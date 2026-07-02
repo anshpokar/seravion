@@ -76,6 +76,7 @@ const Navbar = () => {
           </div>
         </Link>
 
+
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((item) => (

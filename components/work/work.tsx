@@ -33,7 +33,7 @@ const Work = () => {
         scrollTrigger: {
           trigger: pinRef.current,
           start: "top top",
-          end: `+=${cards.length * 100}%`,
+          end: `+=${cards.length * 130}%`,
           scrub: 0.5,
           pin: true,
           anticipatePin: 1.5,
@@ -44,7 +44,7 @@ const Work = () => {
       tl.to(
         cards[0],
         {
-          y: -40,
+          y: -30,
           scale: 0.95,
           opacity: 0.5,
           duration: 1,
@@ -77,25 +77,25 @@ const Work = () => {
         tl.to(
           cards[1],
           {
-            y: -40,
+            y: -30,
             scale: 0.95,
             opacity: 0.5,
             duration: 1,
             ease: "none",
           },
-          1
+          1.5
         );
 
         tl.to(
           cards[0],
           {
-            y: -80,
+            y: -60,
             scale: 0.9,
-            opacity: 0.2,
+            opacity: 0,
             duration: 1,
             ease: "none",
           },
-          1
+          1.5
         );
 
         tl.to(
@@ -105,8 +105,11 @@ const Work = () => {
             duration: 1,
             ease: "none",
           },
-          1
+          1.5
         );
+
+        // Add extra scrolling space at the end before unpinning
+        tl.to({}, { duration: 0.5 });
       }
     }, pinRef);
 
@@ -115,74 +118,115 @@ const Work = () => {
 
   return (
     <section className="bg-[#f5f5f5] overflow-hidden">
-      <div className="pt-24 pb-16 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-
-          {/* LEFT SIDE */}
-          <div className="mb-8 md:mb-0 md:w-[55%]">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
-
-              <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">
-                Our Works
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tighter whitespace-nowrap">
-              Unseen Possibilities.
-            </h2>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-16">
-            <p className="text-gray-500 text-[15px] leading-relaxed">
-              Seravion is a people-first technology company focused on
-              building innovative digital
-              solutions that care about your business growth and product
-              success as much as you do
-            </p>
-
-            <button className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300">
-              View All Projects
-            </button>
-          </div>
-        </div>
-      </div>
-
       <div
         ref={pinRef}
-        className="relative h-screen w-full flex items-center justify-center bg-[#f5f5f5] px-6"
+        className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#f5f5f5] pt-16 px-6 pb-20"
       >
-        <div
-          className="work-card absolute w-full max-w-7xl h-[70vh] bg-[#0a0a0a] shadow-2xl transition-none"
-          style={{ willChange: "transform" }}
-        >
-          <img
-            src="/card-1.png"
-            alt="Card 1"
-            className="w-full h-full object-cover"
-          />
+        {/* HEADER TEXT (Now pinned with the cards again!) */}
+        <div className="w-full max-w-[1350px] mx-auto mb-20 md:mb-24">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            {/* LEFT SIDE */}
+            <div className="mb-4 md:mb-0 md:w-[55%]">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
+                <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">
+                  Our Works
+                </p>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tighter whitespace-nowrap">
+                Unseen Possibilities.
+              </h2>
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:gap-16">
+              <p className="text-gray-500 text-[15px] leading-relaxed">
+                Seravion is a people-first technology company focused on
+                building innovative digital
+                solutions that care about your business growth and product
+                success as much as you do
+              </p>
+              <button className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap">
+                View All Projects
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div
-          className="work-card absolute w-full max-w-7xl h-[70vh] bg-[#0a0a0a] shadow-2xl transition-none"
-          style={{ willChange: "transform" }}
-        >
-          <img
-            src="/card-2.png"
-            alt="Card 2"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {/* CARDS CONTAINER (Exactly matches the width of the text) */}
+        <div className="relative w-full max-w-[1350px] h-[70vh] min-h-[450px]">
+          {[
+            {
+              title: (
+                <>
+                  Industry Leading <br />
+                  Scheduling Rules <br />
+                  Engine
+                </>
+              ),
+              desc: "AI follows your practice's custom scheduling rules 100% accurately every time, reducing costly human agent training time and mistakes.",
+              image: "/card-4.png",
+            },
+            {
+              title: (
+                <>
+                  New Patient Intake <br />
+                  With Insurance <br />
+                  Verification
+                </>
+              ),
+              desc: "Collect patient info and verify insurance before the visit - saving your staff time and reducing delays.",
+              image: "/card-5.png",
+            },
+            {
+              title: (
+                <>
+                  Comprehensive <br />
+                  Scheduling
+                </>
+              ),
+              desc: "Supports scheduling, rescheduling, cancelling, and confirming all appointment types - office visits, procedures, and ancillaries - including multiple visits in a single conversation.",
+              image: "/card-6.png",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="work-card absolute w-full h-[70vh] min-h-[450px] bg-[#0d1116] shadow-2xl transition-none overflow-hidden flex flex-col md:flex-row"
+              style={{ willChange: "transform" }}
+            >
+              {/* LEFT SIDE: TEXT */}
+              <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-6 sm:p-10 lg:p-20 text-white">
+                <h3 className="text-2xl sm:text-3xl lg:text-[44px] xl:text-[50px] font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm sm:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-12 max-w-lg">
+                  {item.desc}
+                </p>
 
-        <div
-          className="work-card absolute w-full max-w-7xl h-[70vh] bg-[#0a0a0a] shadow-2xl transition-none"
-          style={{ willChange: "transform" }}
-        >
-          <img
-            src="/card-3.png"
-            alt="Card 3"
-            className="w-full h-full object-cover"
-          />
+                {/* STATS BOX */}
+                <div className="flex items-center gap-6 xl:gap-10 border border-white/5 rounded-sm p-4 sm:p-6 xl:p-8 bg-transparent w-max">
+                  <div>
+                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">20X</p>
+                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">Faster Now</p>
+                  </div>
+                  <div className="w-[1px] h-8 sm:h-12 bg-white/10"></div>
+                  <div>
+                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">120%</p>
+                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">Growth</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT SIDE: IMAGE */}
+              <div className="w-full md:w-1/2 h-full relative flex items-end justify-end pt-12 pl-4 md:pl-0 pr-0 pb-0">
+                <img
+                  src={item.image}
+                  alt={`Feature UI ${index + 1}`}
+                  className="w-full h-[95%] md:h-[110%] md:w-[120%] max-w-none object-contain object-right-bottom drop-shadow-2xl"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -30,14 +30,11 @@ if (!device || !videoWrapper || !finalText) return;
         const rect = videoWrapper.getBoundingClientRect();
         const scaleX = window.innerWidth / rect.width;
         const scaleY = window.innerHeight / rect.height;
+        // Return exact scale to cover the screen. No extra multiplier needed since transformOrigin is perfectly centered.
         return Math.max(scaleX, scaleY);
       };
 
-      let finalScale = getScale();
 
-      ScrollTrigger.addEventListener("refreshInit", () => {
-        finalScale = getScale();
-      });
 
       gsap.set(finalText, {
         y: 140,
@@ -45,9 +42,11 @@ if (!device || !videoWrapper || !finalText) return;
       });
 
       gsap.set(device, {
-        scale: 0.85,
+        scale: 1.0,
         y: 0,
-        transformOrigin: "center center",
+        // Set transformOrigin to the exact center of the video wrapper (49.5% X, 47% Y) 
+        // to guarantee perfectly symmetrical scaling without any edge gaps
+        transformOrigin: "49.5% 47%",
         willChange: "transform, opacity",
       });
 
@@ -60,6 +59,7 @@ if (!device || !videoWrapper || !finalText) return;
           pin: false,
           anticipatePin: 1,
           fastScrollEnd: true,
+          invalidateOnRefresh: true,
         },
         defaults: {
           ease: "none",
@@ -75,8 +75,9 @@ if (!device || !videoWrapper || !finalText) return;
       tl.to(
         device,
         {
-          scale: finalScale,
-          y: -window.innerHeight * 0.25,
+          scale: () => getScale(),
+          // Shifted further down so the logo sits lower on the screen
+          y: () => -window.innerHeight * 0.20,
           duration: 2.2,
         },
         0
@@ -96,10 +97,11 @@ if (!device || !videoWrapper || !finalText) return;
         {
           opacity: 1,
           y: 0,
-          duration: 2.4,
+          duration: 2.0,
           ease: "power4.out",
         },
-        2
+        // Changed from 2 to 2.8 so it waits for the 2.2s zoom to finish, plus an extra 0.6s scroll delay
+        2.8
       );
 
       tl.to({}, { duration: 0.5 });
@@ -116,50 +118,78 @@ if (!device || !videoWrapper || !finalText) return;
         {/* INITIAL TEXT */}
         <div
           ref={initialTextRef}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-6 -translate-y-16 md:-translate-y-28"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-6 -translate-y-24 md:-translate-y-40 lg:-translate-y-48"
         >
-          <h1 className="font-semibold text-3xl md:text-[55px] leading-[120%] text-[#394247] max-w-4xl">
+          <h1 className="font-medium text-3xl md:text-[44px] lg:text-[55px] leading-[120%] text-[#394247] max-w-4xl">
             The Digital Engineering Partner Built for What's Coming Next
           </h1>
 
-          <button className="mt-6 bg-blue-500 text-white px-5 py-2 rounded-lg">
-            Explore Works
+          <button className="mt-8 bg-[#2693ED] hover:bg-[#1C72BB] text-white text-[16px] font-bold w-[159px] h-[54px] rounded-[8px] flex items-center justify-center leading-[1.4] transition-all shadow-lg shadow-blue-600/20 active:scale-95 mx-auto">
+            Explore Work
           </button>
         </div>
 
         {/* FINAL TEXT */}
         <div
           ref={finalTextRef}
-          className="absolute inset-0 flex flex-col justify-between z-30 px-6 md:px-16 will-change-transform"
+          className="absolute inset-0 z-30 px-6 md:px-16 will-change-transform pointer-events-none"
         >
-          <div className="pt-24 md:pt-28">
-            <div className="flex items-center gap-3 mb-10">
-              <span className="w-3 h-2 bg-blue-500 rounded-full"></span>
+          {/* LEFT SIDE CONTENT */}
+          <div className="h-full flex flex-col justify-between max-w-xl pointer-events-auto">
+            <div className="pt-24 md:pt-28">
+              <div className="flex items-center gap-3 mb-10">
+                <span className="w-3 h-2 bg-blue-500 rounded-full"></span>
+                <p className="text-xs tracking-widest text-white">
+                  ABOUT US
+                </p>
+              </div>
 
-              <p className="text-xs tracking-widest text-white">
-                ABOUT US
-              </p>
+            <h1 className="mt-4 font-semibold text-3xl md:text-[42px] leading-[1.1] text-white">
+              We offer a full <br />
+              range of business <br />
+              and consulting
+              </h1>
             </div>
 
-            <h1 className="mt-4 font-extrabold text-xl md:text-[34px] leading-[120%] text-white max-w-md">
-              Transforming Ambitious <br />
-              Ideas into Intelligent <br />
-              Digital Products
-            </h1>
+            <div className="pb-12">
+              <p className="text-sm text-gray-300 max-w-[280px] mb-5 leading-relaxed">
+                Seravion is a people-first design studio that cares as much about your business and product as you do.
+              </p>
+
+              <button className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg border border-white/20 text-sm hover:bg-white hover:border-white hover:text-black transition-all duration-300 font-medium">
+                Know More
+              </button>
+            </div>
           </div>
 
-          <div className="pb-12">
-            <p className="text-sm text-gray-300 max-w-sm mb-3 leading-relaxed">
-              Seravion Technologies is your end-to-end
-              <br />
-              technology partner. We architect, build and
-              <br />
-              scale digital products the redefine industries
-            </p>
-
-            <button className="bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg border border-white/20 text-sm hover:bg-white hover:border-white hover:text-black transition-all duration-300">
-              Know More
-            </button>
+          {/* RIGHT SIDE: LATEST PROJECTS CARD */}
+          <div className="hidden lg:block absolute bottom-12 right-6 md:right-16 w-[320px] bg-[#0A1016] border border-white/10 pointer-events-auto group cursor-pointer hover:border-white/30 transition-colors">
+            <div className="relative w-full h-[160px] flex p-1 pb-0">
+              {/* Left Image Placeholder */}
+              <div className="w-1/2 bg-[#cfcfcf] relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#0c1f4c] rounded-md opacity-90"></div>
+                </div>
+              </div>
+              {/* Right Image Placeholder */}
+              <div className="w-1/2 bg-black relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-24 bg-gray-900 rounded-xl border-4 border-gray-800"></div>
+                </div>
+              </div>
+              {/* Play Button Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-14 h-14 bg-gradient-to-tr from-gray-700/80 to-gray-500/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+            
+            <div className="py-5 text-center bg-[#0A1016]">
+              <span className="text-white text-[15px] font-medium tracking-wide">
+                Latest Projects <span className="ml-1 opacity-70 group-hover:opacity-100 transition-opacity">&rarr;</span>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -167,7 +197,7 @@ if (!device || !videoWrapper || !finalText) return;
         <div className="absolute inset-x-0 bottom-[-40px] flex justify-center z-20 pointer-events-none">
           <div
             ref={deviceRef}
-            className="relative w-full max-w-4xl h-[260px] md:h-[380px]"
+            className="relative w-[92%] md:w-[85%] lg:w-[80%] max-w-[950px] 2xl:max-w-[1150px] aspect-[896/380]"
           >
             <div
               ref={videoWrapperRef}

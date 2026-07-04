@@ -9,29 +9,33 @@ import gsap from "gsap";
 const data = [
   {
     number: "01",
-    title: "20+",
-    desc1: "Projects delivered",
+    title: "2,000+",
+    desc1: "Projects Launched",
+    image: "/image.png",
   },
   {
     number: "02",
     title: "5+",
     desc1: "Countries served",
+    image: "/countriesServed.png",
   },
   {
     number: "03",
     title: "15+",
     desc1: "Years of Excellence",
+    image: "/exceelence.png",
   },
   {
     number: "04",
     title: "98%",
     desc1: "Client Retention",
-    desc2: "Launched",
+    image: "/retyention.png",
   },
 ];
 const Services = () => {
   const panelsRef = useRef<HTMLDivElement[]>([]);
   const contentsRef = useRef<HTMLDivElement[]>([]);
+  const bgRefs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const panels = panelsRef.current;
@@ -41,6 +45,7 @@ const Services = () => {
       panels.forEach((panel, index) => {
         gsap.killTweensOf(panel);
         gsap.killTweensOf(contents[index]);
+        if (bgRefs.current[index]) gsap.killTweensOf(bgRefs.current[index]);
 
         gsap.to(panel, {
           flex: index === activeIndex ? 3 : 0.6,
@@ -54,6 +59,14 @@ const Services = () => {
           duration: 0.4,
           ease: "power3.out",
         });
+
+        if (bgRefs.current[index]) {
+          gsap.to(bgRefs.current[index], {
+            opacity: index === activeIndex ? 1 : 0,
+            duration: index === activeIndex ? 0.15 : 0.4,
+            ease: "power3.out",
+          });
+        }
       });
     };
 
@@ -61,6 +74,7 @@ const Services = () => {
       panels.forEach((panel, index) => {
         gsap.killTweensOf(panel);
         gsap.killTweensOf(contents[index]);
+        if (bgRefs.current[index]) gsap.killTweensOf(bgRefs.current[index]);
 
         gsap.to(panel, {
           flex: 1,
@@ -74,6 +88,14 @@ const Services = () => {
           duration: 0.3,
           ease: "power3.out",
         });
+
+        if (bgRefs.current[index]) {
+          gsap.to(bgRefs.current[index], {
+            opacity: 0,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        }
       });
     };
 
@@ -103,9 +125,9 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="w-full h-screen flex overflow-hidden">
+    <section className="w-full h-[calc(100vh-176px)] min-h-[500px] flex overflow-hidden">
       {/* LEFT TEXT */}
-      <div className="w-[32%] bg-[#efefef] flex items-center px-16">
+      <div className="w-[32%] bg-[#efefef] flex pt-12 pl-32 xl:pl-40 pr-8">
         <h1 className="text-[64px] leading-[1.1] font-semibold text-black tracking-tight">
           Proven <br />
           Results. <br />
@@ -134,29 +156,32 @@ const Services = () => {
               }
             `}
           >
+            {/* BACKGROUND IMAGE (Revealed on hover) */}
+            <div
+              ref={(el) => {
+                if (el) bgRefs.current[i] = el;
+              }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 z-0"
+              style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), transparent), url(${item.image})` }}
+            />
+
             {/* NUMBER */}
-            <span className="absolute top-6 left-6 text-sm opacity-70">
+            <span className="absolute top-12 left-12 text-xl font-medium opacity-90 z-10">
               {item.number}
             </span>
 
-            {/* CENTERED CONTENT */}
+            {/* BOTTOM LEFT CONTENT */}
             <div
               ref={(el) => {
                 if (el) contentsRef.current[i] = el;
               }}
-              className="opacity-0 translate-y-6 flex flex-col items-center"
+              className="opacity-0 translate-y-6 flex flex-col items-start text-left absolute bottom-12 left-12 z-10"
             >
-              <h2 className="text-4xl font-semibold mb-3">
+              <h2 className="text-6xl xl:text-7xl font-bold mb-2">
                 {item.title}
               </h2>
 
-              <p className="text-sm opacity-80">{item.desc1}</p>
-
-              {item.desc2 && (
-                <p className="text-sm opacity-80">
-                  {item.desc2}
-                </p>
-              )}
+              <p className="text-xl opacity-90">{item.desc1}</p>
             </div>
           </div>
         ))}

@@ -63,7 +63,7 @@ const ServiceSection = () => {
       // Step 1: Card 2 animates in
       tl.to(cards[1], {
         yPercent: 0,
-        y: 110,
+        y: 80,
         ease: "none",
       }, "step-1");
 
@@ -72,7 +72,7 @@ const ServiceSection = () => {
         yPercent: 0,
         y: (i, target) => {
           const cardIndex = cards.indexOf(target);
-          return cardIndex * 110;
+          return cardIndex * 80;
         },
         ease: "none",
       }, "step-2");

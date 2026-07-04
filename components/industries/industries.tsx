@@ -1,21 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const industries = [
-  "Fintech",
-  "Edutech",
-  "Medtech",
-  "Automobile",
-  "Chemical",
-  "Finance",
+  { name: "Fintech", image: "/fintech.png" },
+  { name: "Edutech", image: "/edutech.png" },
+  { name: "Chemical", image: "/meditech.png" },
+  { name: "Medtech", image: "/healthtech.png" },
+  { name: "Automobile", image: "/cartech.png" },
+  { name: "Finance", image: "/biztech.png" },
 ];
 
 const Industries = () => {
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<string>(industries[0].name);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=100%", // Pin for 1 screen worth of scrolling
+        pin: true,
+        pinSpacing: true,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative h-screen w-full bg-[#0a121e] text-white flex items-center px-6 md:px-16 lg:px-24 overflow-hidden">
+    <section ref={sectionRef} className="relative h-screen w-full bg-[#0a121e] text-white flex items-center px-6 md:px-16 lg:px-24 overflow-hidden">
       
       <div className="grid grid-cols-1 md:grid-cols-[35%_35%_30%] gap-6 w-full max-w-[1400px] mx-auto py-10 h-full max-h-[90vh] items-center">
         
@@ -39,25 +58,22 @@ const Industries = () => {
         </div>
 
         {/* MIDDLE COLUMN: Interactive List */}
-        <div 
-          className="flex flex-col border-l border-white/10 pl-8 md:pl-12 justify-center h-full"
-          onMouseLeave={() => setActiveItem(null)}
-        >
+        <div className="flex flex-col border-l border-white/10 pl-8 md:pl-12 justify-center h-full">
           {industries.map((item) => (
             <div
-              key={item}
-              onMouseEnter={() => setActiveItem(item)}
+              key={item.name}
+              onMouseEnter={() => setActiveItem(item.name)}
               /* Removed border-b from here to use the custom line below */
               className="relative group py-4 md:py-6 cursor-pointer transition-colors duration-300"
             >
               <h3
                 className={`text-2xl md:text-3xl lg:text-[40px] font-bold transition-all duration-500 ease-out ${
-                  activeItem === item 
+                  activeItem === item.name 
                     ? "text-white translate-x-2" 
                     : "text-gray-700" 
                 }`}
               >
-                {item}
+                {item.name}
               </h3>
 
               {/* CUSTOM REDUCED WIDTH LINE: 
@@ -71,13 +87,22 @@ const Industries = () => {
 
         {/* RIGHT COLUMN: Industry Image */}
         <div className="flex items-center justify-end relative h-full">
-          <div className="relative w-full max-h-[750px] aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
-            <img
-              src="/industryimage.png"
-              alt="Industry visualization"
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-            />
-            <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay" />
+          <div className="relative w-full max-h-[750px] aspect-[4/5] overflow-hidden rounded-sm">
+            {industries.map((item) => (
+              <img
+                key={item.name}
+                src={item.image}
+                alt={item.name}
+                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                  activeItem === item.name ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay pointer-events-none" />
+            
+            {/* Edge blending overlay: Creates a heavy inset shadow identical to the background color */}
+            <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_70px_#0a121e]" />
+            <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_20px_#0a121e]" />
           </div>
         </div>
       </div>

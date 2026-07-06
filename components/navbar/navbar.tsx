@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "About Us", href: "/about" },
@@ -16,10 +17,24 @@ const navLinks = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      const currentScrollY = window.scrollY;
+      
+      setScrolled(currentScrollY > 80);
+
+      // Hide if scrolling down and past 100px, show if scrolling up
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,14 +42,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Determine if the navbar should actually be hidden (never hide on home page)
+  const shouldHide = hidden && pathname !== "/";
+
   return (
     <>
       {/* LAYER 1: NORMAL BLEND MODE (Logo Icon, Button) */}
       <header
         className={`
           fixed top-0 left-0 w-full z-[100] pointer-events-none
-          transition-all duration-300 ease-in-out
+          transition-transform duration-300 ease-in-out
           ${scrolled ? "py-3" : "py-4"}
+          ${shouldHide ? "-translate-y-full" : "translate-y-0"}
         `}
       >
         <div className="max-w-[1600px] w-full mx-auto relative flex items-center justify-between px-6 md:px-10 lg:px-12">
@@ -95,8 +114,9 @@ const Navbar = () => {
       <header
         className={`
           fixed top-0 left-0 w-full z-[101] pointer-events-none mix-blend-difference text-white
-          transition-all duration-300 ease-in-out
+          transition-transform duration-300 ease-in-out
           ${scrolled ? "py-3" : "py-4"}
+          ${shouldHide ? "-translate-y-full" : "translate-y-0"}
         `}
       >
         <div className="max-w-[1600px] w-full mx-auto relative flex items-center justify-between px-6 md:px-10 lg:px-12">

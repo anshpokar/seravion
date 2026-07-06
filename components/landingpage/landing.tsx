@@ -8,6 +8,7 @@ import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowDown } from "lucide-react";
 
 const Landing = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -112,7 +113,7 @@ if (!device || !videoWrapper || !finalText) return;
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[260vh] bg-white">
+    <div ref={containerRef} className="relative h-[260vh] bg-white">
       <div className="sticky top-0 h-screen overflow-hidden">
         
         {/* INITIAL TEXT */}
@@ -124,8 +125,9 @@ if (!device || !videoWrapper || !finalText) return;
             The Digital Engineering Partner Built for What's Coming Next
           </h1>
 
-          <button className="mt-8 bg-[#2693ED] hover:bg-[#1C72BB] text-white text-[16px] font-bold w-[159px] h-[54px] rounded-[8px] flex items-center justify-center leading-[1.4] transition-all shadow-lg shadow-blue-600/20 active:scale-95 mx-auto">
+          <button className="mt-8 bg-[#2693ED]/10 backdrop-blur-md border border-[#2693ED]/20 hover:bg-[#2693ED]/20 text-[#1C72BB] text-[16px] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 leading-[1.4] transition-all shadow-sm hover:shadow-md active:scale-95 mx-auto">
             Explore Work
+            <ArrowDown className="w-5 h-5 text-[#1C72BB] animate-bounce" />
           </button>
         </div>
 
@@ -230,7 +232,7 @@ if (!device || !videoWrapper || !finalText) return;
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -12,15 +12,6 @@ const SaasProduct = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // 0. Pin the entire section for some scrolling distance
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=100%", // Pins for 1x viewport height
-        pin: true,
-        pinSpacing: true,
-      });
-
       // 1. Entry Animation on Scroll
       gsap.from(".saas-animate", {
         y: 200,
@@ -51,7 +42,8 @@ const SaasProduct = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[700px] h-[100svh] w-full flex flex-col items-center justify-between overflow-hidden bg-white">
+    <div className="h-[200vh]">
+    <section ref={sectionRef} className="sticky top-0 min-h-[700px] h-[100svh] w-full flex flex-col items-center justify-between overflow-hidden bg-white">
       
       {/* BACKGROUND IMAGE ASSET */}
       <div className="absolute bottom-0 left-0 w-full h-full z-0 pointer-events-none select-none">
@@ -138,6 +130,7 @@ const SaasProduct = () => {
       {/* SMALL TRANSLUCENT BORDER AT THE BOTTOM */}
       <div className="absolute bottom-0 left-0 w-full h-[15px] bg-black/5 backdrop-blur-sm z-50" />
     </section>
+    </div>
   );
 };
 

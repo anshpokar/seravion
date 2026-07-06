@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useState } from "react";
 
 const industries = [
   { name: "Fintech", image: "/fintech.png" },
@@ -15,26 +13,10 @@ const industries = [
 
 const Industries = () => {
   const [activeItem, setActiveItem] = useState<string>(industries[0].name);
-  const sectionRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=100%", // Pin for 1 screen worth of scrolling
-        pin: true,
-        pinSpacing: true,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen w-full bg-[#0a121e] text-white flex items-center px-6 md:px-16 lg:px-24 overflow-hidden">
+    <div className="h-[200vh]">
+    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex items-center px-6 md:px-16 lg:px-24 overflow-hidden">
       
       <div className="grid grid-cols-1 md:grid-cols-[35%_35%_30%] gap-6 w-full max-w-[1400px] mx-auto py-10 h-full max-h-[90vh] items-center">
         
@@ -107,6 +89,7 @@ const Industries = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

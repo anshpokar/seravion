@@ -9,8 +9,8 @@ const projects = [
   {
     id: 1,
     category: ["All Work", "Web App"],
-    tags: ["#UX Audit", "#Product redesign", "#Web development"],
-    title: "Comprehensive Scheduling",
+    tags: ["#UX Audit", "#Product Redesign", "#Web Development"],
+    title: "Comprehensive Scheduling Platform",
     techStack: ["React", "Python", "AWS"],
     timeline: "12 months, ongoing",
     results: [
@@ -23,12 +23,12 @@ const projects = [
   {
     id: 2,
     category: ["All Work", "Mobile App"],
-    tags: ["#UI Design", "#Mobile Development", "#iOS"],
-    title: "Health Monitoring App",
+    tags: ["#Health Tech", "#Mobile Development", "#iOS & Android"],
+    title: "AI Health Monitoring Dashboard",
     techStack: ["React Native", "Node.js", "Firebase"],
     timeline: "8 months",
     results: [
-      "4.8 App Store rating",
+      "4.8★ App Store rating",
       "200K+ active users",
       "Best Health App Award 2023",
     ],
@@ -37,14 +37,14 @@ const projects = [
   {
     id: 3,
     category: ["All Work", "Website"],
-    tags: ["#Branding", "#Web Design", "#No-Code"],
-    title: "E-Commerce Platform",
-    techStack: ["Next.js", "Shopify", "Tailwind"],
+    tags: ["#FinTech", "#Web Design", "#Branding"],
+    title: "Nexori — Smart Financial Platform",
+    techStack: ["Next.js", "Stripe API", "Tailwind CSS"],
     timeline: "5 months",
     results: [
       "3× increase in conversions",
-      "40% lower bounce rate",
-      "Featured in Awwwards",
+      "56K+ users onboarded in month 1",
+      "Featured on Awwwards",
     ],
     image: "/service-tab.png",
   },

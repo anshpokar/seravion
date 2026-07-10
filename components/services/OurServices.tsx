@@ -4,33 +4,38 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "AI-enhanced UX/UI design",
-    description: "Interfaces that adapt, predict, and respond intelligently.",
+    title: "AI-Enhanced UX/UI Design",
+    description:
+      "Intelligent interfaces that adapt to user behavior, predict actions, and deliver frictionless experiences powered by AI.",
     image: "/service1.png",
     bgColor: "#0933C4", // Bright blue
   },
   {
-    title: "Custom development",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
+    title: "Custom Development",
+    description:
+      "End-to-end engineering — pixel-perfect frontends, robust backends, and seamless AI integrations built to scale.",
     image: "/service3.png",
     bgColor: "#08175E", // Dark blue
   },
   {
     title: "Brand Identity",
-    description: "Interfaces that adapt, predict, and respond intelligently.",
+    description:
+      "From logo to language, we craft cohesive brand systems that resonate with your audience and stand out in any market.",
     image: "/servic2.png",
     bgColor: "#0B2183", // Medium-dark blue
   },
   {
     title: "Outbound Scheduling Support",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
-    image: "/service3.png",
+    description:
+      "AI-driven outreach automation that books meetings, syncs calendars, and keeps your pipeline moving — 24/7.",
+    image: "/service1.png",
     bgColor: "#030A24", // Very dark blue
   },
   {
-    title: "Appointment Reminder",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
-    image: "/service3.png",
+    title: "Appointment Reminder System",
+    description:
+      "Smart multi-channel reminders via SMS, email, and push — reducing no-shows and maximizing customer retention.",
+    image: "/servic2.png",
     bgColor: "#040605", // Almost black
   },
 ];

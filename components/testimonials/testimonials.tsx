@@ -5,217 +5,214 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const testimonialsData = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     src: "/main_testimonial.png",
     text: "Working with Seravion was a game changer for our business. Their team truly understands our vision and brings it to life with creativity and precision. We felt valued every step of the way!",
     name: "Ravi Yadav",
-    company: "Company Name"
+    company: "Company Name",
   },
-  { 
-    id: 2, 
+  {
+    id: 2,
     src: "/testimonial_2.png",
     text: "The level of detail and thought put into our project was outstanding. We couldn't be happier with the results and highly recommend their services to anyone looking to elevate their brand.",
     name: "Sarah Jenkins",
-    company: "Tech Innovations"
+    company: "Tech Innovations",
   },
-  { 
-    id: 3, 
+  {
+    id: 3,
     src: "/testimonial_3.png",
     text: "From start to finish, the communication and execution were flawless. They delivered exactly what we needed, on time and within budget.",
     name: "Michael Chen",
-    company: "Growth Partners"
+    company: "Growth Partners",
   },
-  { 
-    id: 4, 
+  {
+    id: 4,
     src: "/testimonial_4.png",
     text: "An absolute pleasure to work with. The final product exceeded all of our expectations and has already started generating positive feedback from our users.",
     name: "Emily Carter",
-    company: "Design Works"
+    company: "Design Works",
   },
 ];
 
 const Testimonials = () => {
   const [step, setStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  
-  // Ref for wheel throttle
   const lastWheelTime = useRef(0);
-  const [touchStart, setTouchStart] = useState(0);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     if (isPaused) return;
-    
-    const interval = setInterval(() => {
-      setStep((prev) => prev + 1);
-    }, 5000); // Intact for at least 4-5 seconds
-
+    const interval = setInterval(() => setStep((p) => p + 1), 5000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // Handle trackpad/mouse horizontal scroll
   const handleWheel = (e: React.WheelEvent) => {
     const now = Date.now();
-    if (now - lastWheelTime.current < 600) return; // 600ms throttle to prevent crazy fast spinning
-
+    if (now - lastWheelTime.current < 700) return;
     if (Math.abs(e.deltaX) > 20) {
-      if (e.deltaX > 0) {
-        setStep((prev) => prev + 1);
-      } else {
-        setStep((prev) => prev - 1);
-      }
+      setStep((p) => (e.deltaX > 0 ? p + 1 : p - 1));
       lastWheelTime.current = now;
     }
   };
 
-  // Handle mobile touch swipe
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-    setIsPaused(true); // pause auto-play while swiping
+    touchStartX.current = e.targetTouches[0].clientX;
+    setIsPaused(true);
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    const touchEnd = e.changedTouches[0].clientX;
-    const diff = touchStart - touchEnd;
-    
-    if (Math.abs(diff) > 50) { // 50px threshold for swipe
-      if (diff > 0) {
-        setStep((prev) => prev + 1); // swiped left -> next
-      } else {
-        setStep((prev) => prev - 1); // swiped right -> prev
-      }
-    }
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) setStep((p) => (diff > 0 ? p + 1 : p - 1));
     setIsPaused(false);
   };
 
-  // Create an array of exactly 4 displayed items (1 active, 3 thumbnails)
   const displayedItems = Array.from({ length: 4 }).map((_, i) => {
-    const absoluteIndex = step + i;
-    // Safely handle negative modulo for when user scrubs backward
-    const dataIndex = ((absoluteIndex % testimonialsData.length) + testimonialsData.length) % testimonialsData.length;
-    return {
-      ...testimonialsData[dataIndex],
-      uniqueKey: `${testimonialsData[dataIndex].id}-${absoluteIndex}`
-    };
+    const abs = step + i;
+    const idx = ((abs % testimonialsData.length) + testimonialsData.length) % testimonialsData.length;
+    return { ...testimonialsData[idx], uniqueKey: `${testimonialsData[idx].id}-${abs}` };
   });
 
   return (
     <div className="h-[200vh]">
-    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 overflow-hidden">
-      
-      {/* HEADER SECTION */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-6">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-4 h-[7px] rounded-full bg-[#1E90FF]" />
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
-              Testimonials
-            </span>
+      <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 overflow-hidden">
+
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-14 gap-4">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-4 h-[7px] rounded-full bg-[#1E90FF]" />
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
+                Testimonials
+              </span>
+            </div>
+            <h2 className="text-[clamp(32px,5vw,64px)] font-bold leading-tight">
+              What Our Clients Say
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-[54px] font-bold leading-tight">
-            What Our Client Say's
-          </h2>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:max-w-md">
+            <p className="text-gray-400 text-[clamp(12px,1.3vw,16px)] leading-relaxed">
+              Seravion is a people-first design studio that cares as much about your business and product as you do.
+            </p>
+            <button className="px-6 py-3 border border-white/20 text-sm md:text-base font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
+              View All
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 md:max-w-xl">
-          {/* TEXT FIELD WITH CONTROLLED LINE BREAKS */}
-          <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-            <span className="md:block">Seravion is a people-first design studio that cares as much </span>
-            <span className="md:block">about your business and product as you do.</span>
-          </p>
-          
-          <button className="px-6 md:px-8 py-3 border border-white/20 rounded-none text-xs md:text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
-            View All
-          </button>
-        </div>
-      </div>
-
-      {/* MAIN TESTIMONIAL CONTENT */}
-      <div 
-        className="relative flex flex-row items-end w-full max-w-[1400px] gap-3 md:gap-6 lg:gap-8 overflow-visible pl-2 md:pl-4 min-h-[450px] md:min-h-[300px] lg:min-h-[350px]"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onWheel={handleWheel}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <AnimatePresence mode="sync">
-          {displayedItems.map((testimonial, index) => {
-            const isMain = index === 0;
-
-            return (
-              <motion.div
-                layout
-                key={testimonial.uniqueKey}
-                onClick={() => {
-                  if (!isMain) {
-                    setStep(step + index);
-                  }
-                }}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -150 }}
-                className={`overflow-hidden shadow-2xl border shrink-0 ${
-                  isMain 
-                    ? "relative w-[85vw] md:w-[55vw] lg:w-full lg:max-w-[750px] h-auto md:h-[300px] lg:h-[350px] flex flex-col md:flex-row bg-[#17202A] cursor-default border-white/10 z-10" 
-                    : "relative w-14 md:w-20 lg:w-32 aspect-square cursor-pointer grayscale hover:grayscale-0 mb-0 lg:mb-2 border-white/10 z-0"
-                }`}
-                transition={{
-                  layout: { type: "tween", duration: 0.8, ease: "easeInOut" },
-                  x: { type: "tween", duration: 0.8, ease: "easeInOut" },
-                  opacity: { type: "tween", duration: 0.6, ease: "easeInOut" }
-                }}
-              >
-                {/* Image Side */}
-                <motion.div 
+        {/* CARDS ROW */}
+        <div
+          className="relative flex flex-row items-end gap-4 md:gap-6 overflow-visible"
+          style={{ minHeight: "clamp(300px, 45vh, 480px)" }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onWheel={handleWheel}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {displayedItems.map((item, index) => {
+              const isMain = index === 0;
+              return (
+                <motion.div
+                  key={item.uniqueKey}
                   layout
-                  className={`${isMain ? 'w-full md:w-2/5 h-48 md:h-full shrink-0' : 'w-full h-full shrink-0'}`}
+                  onClick={() => { if (!isMain) setStep(step + index); }}
+                  initial={{ opacity: 0, x: 80 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -80, transition: { duration: 0.25 } }}
                   transition={{
-                    layout: { type: "tween", duration: 0.8, ease: "easeInOut" }
+                    layout: { type: "spring", stiffness: 280, damping: 34 },
+                    opacity: { duration: 0.3 },
+                    x: { type: "spring", stiffness: 280, damping: 34 },
                   }}
+                  className={`overflow-hidden border border-white/10 shadow-2xl shrink-0 ${
+                    isMain
+                      ? "flex flex-col sm:flex-row bg-[#17202A] cursor-default z-10"
+                      : "bg-[#111922] cursor-pointer hover:border-white/25 z-0 transition-colors duration-200"
+                  }`}
+                  style={
+                    isMain
+                      ? {
+                          width: "clamp(320px, 65vw, 960px)",
+                          height: "clamp(280px, 42vh, 440px)",
+                        }
+                      : {
+                          width: "clamp(64px, 8vw, 110px)",
+                          aspectRatio: "1",
+                          alignSelf: "flex-end",
+                          marginBottom: "12px",
+                          filter: "grayscale(0.4)",
+                        }
+                  }
                 >
-                  <img 
-                    src={testimonial.src} 
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover block"
-                  />
-                </motion.div>
+                  {/* Image */}
+                  <div
+                    className={`shrink-0 overflow-hidden ${isMain ? "h-[45%] sm:h-full" : "w-full h-full"}`}
+                    style={isMain ? { width: "clamp(140px, 25vw, 360px)" } : {}}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                {/* Text Side (only visible when main) */}
-                <AnimatePresence>
-                  {isMain && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 }}
-                      className="w-full md:w-3/5 h-auto md:h-full p-5 md:p-8 lg:p-10 flex flex-col justify-between shrink-0"
-                    >
-                      <div>
-                        <Quote className="text-white w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 mb-3 md:mb-4" fill="currentColor" />
-                        <p className="text-gray-300 text-xs md:text-sm lg:text-base leading-relaxed">
-                          {testimonial.text}
-                        </p>
-                      </div>
-                      
-                      <div className="mt-4 md:mt-0">
-                        <h4 className="text-white font-bold text-sm md:text-base">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-gray-400 text-[10px] md:text-xs mt-1">
-                          {testimonial.company}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                  {/* Text — only on main card */}
+                  <AnimatePresence>
+                    {isMain && (
+                      <motion.div
+                        key="text"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { delay: 0.18, duration: 0.35 } }}
+                        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                        className="flex flex-col justify-between p-6 md:p-10 flex-1 overflow-hidden"
+                      >
+                        <div>
+                          <Quote className="text-[#1E90FF] mb-4" size={28} fill="currentColor" />
+                          <p className="text-gray-300 text-[clamp(13px,1.4vw,18px)] leading-relaxed line-clamp-4">
+                            {item.text}
+                          </p>
+                        </div>
+                        <div className="mt-5 pt-5 border-t border-white/10">
+                          <h4 className="text-white font-bold text-base md:text-lg">{item.name}</h4>
+                          <p className="text-gray-400 text-sm mt-1">{item.company}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
+
+        {/* DOT INDICATORS */}
+        <div className="flex items-center gap-2 mt-8">
+          {testimonialsData.map((_, i) => {
+            const active = ((step % testimonialsData.length) + testimonialsData.length) % testimonialsData.length === i;
+            return (
+              <button
+                key={i}
+                onClick={() => setStep(i)}
+                aria-label={`Go to testimonial ${i + 1}`}
+                style={{
+                  width: active ? "32px" : "8px",
+                  height: "8px",
+                  borderRadius: "9999px",
+                  backgroundColor: active ? "#1E90FF" : "rgba(255,255,255,0.2)",
+                  transition: "all 0.3s ease",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+              />
             );
           })}
-        </AnimatePresence>
-      </div>
-      
-    </section>
+        </div>
+
+      </section>
     </div>
   );
 };

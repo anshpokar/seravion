@@ -2,10 +2,11 @@
 
 export default function AboutGallery() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16 md:py-24">
       <div className="w-full px-4 md:px-6">
 
-        <div className="flex gap-3 items-start">
+        {/* On mobile: 2-col grid. On md+: horizontal flex strip */}
+        <div className="hidden md:flex gap-3 items-start">
 
           {/* Image 1 */}
           <div className="flex-[1.55]">
@@ -43,6 +44,18 @@ export default function AboutGallery() {
             />
           </div>
 
+        </div>
+
+        {/* Mobile gallery: 2-col grid */}
+        <div className="md:hidden grid grid-cols-2 gap-2">
+          {["/aboutus1.png", "/aboutus2.png", "/aboutus3.png", "/aboutus4.png"].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`Gallery ${i + 1}`}
+              className="w-full h-[180px] object-cover"
+            />
+          ))}
         </div>
 
       </div>

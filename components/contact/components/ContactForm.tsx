@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Container from "@/components/ui/Container";
 
 const services = [
   "Site for Scratch",
@@ -26,12 +27,12 @@ export default function ContactForm() {
 
   return (
     <section className="bg-white py-24">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12">
+      <Container>
         {/* Label */}
         <p className="text-sm text-[#4A90FF] mb-4">— Enquiry Form</p>
 
         {/* Heading */}
-        <h2 className="text-5xl font-semibold text-[#3E3E3E] mb-8">
+        <h2 className="text-4xl md:text-5xl font-semibold text-[#3E3E3E] mb-8">
           Let's Talk
         </h2>
 
@@ -115,7 +116,7 @@ export default function ContactForm() {
             Send Request
           </button>
         </form>
-      </div>
+      </Container>
     </section>
   );
 }

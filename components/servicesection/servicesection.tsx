@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Container from "@/components/ui/Container";
 
 const ServiceSection = () => {
   const scrollWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -89,7 +90,7 @@ const ServiceSection = () => {
     <div ref={scrollWrapperRef} className="relative w-full overflow-hidden bg-white">
       <section className="flex flex-col md:flex-row w-full h-screen overflow-hidden">
         
-        <div className="w-full md:w-1/2 h-full flex flex-col justify-between px-12 md:px-24 pt-[10vh] pb-24 md:pb-32 bg-white z-50">
+        <div className="w-full md:w-1/2 h-full flex flex-col justify-between pt-[10vh] pb-24 md:pb-32 bg-white z-50 pl-6 md:pl-10 lg:pl-12 pr-6 md:pr-8">
           <div>
             <div className="flex items-center gap-2 mb-8">
               <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>

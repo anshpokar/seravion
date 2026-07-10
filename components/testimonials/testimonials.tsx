@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
+import Container from "@/components/ui/Container";
 
 const testimonialsData = [
   { 
@@ -101,7 +102,8 @@ const Testimonials = () => {
 
   return (
     <div className="h-[200vh]">
-    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 overflow-hidden">
+    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex flex-col justify-center py-16 md:py-20 overflow-hidden">
+      <Container>
       
       {/* HEADER SECTION */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-6">
@@ -132,7 +134,7 @@ const Testimonials = () => {
 
       {/* MAIN TESTIMONIAL CONTENT */}
       <div 
-        className="relative flex flex-row items-end w-full max-w-[1400px] gap-3 md:gap-6 lg:gap-8 overflow-visible pl-2 md:pl-4 min-h-[450px] md:min-h-[300px] lg:min-h-[350px]"
+        className="relative flex flex-row items-end w-full gap-3 md:gap-6 lg:gap-8 overflow-visible min-h-[450px] md:min-h-[300px] lg:min-h-[350px]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onWheel={handleWheel}
@@ -214,7 +216,7 @@ const Testimonials = () => {
           })}
         </AnimatePresence>
       </div>
-      
+      </Container>
     </section>
     </div>
   );

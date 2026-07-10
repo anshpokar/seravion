@@ -1,11 +1,13 @@
 "use client";
 
+import Container from "@/components/ui/Container";
+
 const AboutHero = () => {
   return (
     <section className="bg-white pt-32 lg:pt-36">
 
       {/* Content */}
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12">
+      <Container>
 
         {/* Label */}
         <p className="text-[15px] text-[#555] mb-5">
@@ -30,7 +32,7 @@ const AboutHero = () => {
   Development Agency.
 </h1>
 
-      </div>
+      </Container>
 
       {/* Hero Image */}
 

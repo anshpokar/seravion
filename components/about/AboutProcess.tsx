@@ -1,5 +1,7 @@
 "use client";
 
+import Container from "@/components/ui/Container";
+
 const processData = [
   {
     title: (
@@ -55,64 +57,46 @@ const processData = [
 
 export default function AboutProcess() {
   return (
-    
-    <section className="py-28 bg-white">
-      <div className="max-w-[1320px] mx-auto px-8">
-<div className="col-span-2 flex items-start pt-3">
-  <div className="flex items-center gap-3">
-    <div className="w-7 h-[2px] bg-[#2F80ED]" />
+    <section className="py-20 md:py-28 bg-white">
+      <Container>
+        {/* Label */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-7 h-[2px] bg-[#2F80ED]" />
+          <span className="text-[11px] uppercase tracking-[0.35em] font-medium text-[#8C8C8C] whitespace-nowrap">
+            Approach
+          </span>
+        </div>
 
-    <span
-      className="
-        text-[11px]
-        uppercase
-        tracking-[0.35em]
-        font-medium
-        text-[#8C8C8C]
-        whitespace-nowrap
-      "
-    >
-      Approach
-    </span>
-  </div>
-</div>
-        <h2 className="text-6xl font-semibold mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-12 md:mb-16 tracking-tight">
           Method of making better result
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-14">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-14">
           {processData.map((step, index) => (
             <div key={index}>
-
-              <h3 className="text-3xl font-semibold mb-8">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-8">
                 {step.title}
               </h3>
-
               <ul className="space-y-4">
                 {step.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-[#666]"
+                    className="flex items-center gap-3 text-[#666] text-sm md:text-base"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-
               {index !== 2 && (
                 <div className="hidden lg:block mt-10 text-3xl">
                   →
                 </div>
               )}
-
             </div>
           ))}
-
         </div>
-
-      </div>
+      </Container>
     </section>
   );
 }

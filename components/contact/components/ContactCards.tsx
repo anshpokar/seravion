@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, Phone, MapPin } from "lucide-react";
+import Container from "@/components/ui/Container";
 
 const cards = [
   {
@@ -20,7 +21,7 @@ const cards = [
 export default function ContactCards() {
   return (
     <section className="bg-white pt-14 pb-24">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12">
+      <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => {
             const Icon = card.icon;
@@ -45,7 +46,7 @@ export default function ContactCards() {
             );
           })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

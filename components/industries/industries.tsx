@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Container from "@/components/ui/Container";
 
 const industries = [
   { name: "Fintech", image: "/fintech.png" },
@@ -16,9 +17,9 @@ const Industries = () => {
 
   return (
     <div className="h-[200vh]">
-    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex items-center px-6 md:px-16 lg:px-24 overflow-hidden">
-      
-      <div className="grid grid-cols-1 md:grid-cols-[35%_35%_30%] gap-6 w-full max-w-[1400px] mx-auto py-10 h-full max-h-[90vh] items-center">
+    <section className="sticky top-0 h-screen w-full bg-[#0a121e] text-white flex items-center overflow-hidden">
+      <Container className="py-10 h-full flex items-center">
+      <div className="grid grid-cols-1 md:grid-cols-[35%_35%_30%] gap-6 w-full py-10 h-full max-h-[90vh] items-center">
         
         {/* LEFT COLUMN: Static Content */}
         <div className="flex flex-col justify-between h-full py-4">
@@ -67,8 +68,8 @@ const Industries = () => {
           ))}
         </div>
 
-        {/* RIGHT COLUMN: Industry Image */}
-        <div className="flex items-center justify-end relative h-full">
+        {/* RIGHT COLUMN: Industry Image — hidden on mobile */}
+        <div className="hidden md:flex items-center justify-end relative h-full">
           <div className="relative w-full max-h-[750px] aspect-[4/5] overflow-hidden rounded-sm">
             {industries.map((item) => (
               <img
@@ -88,6 +89,7 @@ const Industries = () => {
           </div>
         </div>
       </div>
+      </Container>
     </section>
     </div>
   );

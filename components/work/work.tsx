@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Container from "@/components/ui/Container";
 
 const Work = () => {
   const pinRef = useRef<HTMLDivElement | null>(null);
@@ -120,10 +121,10 @@ const Work = () => {
     <section className="bg-[#f5f5f5] overflow-hidden">
       <div
         ref={pinRef}
-        className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#f5f5f5] pt-16 px-6 pb-20"
+        className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#f5f5f5] pt-16 pb-20"
       >
-        {/* HEADER TEXT (Now pinned with the cards again!) */}
-        <div className="w-full max-w-[1350px] mx-auto mb-20 md:mb-24">
+        {/* HEADER TEXT */}
+        <Container className="mb-20 md:mb-24">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             {/* LEFT SIDE */}
             <div className="mb-4 md:mb-0 md:w-[55%]">
@@ -151,10 +152,10 @@ const Work = () => {
               </button>
             </div>
           </div>
-        </div>
+        </Container>
 
-        {/* CARDS CONTAINER (Exactly matches the width of the text) */}
-        <div className="relative w-full max-w-[1350px] h-[70vh] min-h-[450px]">
+        {/* CARDS CONTAINER */}
+        <Container className="relative h-[70vh] min-h-[450px]">
           {[
             {
               title: (
@@ -227,7 +228,7 @@ const Work = () => {
               </div>
             </div>
           ))}
-        </div>
+        </Container>
       </div>
     </section>
   );

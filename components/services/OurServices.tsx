@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Container from "@/components/ui/Container";
 
 const services = [
   {
@@ -37,7 +38,8 @@ const services = [
 
 export default function OurServices() {
   return (
-    <main className="bg-white min-h-screen pt-24 pb-24 px-6 md:px-16 lg:px-24">
+    <main className="bg-white min-h-screen">
+      <Container className="pt-24 pb-24">
       {/* Header Section */}
       <div className="mb-12">
         <p className="text-sm text-[#555] font-medium mb-2">
@@ -83,6 +85,7 @@ export default function OurServices() {
           </div>
         ))}
       </div>
+    </Container>
     </main>
   );
 }

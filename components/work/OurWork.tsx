@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Container from "@/components/ui/Container";
 
 const tabs = ["All Work", "Web App", "Mobile App", "Website"];
 
@@ -56,7 +57,8 @@ export default function OurWork() {
   const filtered = projects.filter((p) => p.category.includes(activeTab));
 
   return (
-    <main className="bg-white min-h-screen pt-24 pb-24 px-6 md:px-16 lg:px-24">
+    <main className="bg-white min-h-screen">
+      <Container className="pt-24 pb-24">
 
       {/* HEADER */}
       <div className="mb-10">
@@ -225,6 +227,7 @@ export default function OurWork() {
           </div>
         ))}
       </div>
+    </Container>
     </main>
   );
 }

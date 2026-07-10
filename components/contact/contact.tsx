@@ -36,7 +36,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <section className="relative h-[92vh] w-full bg-[#071019] text-white">
+    <section className="relative w-full flex flex-col justify-end bg-[#071019] text-white" style={{ minHeight: "100vh" }}>
       
       {/* BACKGROUNDS WRAPPER */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -66,22 +66,22 @@ const ContactUs = () => {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-30 h-full flex flex-col justify-end">
+      <div className="relative z-30 w-full flex flex-col justify-end mt-auto">
         
-        {/* HERO TEXT */}
-        <div className="px-[118px] pb-[42px]">
-          <h1 className="text-[62px] leading-[0.98] tracking-[-0.06em] font-semibold max-w-[620px]">
+        {/* HERO TEXT — aligned via shared Container padding */}
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-10 lg:px-12 pb-8 md:pb-[42px]">
+          <h1 className="text-[40px] sm:text-[52px] md:text-[62px] leading-[0.98] tracking-[-0.06em] font-semibold max-w-[620px]">
             Have an idea?
             <br />
             TELL US
           </h1>
         </div>
 
-        {/* BOTTOM PANELS */}
-        <div className="flex w-full h-[185px]">
+        {/* BOTTOM PANELS — stacked on mobile, side-by-side on sm+ */}
+        <div className="flex flex-col sm:flex-row w-full">
           
           {/* LEFT PANEL */}
-          <div className="relative w-1/2">
+          <div className="relative w-full sm:w-1/2 min-h-[185px]">
             
             {/* PANEL BACKGROUNDS WRAPPER */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -92,18 +92,18 @@ const ContactUs = () => {
               <div className="absolute left-[280px] top-0 h-full w-[240px] bg-[#76a8ff] blur-[110px] opacity-60" />
             </div>
 
-            <div className="relative z-10 h-full px-[115px] py-[28px] flex flex-col justify-between">
+            <div className="relative z-10 h-full min-h-[185px] px-6 sm:px-10 lg:px-16 py-[28px] flex flex-col justify-between">
               
               {/* TOP LABEL */}
-              <p className="text-[15px] text-white font-normal tracking-[-0.01em]">
+              <p className="text-[14px] md:text-[15px] text-white font-normal tracking-[-0.01em]">
                 Test It Yourself
               </p>
 
               {/* BOTTOM AREA */}
-              <div className="flex items-end justify-between">
+              <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-0">
                 
                 {/* INPUT */}
-                <div className="relative w-[320px] h-[52px] bg-white/10 backdrop-blur-sm border border-white/10 flex items-center px-4 focus-within:border-white/30 transition-colors z-20">
+                <div className="relative w-full max-w-[320px] h-[52px] bg-white/10 backdrop-blur-sm border border-white/10 flex items-center px-4 focus-within:border-white/30 transition-colors z-20">
                   
                   {/* Custom Glassmorphism Country Code Dropdown */}
                   <div 
@@ -126,7 +126,7 @@ const ContactUs = () => {
 
                     {/* Glass Dropdown Menu */}
                     {isDropdownOpen && (
-                      <div className="absolute top-[40px] left-[-16px] w-[140px] max-h-[180px] overflow-y-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-md py-1 z-50 shadow-2xl flex flex-col scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+                      <div className="absolute top-[40px] left-[-16px] w-[140px] max-h-[180px] overflow-y-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-md py-1 z-50 shadow-2xl flex flex-col">
                         {countryCodes.map((c) => (
                           <button
                             key={c.code}
@@ -153,7 +153,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* BUTTON */}
-                <button className="text-[32px] leading-none font-light underline underline-offset-[10px]">
+                <button className="text-2xl md:text-[32px] leading-none font-light underline underline-offset-[10px] hover:opacity-70 transition-opacity">
                   Get a Call
                 </button>
               </div>
@@ -161,17 +161,17 @@ const ContactUs = () => {
           </div>
 
           {/* RIGHT PANEL */}
-          <div className="w-1/2 bg-[#9CEC84] text-black">
-            <div className="h-full px-[46px] py-[28px] flex flex-col">
+          <div className="w-full sm:w-1/2 bg-[#9CEC84] text-black min-h-[185px]">
+            <div className="h-full min-h-[185px] px-6 md:px-10 lg:px-[46px] py-[28px] flex flex-col">
               
               {/* TOP LABEL */}
-              <p className="text-[15px] font-normal">
+              <p className="text-[14px] md:text-[15px] font-normal">
                 See It in Action
               </p>
 
               {/* CENTER BUTTON */}
               <div className="flex-1 flex items-center justify-center">
-                <button className="text-[32px] leading-none font-normal underline underline-offset-[10px]">
+                <button className="text-2xl md:text-[32px] leading-none font-normal underline underline-offset-[10px] hover:opacity-70 transition-opacity">
                   Book a Demo
                 </button>
               </div>

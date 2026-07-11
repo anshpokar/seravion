@@ -39,7 +39,7 @@ export default function ScrollToTop() {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12 pointer-events-none"
       }`}
     >
-      <button
+      <button suppressHydrationWarning
         onClick={scrollToTop}
         className="group relative flex h-14 w-14 items-center justify-center rounded-full outline-none transition-transform hover:scale-110 active:scale-95"
         aria-label="Scroll to top"

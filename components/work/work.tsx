@@ -147,7 +147,7 @@ const Work = () => {
                 solutions that care about your business growth and product
                 success as much as you do
               </p>
-              <button className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap">
+              <button suppressHydrationWarning className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap">
                 View All Projects
               </button>
             </div>
@@ -155,7 +155,7 @@ const Work = () => {
         </Container>
 
         {/* CARDS CONTAINER */}
-        <Container className="relative h-[70vh] min-h-[450px]">
+        <Container className="relative h-[65vh] min-h-[425px]">
           {[
             {
               title: (
@@ -192,12 +192,12 @@ const Work = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="work-card absolute w-full h-[70vh] min-h-[450px] bg-[#0d1116] shadow-2xl transition-none overflow-hidden flex flex-col md:flex-row"
+              className="work-card absolute top-0 left-0 right-0 mx-auto w-[95%] md:w-[92%] lg:w-[90%] max-w-[1400px] h-[65vh] min-h-[425px] bg-[#0d1116] shadow-2xl transition-none overflow-hidden flex flex-col md:flex-row"
               style={{ willChange: "transform" }}
             >
               {/* LEFT SIDE: TEXT */}
-              <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-6 sm:p-10 lg:p-20 text-white">
-                <h3 className="text-2xl sm:text-3xl lg:text-[44px] xl:text-[50px] font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+              <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-6 sm:p-10 lg:p-16 text-white">
+                <h3 className="text-2xl sm:text-3xl lg:text-[42px] xl:text-[48px] font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-gray-400 text-sm sm:text-lg xl:text-xl leading-relaxed mb-8 sm:mb-12 max-w-lg">

@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/ui/Container";
 
 const tabs = ["All Work", "Web App", "Mobile App", "Website"];
@@ -53,25 +55,88 @@ const projects = [
 
 export default function OurWork() {
   const [activeTab, setActiveTab] = useState("All Work");
+  const headerRef = useRef<HTMLDivElement>(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   const filtered = projects.filter((p) => p.category.includes(activeTab));
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // 1. Header: words slide up and fade in
+      const headerEls = headerRef.current?.querySelectorAll(".h-anim");
+      if (headerEls?.length) {
+        gsap.fromTo(
+          headerEls,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.1, duration: 0.85, ease: "power3.out", delay: 0.1 }
+        );
+      }
+
+      // 2. Tabs slide in from left
+      const tabEls = tabsRef.current?.querySelectorAll("button");
+      if (tabEls?.length) {
+        gsap.fromTo(
+          tabEls,
+          { x: -20, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            stagger: 0.07,
+            duration: 0.5,
+            ease: "power2.out",
+            scrollTrigger: { trigger: tabsRef.current, start: "top 90%" },
+          }
+        );
+      }
+
+      // 3. Project cards: curtain reveal from bottom + image zoom-out
+      const cards = cardsRef.current?.querySelectorAll(".project-card");
+      cards?.forEach((card) => {
+        const img = card.querySelector(".project-img") as HTMLElement;
+        const contentEls = card.querySelectorAll(".card-content-anim");
+
+        gsap.set(card, { clipPath: "inset(100% 0 0% 0)" });
+        gsap.set(img, { scale: 1.12 });
+        gsap.set(contentEls, { y: 24, opacity: 0 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: card, start: "top 85%" },
+        });
+
+        tl.to(card, { clipPath: "inset(0% 0 0% 0)", duration: 0.85, ease: "expo.out" })
+          .to(img, { scale: 1, duration: 1.3, ease: "power2.out" }, "<")
+          .to(contentEls, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.08,
+            duration: 0.5,
+            ease: "power3.out",
+          }, "-=0.5");
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <main className="bg-white min-h-screen">
       <Container className="pt-24 pb-24">
 
       {/* HEADER */}
-      <div className="mb-10">
-        <p className="text-sm text-[#555] font-medium mb-2">Our Work</p>
-        <h1 className="text-[42px] md:text-[58px] lg:text-[68px] font-semibold tracking-[-0.04em] leading-[1.05] text-[#1a1a1a]">
+      <div className="mb-10" ref={headerRef}>
+        <p className="h-anim text-sm text-[#555] font-medium mb-2">Our Work</p>
+        <h1 className="h-anim text-[42px] md:text-[58px] lg:text-[68px] font-semibold tracking-[-0.04em] leading-[1.05] text-[#1a1a1a]">
           Explore Our Projects
         </h1>
       </div>
 
       {/* TABS */}
-      <div className="flex items-center gap-3 mb-12 flex-wrap">
+      <div className="flex items-center gap-3 mb-12 flex-wrap" ref={tabsRef}>
         {tabs.map((tab) => (
-          <button
+          <button suppressHydrationWarning
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`px-5 py-2 rounded-full text-[15px] font-medium transition-all duration-200 border ${
@@ -86,11 +151,11 @@ export default function OurWork() {
       </div>
 
       {/* PROJECT CARDS */}
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-16" ref={cardsRef}>
         {filtered.map((project, index) => (
           <div
             key={project.id}
-            className="flex flex-col lg:flex-row w-full"
+            className="project-card flex flex-col lg:flex-row w-full"
             style={{ minHeight: "480px" }}
           >
             {/* LEFT: CONTENT PANEL */}
@@ -99,7 +164,7 @@ export default function OurWork() {
               {/* TOP */}
               <div>
                 {/* TAGS */}
-                <div className="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+                <div className="card-content-anim flex flex-wrap gap-x-2 gap-y-1 mb-5">
                   {project.tags.map((tag) => (
                     <span key={tag} className="text-[12px] text-[#888]">
                       {tag}
@@ -108,12 +173,12 @@ export default function OurWork() {
                 </div>
 
                 {/* TITLE */}
-                <h2 className="text-[26px] md:text-[32px] font-bold text-[#1a1a1a] leading-tight mb-8">
+                <h2 className="card-content-anim text-[26px] md:text-[32px] font-bold text-[#1a1a1a] leading-tight mb-8">
                   {project.title}
                 </h2>
 
                 {/* TECH + TIMELINE */}
-                <div className="flex gap-12 mb-8">
+                <div className="card-content-anim flex gap-12 mb-8">
                   <div>
                     <p className="text-[#2B95FF] text-[13px] font-semibold mb-1">
                       Tech Stack
@@ -131,7 +196,7 @@ export default function OurWork() {
                 </div>
 
                 {/* RESULTS */}
-                <div className="border-t border-[#ebebeb] pt-6">
+                <div className="card-content-anim border-t border-[#ebebeb] pt-6">
                   <p className="text-[#2B95FF] text-[13px] font-semibold mb-3">
                     Results
                   </p>
@@ -146,8 +211,8 @@ export default function OurWork() {
               </div>
 
               {/* BUTTON */}
-              <div className="mt-10">
-                <button className="bg-[#2B95FF] hover:bg-[#1D83E8] text-white font-medium px-7 py-3 rounded-md text-[15px] transition-colors">
+              <div className="card-content-anim mt-10">
+                <button suppressHydrationWarning className="bg-[#2B95FF] hover:bg-[#1D83E8] text-white font-medium px-7 py-3 rounded-md text-[15px] transition-colors">
                   Explore Project
                 </button>
               </div>
@@ -167,7 +232,7 @@ export default function OurWork() {
 
               {/* TABLET FRAME — slightly overflows right edge */}
               <div
-                className="relative flex-shrink-0 self-stretch"
+                className="project-img relative flex-shrink-0 self-stretch"
                 style={{
                   width: "115%",
                   maxWidth: "900px",

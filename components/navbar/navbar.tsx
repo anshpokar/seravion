@@ -93,15 +93,16 @@ const Navbar = () => {
           <div className="flex shrink-0 justify-end items-center gap-6">
             {/* CONTACT BUTTON */}
             <div className="hidden md:block pointer-events-auto">
-              <Link href="/contact">
-                <button className="bg-[#2693ED] hover:bg-[#1C72BB] text-white text-[14px] lg:text-[16px] font-bold w-[130px] lg:w-[159px] h-[48px] lg:h-[54px] rounded-[8px] flex items-center justify-center leading-[1.4] transition-all shadow-lg shadow-blue-600/20 active:scale-95">
-                  Contact Us
-                </button>
+              <Link 
+                href="/contact"
+                className="bg-[#2693ED] hover:bg-[#1C72BB] text-white text-[14px] lg:text-[16px] font-bold w-[130px] lg:w-[159px] h-[48px] lg:h-[54px] rounded-[8px] flex items-center justify-center leading-[1.4] transition-all shadow-lg shadow-blue-600/20 active:scale-95"
+              >
+                Contact Us
               </Link>
             </div>
 
             {/* MOBILE MENU BUTTON (Invisible for spacing) */}
-            <button className="md:hidden flex flex-col gap-1.5 opacity-0 select-none">
+            <button suppressHydrationWarning className="md:hidden flex flex-col gap-1.5 opacity-0 select-none">
               <span className="w-6 h-0.5 bg-white" />
               <span className="w-6 h-0.5 bg-white" />
               <span className="w-6 h-0.5 bg-white" />
@@ -156,13 +157,13 @@ const Navbar = () => {
           <div className="flex shrink-0 justify-end items-center gap-6">
             {/* CONTACT BUTTON (Invisible for spacing) */}
             <div className="hidden md:block opacity-0 select-none">
-              <button className="w-[130px] lg:w-[159px] h-[48px] lg:h-[54px] flex items-center justify-center text-[14px] lg:text-[16px] font-bold leading-[1.4] border border-transparent">
+              <button suppressHydrationWarning className="w-[130px] lg:w-[159px] h-[48px] lg:h-[54px] flex items-center justify-center text-[14px] lg:text-[16px] font-bold leading-[1.4] border border-transparent">
                 Contact Us
               </button>
             </div>
 
             {/* MOBILE MENU BUTTON */}
-            <button
+            <button suppressHydrationWarning
               className="md:hidden flex flex-col gap-1.5 pointer-events-auto"
               onClick={() => setMenuOpen(!menuOpen)}
             >
@@ -200,10 +201,12 @@ const Navbar = () => {
           </Link>
         ))}
 
-        <Link href="/contact" onClick={() => setMenuOpen(false)}>
-          <button className="mt-4 bg-[#3B82F6] text-white text-lg font-bold px-12 py-4 rounded-xl">
-            Contact Us
-          </button>
+        <Link 
+          href="/contact" 
+          onClick={() => setMenuOpen(false)}
+          className="mt-4 bg-[#3B82F6] text-white text-lg font-bold px-12 py-4 rounded-xl inline-block"
+        >
+          Contact Us
         </Link>
       </div>
     </>

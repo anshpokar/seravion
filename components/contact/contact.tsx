@@ -110,7 +110,7 @@ const ContactUs = () => {
                     ref={dropdownRef}
                     className="relative flex items-center border-r border-white/10 pr-2 h-3/5"
                   >
-                    <button 
+                    <button suppressHydrationWarning 
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                       className="flex items-center gap-1 bg-transparent text-white/90 text-[15px] font-normal outline-none pr-1"
                     >
@@ -128,7 +128,7 @@ const ContactUs = () => {
                     {isDropdownOpen && (
                       <div className="absolute top-[40px] left-[-16px] w-[140px] max-h-[180px] overflow-y-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-md py-1 z-50 shadow-2xl flex flex-col">
                         {countryCodes.map((c) => (
-                          <button
+                          <button suppressHydrationWarning
                             key={c.code}
                             onClick={() => {
                               setSelectedCode(c.code);
@@ -145,7 +145,7 @@ const ContactUs = () => {
                   </div>
                   
                   {/* Phone Input */}
-                  <input 
+                  <input suppressHydrationWarning 
                     type="tel"
                     placeholder="Mobile Number"
                     className="bg-transparent text-white text-[15px] font-normal outline-none w-full placeholder:text-white/50 pl-3"
@@ -153,7 +153,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* BUTTON */}
-                <button className="text-2xl md:text-[32px] leading-none font-light underline underline-offset-[10px] hover:opacity-70 transition-opacity">
+                <button suppressHydrationWarning className="text-2xl md:text-[32px] leading-none font-light underline underline-offset-[10px] hover:opacity-70 transition-opacity">
                   Get a Call
                 </button>
               </div>
@@ -171,7 +171,7 @@ const ContactUs = () => {
 
               {/* CENTER BUTTON */}
               <div className="flex-1 flex items-center justify-center">
-                <button className="text-2xl md:text-[32px] leading-none font-normal underline underline-offset-[10px] hover:opacity-70 transition-opacity">
+                <button suppressHydrationWarning className="text-2xl md:text-[32px] leading-none font-normal underline underline-offset-[10px] hover:opacity-70 transition-opacity">
                   Book a Demo
                 </button>
               </div>

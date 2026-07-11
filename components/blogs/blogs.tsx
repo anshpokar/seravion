@@ -117,7 +117,7 @@ const Blogs = () => {
             <span className="md:block">about your business and product as you do.</span>
           </p>
           
-          <button className="px-6 md:px-8 py-3 border border-white/20 rounded-none text-xs md:text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
+          <button suppressHydrationWarning className="px-6 md:px-8 py-3 border border-white/20 rounded-none text-xs md:text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
             View All
           </button>
         </div>
@@ -132,7 +132,7 @@ const Blogs = () => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        <AnimatePresence mode="sync">
+        <AnimatePresence mode="popLayout">
           {displayedItems.map((blog, index) => {
             const isMain = index === 0;
 

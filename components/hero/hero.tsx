@@ -28,10 +28,10 @@ const Hero = () => {
        </p>
        {/* CTAs */}
        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-         <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300">
+         <button suppressHydrationWarning className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300">
            Explore Works
          </button>
-         <button className="text-gray-700 hover:text-black text-sm font-medium px-8 py-3.5 rounded-xl border border-gray-200 hover:border-gray-300 transition-all flex items-center gap-2">
+         <button suppressHydrationWarning className="text-gray-700 hover:text-black text-sm font-medium px-8 py-3.5 rounded-xl border border-gray-200 hover:border-gray-300 transition-all flex items-center gap-2">
            <span className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
              <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
                <path d="M1 1L7 5L1 9V1Z" fill="#3B82F6" />

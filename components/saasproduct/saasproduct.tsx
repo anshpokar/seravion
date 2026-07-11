@@ -62,7 +62,7 @@ const SaasProduct = () => {
         <p className="text-gray-500 text-sm md:text-base max-w-none mx-auto mb-6 leading-relaxed md:whitespace-nowrap">
           Seravion is a people-first design studio that cares as much about your business and product as you do.
         </p>
-        <button className="px-8 py-2 border border-blue-400 text-blue-500 font-semibold rounded-lg hover:bg-blue-50/50 transition-all duration-300 text-xs">
+        <button suppressHydrationWarning className="px-8 py-2 border border-blue-400 text-blue-500 font-semibold rounded-lg hover:bg-blue-50/50 transition-all duration-300 text-xs">
           Know More
         </button>
       </div>

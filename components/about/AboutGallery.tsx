@@ -1,63 +1,60 @@
 "use client";
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 export default function AboutGallery() {
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Scrolls horizontally from right to left as the user scrolls down the page
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-35%"]);
+
+  const images = [
+    { 
+      src: "/about corousel 1.png", 
+      w: "w-[70vw] md:w-[45vw] lg:w-[35vw]", 
+      height: "h-[320px] md:h-[520px] lg:h-[640px]" 
+    },
+    { 
+      src: "/about us corousel 2_talent squad 4.png", 
+      w: "w-[50vw] md:w-[35vw] lg:w-[25vw]", 
+      height: "h-[220px] md:h-[360px] lg:h-[420px]" 
+    },
+    { 
+      src: "/about corousel 3.png", 
+      w: "w-[70vw] md:w-[45vw] lg:w-[35vw]", 
+      height: "h-[280px] md:h-[440px] lg:h-[500px]" 
+    },
+    { 
+      src: "/about corousel 4.png", 
+      w: "w-[40vw] md:w-[25vw] lg:w-[20vw]", 
+      height: "h-[300px] md:h-[480px] lg:h-[560px]" 
+    },
+  ];
+
   return (
-    <section className="bg-white py-16 md:py-24">
-      <div className="w-full px-4 md:px-6">
-
-        {/* On mobile: 2-col grid. On md+: horizontal flex strip */}
-        <div className="hidden md:flex gap-3 items-start">
-
-          {/* Image 1 */}
-          <div className="flex-[1.55]">
-            <img
-              src="/aboutus1.png"
-              alt="Gallery 1"
-              className="w-full h-[305px] object-cover"
-            />
-          </div>
-
-          {/* Image 2 */}
-          <div className="flex-[1.15]">
-            <img
-              src="/aboutus2.png"
-              alt="Gallery 2"
-              className="w-full h-[305px] object-cover"
-            />
-          </div>
-
-          {/* Image 3 */}
-          <div className="flex-[1.55]">
-            <img
-              src="/aboutus3.png"
-              alt="Gallery 3"
-              className="w-full h-[305px] object-cover"
-            />
-          </div>
-
-          {/* Image 4 */}
-          <div className="flex-[0.75]">
-            <img
-              src="/aboutus4.png"
-              alt="Gallery 4"
-              className="w-full h-[305px] object-cover"
-            />
-          </div>
-
-        </div>
-
-        {/* Mobile gallery: 2-col grid */}
-        <div className="md:hidden grid grid-cols-2 gap-2">
-          {["/aboutus1.png", "/aboutus2.png", "/aboutus3.png", "/aboutus4.png"].map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`Gallery ${i + 1}`}
-              className="w-full h-[180px] object-cover"
-            />
+    <section ref={sectionRef} className="bg-white pb-16 md:pb-24 overflow-hidden">
+      <div className="w-full relative">
+        <motion.div 
+          className="flex w-max gap-2 md:gap-3 items-start" 
+          style={{ x }}
+        >
+          {/* Two sets of images to ensure we have enough content to scroll through */}
+          {[...images, ...images].map((img, i) => (
+            <div key={i} className={`flex-shrink-0 ${img.w}`}>
+              <img
+                src={img.src}
+                alt={`Gallery image ${i + 1}`}
+                className={`w-full object-cover ${img.height}`}
+              />
+            </div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

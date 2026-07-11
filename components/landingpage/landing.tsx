@@ -119,13 +119,13 @@ if (!device || !videoWrapper || !finalText) return;
         {/* INITIAL TEXT */}
         <div
           ref={initialTextRef}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 px-6 -translate-y-24 md:-translate-y-40 lg:-translate-y-48"
+          className="absolute inset-x-0 top-[96px] lg:top-[110px] flex flex-col items-center justify-start text-center z-30 px-6"
         >
-          <h1 className="font-medium text-3xl md:text-[44px] lg:text-[55px] leading-[120%] text-[#394247] max-w-4xl">
+          <h1 className="font-medium text-[32px] md:text-[40px] lg:text-[48px] xl:text-[52px] leading-[1.15] text-[#394247] max-w-4xl tracking-tight">
             The Digital Engineering Partner Built for What's Coming Next
           </h1>
 
-          <button className="mt-8 bg-[#2693ED]/10 backdrop-blur-md border border-[#2693ED]/20 hover:bg-[#2693ED]/20 text-[#1C72BB] text-[16px] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 leading-[1.4] transition-all shadow-sm hover:shadow-md active:scale-95 mx-auto">
+          <button suppressHydrationWarning className="mt-6 md:mt-8 bg-[#2693ED]/10 backdrop-blur-md border border-[#2693ED]/20 hover:bg-[#2693ED]/20 text-[#1C72BB] text-[15px] md:text-[16px] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 leading-[1.4] transition-all shadow-sm hover:shadow-md active:scale-95 mx-auto">
             Explore Work
             <ArrowDown className="w-5 h-5 text-[#1C72BB] animate-bounce" />
           </button>
@@ -158,7 +158,7 @@ if (!device || !videoWrapper || !finalText) return;
                 Seravion is a people-first design studio that cares as much about your business and product as you do.
               </p>
 
-              <button className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg border border-white/20 text-sm hover:bg-white hover:border-white hover:text-black transition-all duration-300 font-medium">
+              <button suppressHydrationWarning className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg border border-white/20 text-sm hover:bg-white hover:border-white hover:text-black transition-all duration-300 font-medium">
                 Know More
               </button>
             </div>
@@ -199,7 +199,7 @@ if (!device || !videoWrapper || !finalText) return;
         <div className="absolute inset-x-0 bottom-[-40px] flex justify-center z-20 pointer-events-none">
           <div
             ref={deviceRef}
-            className="relative w-[92%] md:w-[85%] lg:w-[80%] max-w-[950px] 2xl:max-w-[1150px] aspect-[896/380]"
+            className="relative w-[92%] md:w-[85%] lg:w-[80%] max-w-[850px] 2xl:max-w-[1050px] aspect-[896/380]"
           >
             <div
               ref={videoWrapperRef}

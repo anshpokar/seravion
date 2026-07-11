@@ -166,13 +166,18 @@ const Services = () => {
       {/* ── DESKTOP: horizontal accordion (hidden below md) ── */}
       <div className="hidden md:flex w-full" style={{ height: "calc(100vh - 176px)", minHeight: "500px" }}>
         {/* LEFT TEXT */}
-        <div className="w-[32%] bg-[#efefef] flex pt-12 pl-6 md:pl-10 lg:pl-12 pr-8">
-          <h1 className="text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.1] font-semibold text-black tracking-tight">
-            Proven <br />
-            Results. <br />
-            <span className="text-[#2f7df6]">Powerful</span> <br />
-            <span className="text-[#2f7df6]">Impact.</span>
-          </h1>
+        <div 
+          className="w-[32%] bg-[#efefef] flex flex-col pt-12 pr-8"
+          style={{ paddingLeft: "calc(max(0px, (100vw - 1600px) / 2))" }}
+        >
+          <div className="pl-6 md:pl-10 lg:pl-12 w-full">
+            <h1 className="text-[48px] lg:text-[56px] xl:text-[64px] leading-[1.1] font-semibold text-black tracking-tight">
+              Proven <br />
+              Results. <br />
+              <span className="text-[#2f7df6]">Powerful</span> <br />
+              <span className="text-[#2f7df6]">Impact.</span>
+            </h1>
+          </div>
         </div>
 
         {/* PANELS */}

@@ -90,25 +90,30 @@ const ServiceSection = () => {
     <div ref={scrollWrapperRef} className="relative w-full overflow-hidden bg-white">
       <section className="flex flex-col md:flex-row w-full h-screen overflow-hidden">
         
-        <div className="w-full md:w-1/2 h-full flex flex-col justify-between pt-[10vh] pb-24 md:pb-32 bg-white z-50 pl-6 md:pl-10 lg:pl-12 pr-6 md:pr-8">
-          <div>
-            <div className="flex items-center gap-2 mb-8">
-              <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
-              <p className="text-[12px] tracking-[0.2em] text-gray-800 uppercase font-semibold">
-                Our Services
+        <div 
+          className="w-full md:w-1/2 h-full pt-[10vh] pb-24 md:pb-32 bg-white z-50 pr-6 md:pr-8"
+          style={{ paddingLeft: "calc(max(0px, (100vw - 1600px) / 2))" }}
+        >
+          <div className="pl-6 md:pl-10 lg:pl-12 h-full flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-8">
+                <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
+                <p className="text-[12px] tracking-[0.2em] text-gray-800 uppercase font-semibold">
+                  Our Services
+                </p>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-black tracking-tighter leading-[1.1] max-w-2xl">
+                From motion design <br />
+                to AI-powered <br />
+                products
+              </h2>
+            </div>
+            
+            <div>
+              <p className="text-gray-600 text-xl md:text-2xl leading-relaxed max-w-xl">
+                we design and build interfaces for the future.
               </p>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-black tracking-tighter leading-[1.1] max-w-2xl">
-              From motion design <br />
-              to AI-powered <br />
-              products
-            </h2>
-          </div>
-          
-          <div>
-            <p className="text-gray-600 text-xl md:text-2xl leading-relaxed max-w-xl">
-              we design and build interfaces for the future.
-            </p>
           </div>
         </div>
 

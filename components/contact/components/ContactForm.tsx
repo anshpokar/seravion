@@ -41,7 +41,7 @@ export default function ContactForm() {
 
         <div className="flex flex-wrap gap-3 mb-16">
           {services.map((service) => (
-            <button
+            <button suppressHydrationWarning
               key={service}
               type="button"
               onClick={() => setSelectedService(service)}
@@ -59,19 +59,19 @@ export default function ContactForm() {
         {/* Form */}
         <form className="max-w-[760px]">
           <div className="space-y-10">
-            <input
+            <input suppressHydrationWarning
               type="text"
               placeholder="Your Name"
               className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
             />
 
-            <input
+            <input suppressHydrationWarning
               type="email"
               placeholder="Email"
               className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
             />
 
-            <input
+            <input suppressHydrationWarning
               type="tel"
               placeholder="Phone Number"
               className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
@@ -92,7 +92,7 @@ export default function ContactForm() {
 
             <div className="flex flex-wrap gap-3">
               {budgets.map((budget) => (
-                <button
+                <button suppressHydrationWarning
                   key={budget}
                   type="button"
                   onClick={() => setSelectedBudget(budget)}
@@ -109,7 +109,7 @@ export default function ContactForm() {
           </div>
 
           {/* Submit */}
-          <button
+          <button suppressHydrationWarning
             type="submit"
             className="mt-12 bg-[#2B95FF] hover:bg-[#1D83E8] text-white font-medium px-10 py-4 rounded-md transition-colors"
           >

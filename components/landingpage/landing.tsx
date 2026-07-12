@@ -147,15 +147,19 @@ if (!device || !videoWrapper || !finalText) return;
               </div>
 
             <h1 className="mt-4 font-semibold text-3xl md:text-[42px] leading-[1.1] text-white">
-              We offer a full <br />
+              {/*We offer a full <br />
               range of business <br />
-              and consulting
+              and consulting */}
+              Transforming Ambitious <br/>Ideas Into Intelligent <br />Digital Products.
+
               </h1>
             </div>
 
             <div className="pb-12">
               <p className="text-sm text-gray-300 max-w-[280px] mb-5 leading-relaxed">
-                Seravion is a people-first design studio that cares as much about your business and product as you do.
+                {/* Seravion is a people-first design studio that cares as much about your business and product as you do. */}
+                Seravion Technologies is your end-to-end technology partner. We architect, build, and scale digital products that redefine industries.
+
               </p>
 
               <button suppressHydrationWarning className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg border border-white/20 text-sm hover:bg-white hover:border-white hover:text-black transition-all duration-300 font-medium">

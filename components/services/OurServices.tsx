@@ -9,39 +9,95 @@ import Container from "@/components/ui/Container";
 
 const services = [
   {
-    slug: "ux-ui-design",
-    title: "AI-enhanced UX/UI design",
-    description: "Interfaces that adapt, predict, and respond intelligently.",
-    image: "/service1.png",
+    slug: "ai-machine-learning",
+    title: "AI & Machine Learning Solutions",
+    description: "Embed intelligence into every layer with predictive analytics, NLP, and custom AI models.",
+    image: "/service-ai.png",
     bgColor: "#0933C4",
   },
   {
-    slug: "custom-development",
-    title: "Custom development",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
-    image: "/service3.png",
+    slug: "full-stack-development",
+    title: "Full Stack Development",
+    description: "End-to-end applications built for speed, scalability, and robust performance.",
+    image: "/service-fullstack.png",
     bgColor: "#08175E",
   },
   {
-    slug: "brand-identity",
-    title: "Brand Identity",
-    description: "Interfaces that adapt, predict, and respond intelligently.",
-    image: "/servic2.png",
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    description: "Intuitive, high-performance native and cross-platform mobile experiences.",
+    image: "/service-mobile.png",
     bgColor: "#0B2183",
   },
   {
-    slug: "outbound-scheduling",
-    title: "Outbound Scheduling Support",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
-    image: "/service3.png",
+    slug: "web-development",
+    title: "Web Development",
+    description: "Fast, scalable web apps built on the modern stack for long-term maintainability.",
+    image: "/service-web.png",
     bgColor: "#030A24",
   },
   {
-    slug: "appointment-reminder",
-    title: "Appointment Reminder",
-    description: "Frontend + backend + AI integrations — built for performance and scalability.",
-    image: "/service3.png",
+    slug: "cloud-devops",
+    title: "Cloud & DevOps Services",
+    description: "Cloud-native infrastructure engineered for security, speed, and cost efficiency.",
+    image: "/service-cloud.png",
     bgColor: "#040605",
+  },
+  {
+    slug: "erp-crm-development",
+    title: "ERP & CRM Development",
+    description: "Eliminate operational silos, automate business processes, and gain real-time visibility.",
+    image: "/service-erp.png",
+    bgColor: "#0933C4",
+  },
+  {
+    slug: "saas-product-development",
+    title: "SaaS Product Development",
+    description: "Launch your SaaS product with the infrastructure, architecture, and product thinking it needs to grow.",
+    image: "/service-saas.png",
+    bgColor: "#08175E",
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI/UX Design",
+    description: "Design systems and experiences that convert, delight, and scale.",
+    image: "/service-uiux.png",
+    bgColor: "#0B2183",
+  },
+  {
+    slug: "iot-solutions",
+    title: "IoT Solutions",
+    description: "End-to-end IoT solutions from embedded firmware to cloud connectivity.",
+    image: "/service-iot.png",
+    bgColor: "#030A24",
+  },
+  {
+    slug: "product-engineering",
+    title: "Product Engineering",
+    description: "Full lifecycle engineering for digital products, from ideation to global launch.",
+    image: "/service-product.png",
+    bgColor: "#040605",
+  },
+  {
+    slug: "dedicated-development-teams",
+    title: "Dedicated Development Teams",
+    description: "Access a pre-vetted, instantly deployable team of senior engineers and product specialists.",
+    image: "/service-team.png",
+    bgColor: "#0933C4",
+  },
+  {
+    slug: "digital-transformation",
+    title: "Digital Transformation",
+    description: "Modernize legacy systems, implement automation, and digitize core operations.",
+    image: "/service-digital.png",
+    bgColor: "#08175E",
+  },
+  {
+    slug: "maintenance-support",
+    title: "Maintenance & Support",
+    description: "Comprehensive maintenance, monitoring, and enhancement services for mission-critical systems.",
+    image: "/service-support.png",
+    bgColor: "#0B2183",
   },
 ];
 
@@ -145,6 +201,7 @@ export default function OurServices() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 768px) 130px, 160px"
                   className="object-cover"
                 />
               </div>

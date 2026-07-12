@@ -4,20 +4,20 @@
 "use client";
 
 const LOGOS = [
-  { id: 1, name: "Amazon", src: "/amazon-logo.png" },
-  { id: 2, name: "Google", src: "/google_logo_grayed_7-1128x376_983de733_transparent-removebg-preview.png" },
-  { id: 3, name: "Meta", src: "/Meta-logo.png" },
-  { id: 4, name: "Microsoft", src: "/microsoft-logo-png-transparent-background-11660471226dms6lxgzs1-removebg-preview.png" },
-  { id: 5, name: "Netflix", src: "/netflix_PNG25.png" },
-  { id: 6, name: "OIP", src: "/OIP-removebg-preview.png" },
-  { id: 7, name: "Oracle", src: "/Oracle-Logotipo-1995-Presente-removebg-preview.png" },
-  { id: 8, name: "SpaceX", src: "/SpaceX-Emblema-removebg-preview.png" },
-  { id: 9, name: "Tesla", src: "/Tesla_Logo-removebg-preview.png" },
+  { id: 1, name: "Akshar Decore", src: "/akshar-decore.png" },
+  { id: 2, name: "Careerwale", src: "/careerwale.png" },
+  { id: 3, name: "Gandhi Investmall", src: "/gandhi-investmall.png" },
+  { id: 4, name: "HBR Tech", src: "/hbr-tech.png" },
+  { id: 5, name: "Pestmed", src: "/pestmed-logo.png" },
+  { id: 6, name: "SCCA", src: "/sspc-logo.png" },
+  { id: 7, name: "Maitri", src: "/maitri-logo.png" },
+  { id: 8, name: "Reelty", src: "/reelty logo.png" },
+  { id: 9, name: "Sang", src: "/sang-logo.png" },
 ];
 
 const LogoStrip = () => {
   return (
-    <section className="w-full bg-[#061018] py-16 overflow-hidden flex items-center relative">
+    <section className="w-full bg-[#061018] py-12 overflow-hidden flex items-center relative">
       {/* Stronger fade effect on the left and right edges */}
       <div className="absolute inset-y-0 left-0 w-32 md:w-48 bg-gradient-to-r from-[#061018] via-[#061018]/80 to-transparent z-10 pointer-events-none"></div>
       <div className="absolute inset-y-0 right-0 w-32 md:w-48 bg-gradient-to-l from-[#061018] via-[#061018]/80 to-transparent z-10 pointer-events-none"></div>
@@ -35,7 +35,7 @@ const LogoStrip = () => {
               <img 
                 src={logo.src} 
                 alt={logo.name} 
-                className="h-10 md:h-12 w-auto object-contain max-w-[160px] opacity-70 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                className="h-14 md:h-20 w-auto object-contain max-w-[220px] opacity-70 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
               />
             </div>
           ))}
@@ -48,7 +48,7 @@ const LogoStrip = () => {
               <img 
                 src={logo.src} 
                 alt={logo.name} 
-                className="h-10 md:h-12 w-auto object-contain max-w-[160px] opacity-70 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                className="h-14 md:h-20 w-auto object-contain max-w-[220px] opacity-70 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
               />
             </div>
           ))}

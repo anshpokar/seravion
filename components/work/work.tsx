@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/ui/Container";
@@ -147,9 +148,9 @@ const Work = () => {
                 solutions that care about your business growth and product
                 success as much as you do
               </p>
-              <button suppressHydrationWarning className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap">
+              <Link href="/work" suppressHydrationWarning className="border border-blue-500 text-blue-500 font-bold px-8 py-2.5 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap">
                 View All Projects
-              </button>
+              </Link>
             </div>
           </div>
         </Container>
@@ -160,34 +161,44 @@ const Work = () => {
             {
               title: (
                 <>
-                  Industry Leading <br />
-                  Scheduling Rules <br />
-                  Engine
+                  Reelty: AI Real <br />
+                  Estate Platform
                 </>
               ),
-              desc: "AI follows your practice's custom scheduling rules 100% accurately every time, reducing costly human agent training time and mistakes.",
-              image: "/card-4.png",
+              desc: "An AI-powered marketplace that transforms property discovery and investment with intelligent recommendations and immersive digital experiences.",
+              image: "/card-4.png", // Kept your updated image path
+              stats: [
+                { value: "12X", label: "Faster Discovery" },
+                { value: "AI", label: "Intelligence" },
+              ]
             },
             {
               title: (
                 <>
-                  New Patient Intake <br />
-                  With Insurance <br />
-                  Verification
+                  Shramjivi Sangathan <br />
+                  Management
                 </>
               ),
-              desc: "Collect patient info and verify insurance before the visit - saving your staff time and reducing delays.",
-              image: "/card-5.png",
+              desc: "A comprehensive digital platform for union operations featuring AI-powered OCR for Marathi receipts, automated activity tracking, and centralized administration.",
+              image: "/shramjivi landing.png", // Kept your updated image path
+              stats: [
+                { value: "90%", label: "Faster Processing" },
+                { value: "70%", label: "Less Admin Work" },
+              ]
             },
             {
               title: (
                 <>
-                  Comprehensive <br />
-                  Scheduling
+                  Carevo: Career <br />
+                  Intelligence
                 </>
               ),
-              desc: "Supports scheduling, rescheduling, cancelling, and confirming all appointment types - office visits, procedures, and ancillaries - including multiple visits in a single conversation.",
-              image: "/card-6.png",
+              desc: "Transforms career planning using neuroscience-backed assessments and real-time analytics to build dynamic, data-driven career roadmaps.",
+              image: "/seravionConnect landing.png",
+              stats: [
+                { value: "30+", label: "Decision Signals" },
+                { value: "AI", label: "Career GPS" },
+              ]
             },
           ].map((item, index) => (
             <div
@@ -207,13 +218,13 @@ const Work = () => {
                 {/* STATS BOX */}
                 <div className="flex items-center gap-6 xl:gap-10 border border-white/5 rounded-sm p-4 sm:p-6 xl:p-8 bg-transparent w-max">
                   <div>
-                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">20X</p>
-                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">Faster Now</p>
+                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">{item.stats[0].value}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">{item.stats[0].label}</p>
                   </div>
                   <div className="w-[1px] h-8 sm:h-12 bg-white/10"></div>
                   <div>
-                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">120%</p>
-                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">Growth</p>
+                    <p className="text-2xl sm:text-[32px] xl:text-[36px] font-bold mb-1 leading-none">{item.stats[1].value}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm font-semibold">{item.stats[1].label}</p>
                   </div>
                 </div>
               </div>

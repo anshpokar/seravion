@@ -117,211 +117,669 @@ const SHARED_PROCESS: ProcessStep[] = [
 // ─── SERVICE DATA ────────────────────────────────────
 export const servicesData: ServiceData[] = [
   {
-    slug: "ux-ui-design",
-    category: "UX/UI Design",
-    title: "AI-enhanced UX/UI design",
-    subtitle: "Optimizing governance, risk & compliance for top institutions",
+    slug: "ai-machine-learning",
+    category: "AI & ML",
+    title: "AI & Machine Learning Solutions",
+    subtitle: "Embed Intelligence Into Every Layer of Your Business",
     bannerImage: BANNER,
     whatWeDo: [
       {
-        title: "Finance consulting",
-        description: "Finance consulting involves providing expert advice to businesses, individuals, or organizations",
+        title: "Predictive Analytics",
+        description: "Forecast trends, identify opportunities, and mitigate risks using advanced predictive models.",
         image: WD1,
       },
       {
-        title: "Marketing consulting",
-        description: "Marketing consulting involves providing expert advice and strategies to businesses to improve",
+        title: "Computer Vision",
+        description: "Extract actionable insights from visual data, automating inspection and monitoring workflows.",
         image: WD2,
       },
       {
-        title: "Business consulting",
-        description: "Finance consulting involves providing expert advice to businesses, individuals, or organizations",
+        title: "NLP & LLMs",
+        description: "Deploy intelligent chatbots and document analysis systems using state-of-the-art language models.",
         image: WD3,
       },
     ],
     serviceOverview: {
       paragraphs: [
-        "Branding design is the process of creating a unique identity that visually and strategically represents a business. It includes logo design, color schemes, typography, and brand messaging to ensure consistency across all platforms.",
-        "Branding design is the visual and strategic identity of a business, shaping how it is perceived by customers. It includes elements like the logo, color palette, typography, imagery, and messaging, all working together to create a strong and memorable brand presence.",
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We help businesses unlock the full power of artificial intelligence — from predictive analytics and computer vision to NLP, LLM integrations, and custom AI model development. Our AI team combines data science expertise with engineering rigor to deliver AI systems that work in the real world.",
+        "BUSINESS VALUE: Move from AI experimentation to production-grade AI deployment. Our solutions reduce operational costs, automate complex workflows, and generate insights that drive competitive advantage across every department."
       ],
-      approachTitle: "Our Approach to Branding",
+      approachTitle: "Our Intelligent Approach",
       approachSteps: [
-        { label: "Discovery & Research", description: "Understanding your business, audience, and competition." },
-        { label: "Concept Development", description: "Creating initial branding concepts and design ideas." },
-        { label: "Refinement & Testing", description: "Perfecting the visuals and ensuring they resonate with your audience." },
-        { label: "Final Implementation", description: "Delivering all branding assets with a detailed style guide." },
+        { label: "Discovery", description: "Identifying high-ROI AI use cases specific to your operations." },
+        { label: "Data Engineering", description: "Cleaning, structuring, and preparing your data for ML models." },
+        { label: "Model Training", description: "Developing custom algorithms tailored to your exact requirements." },
+        { label: "Deployment", description: "Seamless integration into your existing software ecosystem." },
       ],
       images: [OV1, OV2],
     },
     whatWeOffer: [
-      { title: "Brand Strategy & Positioning", bullets: ["+ Brand Discovery", "+ Brand Voice & Messaging", "+ Brand Positioning Strategy"] },
-      { title: "Logo & Visual Identity", bullets: ["+ Brand Discovery", "+ Brand Voice & Messaging", "+ Brand Positioning Strategy"] },
-      { title: "Rebranding & Brand Refresh", bullets: ["+ Brand Discovery", "+ Brand Voice & Messaging", "+ Brand Positioning Strategy"] },
+      { title: "Custom Models", bullets: ["+ Scalable architectures", "+ Continuous learning", "+ Low-latency inference"] },
+      { title: "Generative AI", bullets: ["+ Content automation", "+ Enterprise search", "+ Code generation"] },
+      { title: "Data Pipelines", bullets: ["+ ETL automation", "+ Real-time processing", "+ Data warehousing"] },
     ],
     guidedSection: {
-      heading: "Guided by Process,\nDriven by Results.",
-      description: "We follow a streamlined, intelligent workflow designed to eliminate friction and deliver consistent results.",
+      heading: "Guided by Data,\nDriven by AI.",
+      description: "We follow a rigorous methodology to ensure your AI investments deliver measurable business impact.",
       image: GUIDED,
     },
     processSteps: SHARED_PROCESS,
     faqs: SHARED_FAQS,
   },
-
   {
-    slug: "custom-development",
+    slug: "full-stack-development",
+    category: "Development",
+    title: "Full Stack Development",
+    subtitle: "End-to-End Full Stack Solutions for Scalable Digital Products",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "Frontend Development",
+        description: "Engaging, accessible, and performant user interfaces built with React, Next.js, and Vue.",
+        image: WD1,
+      },
+      {
+        title: "Backend Engineering",
+        description: "Robust, secure APIs and microservices using Node.js, Python, and Spring Boot.",
+        image: WD2,
+      },
+      {
+        title: "Database Architecture",
+        description: "Scalable SQL and NoSQL data structures designed for complex enterprise requirements.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We build powerful, secure, and scalable full stack applications using modern technologies like React, Next.js, Angular, Vue.js, Node.js, Python, Django, Java Spring Boot, PostgreSQL, MongoDB, and AWS. From startup MVPs to enterprise-grade platforms — our team handles frontend, backend, APIs, databases, cloud infrastructure, and deployment with a seamless development approach.",
+        "BUSINESS VALUE: Transform your ideas into high-performing digital products with a robust full stack architecture designed for speed, scalability, and business growth. We create applications that offer exceptional user experiences, reliable backend systems, secure APIs, and cloud-ready infrastructure — helping businesses launch faster, reduce operational costs, and scale confidently."
+      ],
+      approachTitle: "Full-Stack Lifecycle",
+      approachSteps: [
+        { label: "Architecture", description: "Selecting the optimal tech stack for your specific requirements." },
+        { label: "Prototyping", description: "Rapid MVP development to validate core business concepts." },
+        { label: "Engineering", description: "Agile sprints delivering production-ready features iteratively." },
+        { label: "Scaling", description: "Optimizing infrastructure and code for massive user growth." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Web Platforms", bullets: ["+ Custom SaaS", "+ Enterprise portals", "+ Real-time dashboards"] },
+      { title: "API Development", bullets: ["+ RESTful services", "+ GraphQL integration", "+ 3rd-party connections"] },
+      { title: "System Migration", bullets: ["+ Legacy modernization", "+ Zero-downtime transition", "+ Cloud replatforming"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Process,\nBuilt to Scale.",
+      description: "Our engineering standards ensure that what we build today will comfortably support your growth tomorrow.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "mobile-app-development",
+    category: "Mobile",
+    title: "Mobile App Development",
+    subtitle: "Native & Cross-Platform Mobile Experiences That Users Love",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "iOS Development",
+        description: "Native applications leveraging the latest Swift and Apple ecosystem features.",
+        image: WD1,
+      },
+      {
+        title: "Android Development",
+        description: "Robust Kotlin-based apps optimized across the diverse Android device landscape.",
+        image: WD2,
+      },
+      {
+        title: "Cross-Platform",
+        description: "Unified codebases using React Native or Flutter to reduce time-to-market.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We design and engineer mobile applications across iOS, Android, and cross-platform frameworks that are intuitive, performant, and built for scale. From consumer apps with millions of users to enterprise-grade mobile platforms, our mobile engineering team delivers products that redefine user expectations.",
+        "BUSINESS VALUE: Reduce time-to-market by up to 40% with our proven mobile development framework. We ship polished, production-ready mobile apps with robust backend integration, offline capability, and enterprise security standards."
+      ],
+      approachTitle: "Mobile-First Strategy",
+      approachSteps: [
+        { label: "UX Research", description: "Understanding context and constraints of mobile users." },
+        { label: "UI Design", description: "Crafting fluid, gesture-driven interfaces that feel native." },
+        { label: "Development", description: "Building responsive, memory-efficient mobile clients." },
+        { label: "App Store Ops", description: "Managing compliance, submission, and rollout processes." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Native Apps", bullets: ["+ Swift/Objective-C", "+ Kotlin/Java", "+ Hardware integration"] },
+      { title: "Hybrid Apps", bullets: ["+ React Native", "+ Flutter", "+ Shared business logic"] },
+      { title: "App Optimization", bullets: ["+ Crash reduction", "+ Battery efficiency", "+ Bundle size reduction"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Users,\nPerfected in Hand.",
+      description: "We obsess over micro-interactions and performance to deliver mobile apps that earn 5-star ratings.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "web-development",
+    category: "Web",
+    title: "Web Development",
+    subtitle: "High-Performance Web Applications Built for the Modern Stack",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "Marketing Websites",
+        description: "High-converting, SEO-optimized digital storefronts that load instantly.",
+        image: WD1,
+      },
+      {
+        title: "SaaS Platforms",
+        description: "Complex, feature-rich web applications built for recurring revenue businesses.",
+        image: WD2,
+      },
+      {
+        title: "Enterprise Portals",
+        description: "Secure, role-based dashboards integrating multiple internal data sources.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We build fast, scalable, and beautiful web applications using modern frameworks like React, Next.js, Vue, and Node.js. From marketing websites to complex SaaS platforms and enterprise web portals — our full-stack engineers bring precision to every line of code.",
+        "BUSINESS VALUE: Accelerate your digital presence with web applications that load in milliseconds, rank on search engines, and convert visitors into customers. Our web architecture is designed for performance, security, and long-term maintainability."
+      ],
+      approachTitle: "Web Excellence",
+      approachSteps: [
+        { label: "Wireframing", description: "Mapping out the user journey and page structure." },
+        { label: "Visual Design", description: "Applying your brand identity to digital components." },
+        { label: "Frontend Build", description: "Translating designs into accessible, semantic HTML/CSS/JS." },
+        { label: "Performance Tuning", description: "Optimizing Core Web Vitals and SEO metrics." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Modern Frameworks", bullets: ["+ Next.js / React", "+ Nuxt / Vue", "+ Server-side rendering"] },
+      { title: "CMS Integration", bullets: ["+ Headless CMS", "+ Contentful / Sanity", "+ WordPress"] },
+      { title: "E-Commerce", bullets: ["+ Shopify Plus", "+ Custom checkouts", "+ Payment gateways"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Metrics,\nDesigned for Speed.",
+      description: "We build for the modern web, where every millisecond matters for conversion and retention.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "cloud-devops",
+    category: "Infrastructure",
+    title: "Cloud & DevOps Services",
+    subtitle: "Cloud-Native Infrastructure Built for Scale, Security, and Speed",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "Cloud Migration",
+        description: "Seamlessly transition legacy workloads to modern cloud environments.",
+        image: WD1,
+      },
+      {
+        title: "CI/CD Automation",
+        description: "Streamline code delivery with robust testing and deployment pipelines.",
+        image: WD2,
+      },
+      {
+        title: "Containerization",
+        description: "Package applications with Docker and orchestrate them via Kubernetes.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We architect, migrate, and optimize cloud environments on AWS, Azure, and GCP — implementing DevOps best practices that reduce deployment risk and accelerate delivery velocity. From CI/CD pipelines to Kubernetes orchestration and cloud cost optimization, our DevOps team operates as your infrastructure partner.",
+        "BUSINESS VALUE: Cut infrastructure costs by up to 35% while improving uptime and deployment frequency. Our cloud-native approach gives your engineering team the foundation to move faster without breaking things."
+      ],
+      approachTitle: "DevOps Philosophy",
+      approachSteps: [
+        { label: "Assessment", description: "Auditing current infrastructure and deployment bottlenecks." },
+        { label: "Infrastructure as Code", description: "Automating environment provisioning with Terraform." },
+        { label: "Pipeline Setup", description: "Implementing continuous integration and delivery flows." },
+        { label: "Monitoring", description: "Establishing comprehensive alerting and observability." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Cloud Platforms", bullets: ["+ AWS Architecture", "+ Google Cloud", "+ Microsoft Azure"] },
+      { title: "DevOps Tooling", bullets: ["+ GitHub Actions", "+ GitLab CI", "+ Jenkins/CircleCI"] },
+      { title: "Security & Ops", bullets: ["+ Cloud cost optimization", "+ DevSecOps", "+ 24/7 Monitoring"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Stability,\nEngineered for Scale.",
+      description: "We build resilient, automated infrastructure that lets your engineering team focus on shipping features.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "erp-crm-development",
+    category: "Enterprise Systems",
+    title: "ERP & CRM Development",
+    subtitle: "Enterprise Systems That Drive Operational Excellence",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "Custom ERP Systems",
+        description: "Tailored resource planning software designed for your unique operational workflows.",
+        image: WD1,
+      },
+      {
+        title: "CRM Integration",
+        description: "Centralized customer data platforms integrating sales, marketing, and support.",
+        image: WD2,
+      },
+      {
+        title: "Platform Implementation",
+        description: "Expert configuration of Salesforce, SAP, Microsoft Dynamics, and Odoo.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We build custom ERP and CRM systems tailored to your industry, workflows, and growth trajectory — as well as implement and customize leading platforms like Salesforce, SAP, Microsoft Dynamics, and Odoo. Our enterprise systems team brings decades of combined experience in complex system integration.",
+        "BUSINESS VALUE: Eliminate operational silos, automate business processes, and gain real-time visibility across your organization. Our ERP/CRM solutions are designed for long-term ROI and minimal disruption during rollout."
+      ],
+      approachTitle: "Enterprise Integration",
+      approachSteps: [
+        { label: "Process Mapping", description: "Documenting and optimizing your current business workflows." },
+        { label: "Architecture", description: "Designing a unified system architecture that eliminates data silos." },
+        { label: "Implementation", description: "Phased rollout to minimize operational disruption." },
+        { label: "Training", description: "Comprehensive change management and team onboarding." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Custom Solutions", bullets: ["+ Modular architecture", "+ Workflow automation", "+ Real-time analytics"] },
+      { title: "Platform Experts", bullets: ["+ Salesforce", "+ SAP", "+ Microsoft Dynamics"] },
+      { title: "Data Migration", bullets: ["+ Secure transfer", "+ Data cleansing", "+ Zero data loss"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Process,\nBuilt for Efficiency.",
+      description: "We align enterprise software with your human workflows, not the other way around.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "saas-product-development",
+    category: "Software Products",
+    title: "SaaS Product Development",
+    subtitle: "Build SaaS Products That Scale From Zero to Enterprise",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "MVP Development",
+        description: "Rapidly build and launch your core product to validate market fit.",
+        image: WD1,
+      },
+      {
+        title: "Multi-Tenant Architecture",
+        description: "Secure, scalable backend structures designed for B2B and B2C SaaS models.",
+        image: WD2,
+      },
+      {
+        title: "SaaS Growth Features",
+        description: "Integrated billing, subscription management, and user analytics.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We are the engineering partner behind some of the most innovative SaaS products in the market. From architecture and MVP to multi-tenant enterprise platforms, our team brings deep SaaS DNA — understanding product metrics, monetization models, and the technical complexity of building for scale.",
+        "BUSINESS VALUE: Launch your SaaS product with the infrastructure, architecture, and product thinking it needs to grow. We build with security, scalability, and subscription economics built in from day one."
+      ],
+      approachTitle: "SaaS Engineering",
+      approachSteps: [
+        { label: "Validation", description: "Testing core assumptions before writing extensive code." },
+        { label: "Architecture", description: "Designing multi-tenant databases and scalable APIs." },
+        { label: "Development", description: "Agile iterations focusing on high-value user features." },
+        { label: "Go-To-Market", description: "Integrating analytics, payment gateways, and CRM tools." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Core Features", bullets: ["+ Role-based access", "+ Subscription billing", "+ Analytics dashboards"] },
+      { title: "Architecture", bullets: ["+ Microservices", "+ Serverless", "+ Multi-tenant databases"] },
+      { title: "Product Growth", bullets: ["+ A/B testing frameworks", "+ PLG funnels", "+ Usage tracking"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Growth,\nBuilt for Scale.",
+      description: "We understand the metrics that drive SaaS success and engineer platforms to maximize them.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "ui-ux-design",
+    category: "Design",
+    title: "UI/UX Design",
+    subtitle: "Design Systems and Experiences That Convert, Delight, and Scale",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "User Research",
+        description: "Deep dive into user behavior, pain points, and product opportunities.",
+        image: WD1,
+      },
+      {
+        title: "UX & Interaction Design",
+        description: "Intuitive user journeys, wireframing, and interactive prototyping.",
+        image: WD2,
+      },
+      {
+        title: "Design Systems",
+        description: "Scalable component libraries that ensure visual consistency and speed up development.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "Our design studio creates product experiences that are not just beautiful — they are strategically crafted to drive adoption, reduce churn, and amplify brand equity. We operate at every layer of the design process: user research, IA, interaction design, visual design, prototyping, and design systems.",
+        "BUSINESS VALUE: Great design is your most underrated competitive advantage. Our product designers reduce support tickets, improve conversion rates, and increase user retention through research-driven, pixel-perfect execution."
+      ],
+      approachTitle: "Design Process",
+      approachSteps: [
+        { label: "Discover", description: "Auditing existing experiences and understanding user needs." },
+        { label: "Define", description: "Information architecture and low-fidelity wireframing." },
+        { label: "Design", description: "High-fidelity visual design and interactive prototyping." },
+        { label: "Deliver", description: "Creating a comprehensive design system for developers." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "UX Strategy", bullets: ["+ User journey mapping", "+ Persona development", "+ Usability testing"] },
+      { title: "Visual Design", bullets: ["+ Pixel-perfect UI", "+ Micro-interactions", "+ Brand integration"] },
+      { title: "Design Systems", bullets: ["+ Figma libraries", "+ Component tokens", "+ Documentation"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Empathy,\nDesigned for Impact.",
+      description: "We design experiences that solve real user problems while driving your business objectives forward.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "iot-solutions",
+    category: "IoT",
+    title: "IoT Solutions",
+    subtitle: "Connected Intelligence for the Physical World",
+    bannerImage: BANNER,
+    whatWeDo: [
+      {
+        title: "Embedded Systems",
+        description: "Custom firmware development for smart devices and sensors.",
+        image: WD1,
+      },
+      {
+        title: "Edge Computing",
+        description: "Processing data locally for zero-latency decision making.",
+        image: WD2,
+      },
+      {
+        title: "IoT Dashboards",
+        description: "Real-time web and mobile interfaces for device management and analytics.",
+        image: WD3,
+      },
+    ],
+    serviceOverview: {
+      paragraphs: [
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "We build end-to-end IoT solutions — from embedded firmware and edge computing to cloud connectivity, real-time dashboards, and AI-powered analytics. Our IoT engineering team bridges hardware and software to create connected products that deliver measurable operational intelligence.",
+        "BUSINESS VALUE: Gain real-time visibility into your physical operations, reduce equipment downtime with predictive maintenance, and unlock new revenue streams through connected product capabilities."
+      ],
+      approachTitle: "IoT Architecture",
+      approachSteps: [
+        { label: "Hardware Strategy", description: "Selecting the right sensors, microcontrollers, and connectivity." },
+        { label: "Firmware Dev", description: "Writing secure, battery-efficient code for the edge." },
+        { label: "Cloud Integration", description: "Building robust data pipelines to ingest IoT telemetry." },
+        { label: "Interface Design", description: "Creating dashboards to monitor and control your device fleet." },
+      ],
+      images: [OV1, OV2],
+    },
+    whatWeOffer: [
+      { title: "Device Engineering", bullets: ["+ C/C++ firmware", "+ RTOS integration", "+ OTA updates"] },
+      { title: "Connectivity", bullets: ["+ MQTT & CoAP", "+ Bluetooth/BLE", "+ Cellular & LoRaWAN"] },
+      { title: "Data Platform", bullets: ["+ Time-series DBs", "+ Predictive analytics", "+ Digital twins"] },
+    ],
+    guidedSection: {
+      heading: "Guided by Data,\nConnected by Design.",
+      description: "We bridge the gap between physical hardware and digital intelligence to transform your operations.",
+      image: GUIDED,
+    },
+    processSteps: SHARED_PROCESS,
+    faqs: SHARED_FAQS,
+  },
+  {
+    slug: "product-engineering",
     category: "Engineering",
-    title: "Custom development",
-    subtitle: "Full-stack engineering that scales from MVP to enterprise",
+    title: "Product Engineering",
+    subtitle: "Full Lifecycle Engineering for Digital Products",
     bannerImage: BANNER,
     whatWeDo: [
-      { title: "Frontend Engineering", description: "Pixel-perfect interfaces built with modern React, Next.js, and TypeScript.", image: WD1 },
-      { title: "Backend & APIs", description: "Scalable server infrastructure, RESTful and GraphQL APIs, microservices.", image: WD2 },
-      { title: "AI Integrations", description: "Embedding LLMs, recommendation engines, and predictive models into your product.", image: WD3 },
+      {
+        title: "Product Strategy",
+        description: "Aligning technical architecture with your business goals and market needs.",
+        image: WD1,
+      },
+      {
+        title: "Agile Development",
+        description: "Iterative, sprint-based engineering delivering continuous value.",
+        image: WD2,
+      },
+      {
+        title: "Quality Assurance",
+        description: "Automated and manual testing ensuring flawless product launches.",
+        image: WD3,
+      },
     ],
     serviceOverview: {
       paragraphs: [
-        "Custom development means building software precisely tailored to your workflow — not adapting your business to an off-the-shelf tool. We architect, engineer, and ship products that solve real problems at real scale.",
-        "From a single MVP feature to a full-stack SaaS platform, our engineering team works end-to-end — design system, API, database, CI/CD — so you ship faster and with confidence.",
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "Product engineering is what we do best. We partner with product leaders from ideation through to global launch — bringing together design, engineering, QA, data, and DevOps under one roof. Our product squads operate like an in-house team with the flexibility of an agency.",
+        "BUSINESS VALUE: Ship faster, iterate smarter, and scale confidently. Our product engineering approach combines agile velocity with engineering discipline, delivering products that are built to last and loved by users."
       ],
-      approachTitle: "Our Engineering Approach",
+      approachTitle: "Engineering Excellence",
       approachSteps: [
-        { label: "Requirements & Architecture", description: "Defining the system design, tech stack, and data models." },
-        { label: "Agile Sprints", description: "Two-week sprint cycles with demos and stakeholder feedback." },
-        { label: "QA & Testing", description: "Automated tests, code reviews, and performance audits before every release." },
-        { label: "Deployment & Handoff", description: "CI/CD pipelines, documentation, and knowledge transfer." },
+        { label: "Ideation", description: "Validating concepts and defining the product roadmap." },
+        { label: "Execution", description: "Cross-functional squads building features in agile sprints." },
+        { label: "Testing", description: "Rigorous QA automation for stability and security." },
+        { label: "Launch & Scale", description: "Deploying to production and monitoring user telemetry." },
       ],
       images: [OV1, OV2],
     },
     whatWeOffer: [
-      { title: "Web Application Development", bullets: ["+ React / Next.js", "+ Node.js / Python backends", "+ Database Architecture"] },
-      { title: "Mobile App Development", bullets: ["+ React Native", "+ iOS & Android", "+ Offline-first design"] },
-      { title: "API & Integration Work", bullets: ["+ REST & GraphQL", "+ Third-party integrations", "+ Webhook systems"] },
+      { title: "Dedicated Squads", bullets: ["+ Product managers", "+ Tech leads", "+ QA engineers"] },
+      { title: "Engineering Specs", bullets: ["+ Microservices", "+ TDD / BDD", "+ Scalable databases"] },
+      { title: "Product Ops", bullets: ["+ Release management", "+ Feature flagging", "+ User analytics"] },
     ],
     guidedSection: {
-      heading: "Guided by Process,\nDriven by Results.",
-      description: "We follow a streamlined, intelligent workflow designed to eliminate friction and deliver consistent results.",
+      heading: "Guided by Vision,\nBuilt with Precision.",
+      description: "We don't just write code; we engineer products that solve problems and delight users.",
       image: GUIDED,
     },
     processSteps: SHARED_PROCESS,
     faqs: SHARED_FAQS,
   },
-
   {
-    slug: "brand-identity",
-    category: "Branding",
-    title: "Brand Identity",
-    subtitle: "Building brands that resonate, endure, and inspire loyalty",
+    slug: "dedicated-development-teams",
+    category: "Team Augmentation",
+    title: "Dedicated Development Teams",
+    subtitle: "Extend Your Engineering Capacity. Instantly.",
     bannerImage: BANNER,
     whatWeDo: [
-      { title: "Visual Identity Systems", description: "Logos, color palettes, and typography systems that scale across every medium.", image: WD1 },
-      { title: "Brand Strategy", description: "Positioning, messaging frameworks, and competitive differentiation.", image: WD2 },
-      { title: "Brand Guidelines", description: "Comprehensive documentation so your brand stays consistent across all teams.", image: WD3 },
+      {
+        title: "Team Assembly",
+        description: "Hand-picking senior talent that matches your technical stack and culture.",
+        image: WD1,
+      },
+      {
+        title: "Seamless Integration",
+        description: "Our engineers adopt your tools, workflows, and communication rhythms.",
+        image: WD2,
+      },
+      {
+        title: "Managed Scaling",
+        description: "Flexibly scale your team up or down based on your product roadmap.",
+        image: WD3,
+      },
     ],
     serviceOverview: {
       paragraphs: [
-        "A strong brand identity is more than a logo — it's the story your company tells every time it shows up. We build identity systems that communicate your values instantly, consistently, and memorably.",
-        "From naming and positioning to the full visual language, we create brands that feel premium out of the gate and grow stronger over time.",
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "Access a pre-vetted, instantly deployable team of senior engineers, designers, and product specialists — fully integrated into your workflow, culture, and tech stack. Our dedicated teams operate on your timezone, speak your language, and treat your product as their own.",
+        "BUSINESS VALUE: Scale your engineering capacity without the overhead of hiring, onboarding, and management. Our dedicated teams deliver from day one with zero ramp-up friction."
       ],
-      approachTitle: "Our Approach to Branding",
+      approachTitle: "Team Integration",
       approachSteps: [
-        { label: "Discovery & Research", description: "Understanding your business, audience, and competition." },
-        { label: "Concept Development", description: "Creating initial branding concepts and design ideas." },
-        { label: "Refinement & Testing", description: "Perfecting the visuals and ensuring they resonate with your audience." },
-        { label: "Final Implementation", description: "Delivering all branding assets with a detailed style guide." },
+        { label: "Requirement Analysis", description: "Understanding your tech stack, gaps, and team culture." },
+        { label: "Talent Selection", description: "Providing a curated list of top-tier engineering talent." },
+        { label: "Onboarding", description: "Seamlessly integrating our engineers into your Slack, Jira, and Git." },
+        { label: "Delivery", description: "Continuous output governed by your internal product managers." },
       ],
       images: [OV1, OV2],
     },
     whatWeOffer: [
-      { title: "Brand Strategy & Positioning", bullets: ["+ Brand Discovery", "+ Brand Voice & Messaging", "+ Brand Positioning Strategy"] },
-      { title: "Logo & Visual Identity", bullets: ["+ Logomark & Wordmark", "+ Color System", "+ Typography"] },
-      { title: "Rebranding & Brand Refresh", bullets: ["+ Audit & Analysis", "+ Evolution Strategy", "+ Launch Playbook"] },
+      { title: "Engineering Talent", bullets: ["+ Frontend / Backend", "+ Mobile / DevOps", "+ Data Science"] },
+      { title: "Design Talent", bullets: ["+ UI/UX Designers", "+ Product Designers", "+ UX Researchers"] },
+      { title: "Management", bullets: ["+ Scrum Masters", "+ Product Owners", "+ Tech Leads"] },
     ],
     guidedSection: {
-      heading: "Guided by Process,\nDriven by Results.",
-      description: "We follow a streamlined, intelligent workflow designed to eliminate friction and deliver consistent results.",
+      heading: "Guided by Collaboration,\nDriven by Talent.",
+      description: "We provide the engineering firepower you need to hit your product milestones on time.",
       image: GUIDED,
     },
     processSteps: SHARED_PROCESS,
     faqs: SHARED_FAQS,
   },
-
   {
-    slug: "outbound-scheduling",
-    category: "Automation",
-    title: "Outbound Scheduling Support",
-    subtitle: "AI-powered outreach that fills your calendar automatically",
+    slug: "digital-transformation",
+    category: "Consulting",
+    title: "Digital Transformation",
+    subtitle: "Reimagine Your Business for the Digital Age",
     bannerImage: BANNER,
     whatWeDo: [
-      { title: "Automated Outreach", description: "AI sends personalized scheduling messages at the optimal time for each contact.", image: WD1 },
-      { title: "Calendar Integration", description: "Syncs with Google Calendar, Outlook, and your CRM to prevent double-booking.", image: WD2 },
-      { title: "Follow-up Sequences", description: "Automated multi-step follow-up until a time is confirmed or the lead is disqualified.", image: WD3 },
+      {
+        title: "Legacy Modernization",
+        description: "Upgrading outdated monolithic systems to agile, cloud-native microservices.",
+        image: WD1,
+      },
+      {
+        title: "Process Automation",
+        description: "Replacing manual, paper-based workflows with intelligent digital systems.",
+        image: WD2,
+      },
+      {
+        title: "Data Strategy",
+        description: "Breaking down data silos to create a unified source of truth across the enterprise.",
+        image: WD3,
+      },
     ],
     serviceOverview: {
       paragraphs: [
-        "Outbound scheduling is one of the most time-consuming activities in any sales or support team. Our AI solution handles the entire back-and-forth — proposing times, handling rescheduling, and sending reminders — without any human intervention.",
-        "The result is a fully booked calendar, zero missed meetings, and your team focused only on the conversations that matter.",
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "Digital transformation is not a technology project — it's a business evolution. We work with enterprise leaders to modernize legacy systems, implement intelligent automation, digitize core operations, and build a technology foundation that enables sustainable competitive advantage.",
+        "BUSINESS VALUE: Organizations that complete digital transformation see an average 23% increase in revenue and 45% reduction in operational costs. We guide you through every phase with minimal disruption and maximum ROI."
       ],
-      approachTitle: "How It Works",
+      approachTitle: "Transformation Strategy",
       approachSteps: [
-        { label: "Connect Your Calendar", description: "We integrate directly with your existing calendar and CRM." },
-        { label: "Configure Rules", description: "Define availability windows, lead priority, and outreach tone." },
-        { label: "AI Takes Over", description: "The AI sends personalized scheduling messages and handles all replies." },
-        { label: "You Show Up", description: "You get a notification with meeting details — nothing else required." },
+        { label: "Audit", description: "Comprehensive analysis of existing systems and workflows." },
+        { label: "Strategy", description: "Defining the technology roadmap and desired business outcomes." },
+        { label: "Modernization", description: "Iterative replatforming and custom software development." },
+        { label: "Adoption", description: "Ensuring organizational alignment and high user adoption rates." },
       ],
       images: [OV1, OV2],
     },
     whatWeOffer: [
-      { title: "AI Scheduling Engine", bullets: ["+ Natural language outreach", "+ Time zone awareness", "+ Conflict resolution"] },
-      { title: "CRM Integration", bullets: ["+ Salesforce & HubSpot", "+ Lead scoring sync", "+ Activity logging"] },
-      { title: "Analytics Dashboard", bullets: ["+ Booking rate metrics", "+ Response time tracking", "+ Funnel visibility"] },
+      { title: "Cloud Migration", bullets: ["+ Lift & shift", "+ Replatforming", "+ Cloud-native rewrite"] },
+      { title: "Automation", bullets: ["+ RPA implementation", "+ Custom workflow apps", "+ AI integration"] },
+      { title: "Consulting", bullets: ["+ Tech stack selection", "+ Vendor analysis", "+ IT strategy"] },
     ],
     guidedSection: {
-      heading: "Guided by Process,\nDriven by Results.",
-      description: "We follow a streamlined, intelligent workflow designed to eliminate friction and deliver consistent results.",
+      heading: "Guided by Strategy,\nPowered by Technology.",
+      description: "We help you navigate the complexities of enterprise transformation to emerge stronger and faster.",
       image: GUIDED,
     },
     processSteps: SHARED_PROCESS,
     faqs: SHARED_FAQS,
   },
-
   {
-    slug: "appointment-reminder",
-    category: "Automation",
-    title: "Appointment Reminder",
-    subtitle: "Reduce no-shows and keep your schedule full automatically",
+    slug: "maintenance-support",
+    category: "Support",
+    title: "Maintenance & Support",
+    subtitle: "Always-On Engineering Support for Mission-Critical Systems",
     bannerImage: BANNER,
     whatWeDo: [
-      { title: "Multi-Channel Reminders", description: "Send reminders via SMS, email, and voice calls — whichever channel your clients prefer.", image: WD1 },
-      { title: "Smart Timing", description: "AI determines the optimal reminder window to maximize show rates for your specific audience.", image: WD2 },
-      { title: "Reschedule Handling", description: "Clients can reschedule directly from the reminder without any staff involvement.", image: WD3 },
+      {
+        title: "Proactive Monitoring",
+        description: "24/7 observability to detect and resolve issues before they impact users.",
+        image: WD1,
+      },
+      {
+        title: "Performance Optimization",
+        description: "Continuous tuning of databases, APIs, and frontend assets for maximum speed.",
+        image: WD2,
+      },
+      {
+        title: "Security Updates",
+        description: "Regular patching, dependency updates, and vulnerability management.",
+        image: WD3,
+      },
     ],
     serviceOverview: {
       paragraphs: [
-        "No-shows cost businesses thousands in lost revenue every month. Our appointment reminder system sends automated, personalized reminders through the right channel at the right time — dramatically reducing your no-show rate.",
-        "The system integrates with your existing booking platform and handles everything from initial confirmation to day-of reminders and post-appointment follow-ups.",
+        "End-to-End Digital Engineering. Tailored for Your Ambition. From a single MVP to a full enterprise transformation — we bring the right team, the right technology, and the right process to every engagement.",
+        "Your product never sleeps — and neither does our support team. We offer comprehensive maintenance, monitoring, performance optimization, and enhancement services that ensure your digital systems are always secure, performant, and evolving.",
+        "BUSINESS VALUE: Reduce system downtime by up to 99.9% uptime SLA. Our proactive monitoring and rapid response protocols ensure your business-critical systems are always operating at peak performance."
       ],
-      approachTitle: "Our Reminder Strategy",
+      approachTitle: "Support Workflow",
       approachSteps: [
-        { label: "Booking Confirmation", description: "Immediate confirmation message the moment an appointment is booked." },
-        { label: "24-Hour Reminder", description: "Personalized reminder the day before with easy reschedule option." },
-        { label: "Day-of Reminder", description: "Morning-of nudge with location, link, or instructions." },
-        { label: "Post-Appointment Follow-up", description: "Review request and rebooking prompt sent automatically after." },
+        { label: "Audit", description: "Establishing baselines and setting up comprehensive observability." },
+        { label: "Monitoring", description: "24/7 automated tracking of system health and error rates." },
+        { label: "Response", description: "SLA-driven incident response and root cause analysis." },
+        { label: "Enhancement", description: "Continuous deployment of minor features and technical debt reduction." },
       ],
       images: [OV1, OV2],
     },
     whatWeOffer: [
-      { title: "SMS Reminders", bullets: ["+ Two-way messaging", "+ Opt-out management", "+ Delivery reporting"] },
-      { title: "Email Campaigns", bullets: ["+ Branded templates", "+ Dynamic content", "+ Open & click tracking"] },
-      { title: "Voice Reminders", bullets: ["+ AI voice calls", "+ IVR integration", "+ Voicemail drop"] },
+      { title: "Monitoring", bullets: ["+ APM integration", "+ Uptime tracking", "+ Log aggregation"] },
+      { title: "Security", bullets: ["+ Dependency audits", "+ Penetration testing", "+ Compliance checks"] },
+      { title: "Enhancements", bullets: ["+ Bug fixes", "+ UI tweaks", "+ Server upgrades"] },
     ],
     guidedSection: {
-      heading: "Guided by Process,\nDriven by Results.",
-      description: "We follow a streamlined, intelligent workflow designed to eliminate friction and deliver consistent results.",
+      heading: "Guided by Reliability,\nFocused on Uptime.",
+      description: "We protect your digital investment so you can focus on growing your business.",
       image: GUIDED,
     },
     processSteps: SHARED_PROCESS,
     faqs: SHARED_FAQS,
-  },
+  }
+
 ];
 
 // Helper to find a service by slug

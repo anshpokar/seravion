@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const industries = [
-  { name: "Fintech", image: "/fintech.png" },
-  { name: "Edutech", image: "/edutech.png" },
-  { name: "Chemical", image: "/meditech.png" },
-  { name: "Medtech", image: "/healthtech.png" },
-  { name: "Automobile", image: "/cartech.png" },
-  { name: "Finance", image: "/biztech.png" },
+  { name: "Healthcare", slug: "healthcare-healthtech", image: "/healthtech.png" },
+  { name: "FinTech", slug: "fintech-financial-services", image: "/fintech.png" },
+  { name: "SaaS & Cloud", slug: "saas-cloud-products", image: "/biztech.png" },
+  { name: "EdTech", slug: "edtech-learning-platforms", image: "/edutech.png" },
+  { name: "Real Estate", slug: "real-estate-proptech", image: "/realeastateTech.png" },
+  { name: "HR Tech", slug: "hr-tech-future-of-work", image: "/HRTech.png" },
 ];
 
 const Industries = () => {
@@ -43,11 +44,11 @@ const Industries = () => {
         {/* MIDDLE COLUMN: Interactive List */}
         <div className="flex flex-col border-l border-white/10 pl-8 md:pl-12 justify-center h-full">
           {industries.map((item) => (
-            <div
+            <Link
               key={item.name}
+              href={`/industries/${item.slug}`}
               onMouseEnter={() => setActiveItem(item.name)}
-              /* Removed border-b from here to use the custom line below */
-              className="relative group py-4 md:py-6 cursor-pointer transition-colors duration-300"
+              className="relative group py-4 md:py-6 cursor-pointer transition-colors duration-300 block"
             >
               <h3
                 className={`text-2xl md:text-3xl lg:text-[40px] font-bold transition-all duration-500 ease-out ${
@@ -64,7 +65,7 @@ const Industries = () => {
                   - h-[1px] is the thickness
               */}
               <div className="absolute bottom-0 left-0 w-[70%] h-[1px] bg-white/10" />
-            </div>
+            </Link>
           ))}
         </div>
 

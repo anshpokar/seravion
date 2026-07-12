@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -117,9 +118,9 @@ const Blogs = () => {
             <span className="md:block">about your business and product as you do.</span>
           </p>
           
-          <button suppressHydrationWarning className="px-6 md:px-8 py-3 border border-white/20 rounded-none text-xs md:text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
+          <Link href="/blog" suppressHydrationWarning className="px-6 md:px-8 py-3 border border-white/20 rounded-none text-xs md:text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">
             View All
-          </button>
+          </Link>
         </div>
       </div>
 

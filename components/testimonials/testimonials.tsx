@@ -2,37 +2,36 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 const testimonialsData = [
   { 
     id: 1, 
     src: "/main_testimonial.png",
-    text: "Working with Seravion was a game changer for our business. Their team truly understands our vision and brings it to life with creativity and precision. We felt valued every step of the way!",
-    name: "Ravi Yadav",
-    company: "Company Name"
+    text: "I had the pleasure of working with Kanhaiya on the development of my business website and I couldn’t be happier with the outcome. From our first conversation, Kanhaiya demonstrated a sharp understanding of both design aesthetics and strategic functionality, translating abstract ideas into a clean, intuitive, and high-performing website. What stood out most was his ability to listen deeply and iterate quickly. Whether it was refining the user journey, optimizing for mobile, or aligning the visual language with our GTM narrative, Kanhaiya brought both technical precision and creative insight to every step.",
+    name: "Dushyant Arora",
+    company: "Founder & MD - Ambit GTM"
   },
   { 
     id: 2, 
     src: "/testimonial_2.png",
-    text: "The level of detail and thought put into our project was outstanding. We couldn't be happier with the results and highly recommend their services to anyone looking to elevate their brand.",
-    name: "Sarah Jenkins",
-    company: "Tech Innovations"
+    text: "Working with Seravion was a game-changer for our Carevo app. They understood our vision, delivered a sleek and intuitive design, and ensured a smooth user experience. Their team was proactive, communicative, and always ready to go the extra mile. Highly recommend!",
+    name: "Founder",
+    company: "Founder & CEO - Carevo"
   },
   { 
     id: 3, 
     src: "/testimonial_3.png",
-    text: "From start to finish, the communication and execution were flawless. They delivered exactly what we needed, on time and within budget.",
-    name: "Michael Chen",
-    company: "Growth Partners"
+    text: "Partnering with Seravion truly elevated our SCCA app. They grasped our goals quickly and crafted a clean, user-friendly design that exceeded our expectations. The collaboration was seamless — their team was responsive, collaborative, and consistently went above and beyond. We’re thrilled with the results and would definitely recommend them!",
+    name: "Prem Rathod",
+    company: "Founder & CEO SCCA Argo LLP"
   },
   { 
     id: 4, 
     src: "/testimonial_4.png",
-    text: "An absolute pleasure to work with. The final product exceeded all of our expectations and has already started generating positive feedback from our users.",
-    name: "Emily Carter",
-    company: "Design Works"
+    text: "Seravion Technologies delivered a highly scalable digital platform that completely transformed our union's operations across Maharashtra. The AI-powered OCR automation significantly reduced manual effort, while the centralized member management system provided complete visibility from state to village level. Their technical expertise, commitment, and understanding of our requirements exceeded our expectations.",
+    name: "Leadership Team",
+    company: "Shramjivi Sangathan Union, Maharashtra"
   },
 ];
 
@@ -157,10 +156,10 @@ const Testimonials = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -150 }}
-                className={`overflow-hidden shadow-2xl border shrink-0 ${
+                className={`shadow-2xl border shrink-0 ${
                   isMain 
-                    ? "relative w-[90vw] md:w-[65vw] lg:w-full lg:max-w-[900px] xl:max-w-[1050px] h-auto md:h-[350px] lg:h-[40vh] lg:min-h-[380px] lg:max-h-[480px] flex flex-col md:flex-row bg-[#17202A] cursor-default border-white/10 z-10" 
-                    : "relative w-16 md:w-24 lg:w-32 xl:w-40 aspect-square cursor-pointer grayscale hover:grayscale-0 mb-0 lg:mb-2 border-white/10 z-0"
+                    ? "relative w-[90vw] md:w-[65vw] lg:w-full lg:max-w-[900px] xl:max-w-[1050px] h-auto md:h-[350px] lg:h-[40vh] lg:min-h-[380px] lg:max-h-[480px] flex flex-col md:flex-row bg-[#17202A] cursor-default border-white/10 z-10 overflow-visible" 
+                    : "relative w-16 md:w-24 lg:w-32 xl:w-40 aspect-square cursor-pointer grayscale hover:grayscale-0 mb-0 lg:mb-2 border-white/10 z-0 overflow-hidden"
                 }`}
                 transition={{
                   layout: { type: "tween", duration: 0.8, ease: "easeInOut" },
@@ -193,11 +192,19 @@ const Testimonials = () => {
                       transition={{ duration: 0.4, delay: 0.4 }}
                       className="w-full md:w-3/5 h-auto md:h-full p-6 md:p-10 lg:p-12 xl:p-16 flex flex-col justify-between shrink-0"
                     >
-                      <div>
-                        <Quote className="text-white w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 mb-4 md:mb-6" fill="currentColor" />
-                        <p className="text-gray-300 text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed">
+                      <div className="relative group cursor-help z-50">
+                        <p className="text-gray-300 text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed line-clamp-4 md:line-clamp-5 xl:line-clamp-6">
                           {testimonial.text}
                         </p>
+                        
+                        {/* Custom Glassmorphism Tooltip */}
+                        <div className="absolute left-0 bottom-full mb-2 w-full md:w-[120%] z-[100] 
+                                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                      transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                                      bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] 
+                                      rounded-xl p-4 md:p-6 text-white text-sm md:text-base leading-relaxed pointer-events-none">
+                          {testimonial.text}
+                        </div>
                       </div>
                       
                       <div className="mt-6 md:mt-0">

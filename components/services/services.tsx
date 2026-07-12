@@ -10,8 +10,8 @@ import gsap from "gsap";
 const data = [
   {
     number: "01",
-    title: "2,000+",
-    desc1: "Projects Launched",
+    title: "30+",
+    desc1: "Projects Delivered",
     image: "/image.png",
     bgClass: "bg-[#2f7df6]",
     bgHex: "#2f7df6",

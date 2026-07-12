@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   FaYoutube,
   FaLinkedinIn,
@@ -30,10 +31,11 @@ const Footer = () => {
               className="w-[140px] md:w-[175px] mb-6"
             />
 
-            <p className="max-w-[290px] text-[14px] md:text-[16px] leading-[1.45] text-white/45 font-normal">
-              Seravion improves access, generates
-              savings, and increases efficiency for both
-              your practice and your patients.
+            <p className="text-[14px] md:text-[16px] leading-[1.45] text-white/45 font-normal">
+              Seravion Technologies is a global digital engineering company delivering premium software, AI solutions, and product engineering services to startups, scaleups, and enterprises worldwide. Built in India. Trusted globally.
+            </p>
+            <p className="mt-6 text-[12px] md:text-[13px] text-white/40 font-medium tracking-wide">
+              ISO-Certified &nbsp;|&nbsp; NDA-Protected &nbsp;|&nbsp; SLA-Backed &nbsp;|&nbsp; Agile Delivery &nbsp;|&nbsp; Global Teams
             </p>
           </div>
 
@@ -42,12 +44,12 @@ const Footer = () => {
             <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-6">Navigate</p>
 
             <div className="flex flex-col gap-3 md:gap-4 text-[15px] md:text-[18px]">
-              <a href="#" className="hover:text-white/70 transition-colors">About Us</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Works</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Industries</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Services</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Blogs</a>
-              <a href="#" className="hover:text-white/70 transition-colors">FAQs</a>
+              <Link href="/about" className="hover:text-white/70 transition-colors">About Us</Link>
+              <Link href="/work" className="hover:text-white/70 transition-colors">Works</Link>
+              <Link href="/industries" className="hover:text-white/70 transition-colors">Industries</Link>
+              <Link href="/services" className="hover:text-white/70 transition-colors">Services</Link>
+              <Link href="/blog" className="hover:text-white/70 transition-colors">Blogs</Link>
+              <Link href="/faqs" className="hover:text-white/70 transition-colors">FAQs</Link>
             </div>
           </div>
 
@@ -56,11 +58,19 @@ const Footer = () => {
             <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-6">Services</p>
 
             <div className="flex flex-col gap-3 md:gap-4 text-[15px] md:text-[18px]">
-              <a href="#" className="hover:text-white/70 transition-colors">UX/UI Design</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Development</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Brand Identity</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Scheduling</a>
-              <a href="#" className="hover:text-white/70 transition-colors">Reminders</a>
+              <Link href="/services/ai-machine-learning" className="hover:text-white/70 transition-colors">AI & Machine Learning</Link>
+              <Link href="/services/full-stack-development" className="hover:text-white/70 transition-colors">Full Stack Development</Link>
+              <Link href="/services/mobile-app-development" className="hover:text-white/70 transition-colors">Mobile App Development</Link>
+              <Link href="/services/web-development" className="hover:text-white/70 transition-colors">Web Development</Link>
+              <Link href="/services/cloud-devops" className="hover:text-white/70 transition-colors">Cloud & DevOps</Link>
+              <Link href="/services/erp-crm-development" className="hover:text-white/70 transition-colors">ERP & CRM</Link>
+              <Link href="/services/saas-product-development" className="hover:text-white/70 transition-colors">SaaS Product</Link>
+              <Link href="/services/ui-ux-design" className="hover:text-white/70 transition-colors">UI/UX Design</Link>
+              <Link href="/services/iot-solutions" className="hover:text-white/70 transition-colors">IoT Solutions</Link>
+              <Link href="/services/product-engineering" className="hover:text-white/70 transition-colors">Product Engineering</Link>
+              <Link href="/services/dedicated-development-teams" className="hover:text-white/70 transition-colors">Dedicated Teams</Link>
+              <Link href="/services/digital-transformation" className="hover:text-white/70 transition-colors">Digital Transformation</Link>
+              <Link href="/services/maintenance-support" className="hover:text-white/70 transition-colors">Maintenance & Support</Link>
             </div>
           </div>
 
@@ -77,41 +87,38 @@ const Footer = () => {
         </div>
 
         {/* CONTACT INFO */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 mt-12 md:mt-[90px] gap-8 sm:gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-3 mt-12 md:mt-[90px] gap-8 sm:gap-6">
           
-          {/* CALL */}
+          {/* START A PROJECT */}
           <div>
-            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-10">Call Us</p>
-
+            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Start a Project</p>
             <a
-              href="tel:2059083709"
-              className="text-xl md:text-[24px] lg:text-[30px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors"
+              href="mailto:hello@seravion.com"
+              className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
-              (205) 908–3709
+              hello@seravion.com
             </a>
           </div>
 
-          {/* EMAIL */}
+          {/* JOIN OUR TEAM */}
           <div>
-            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-10">Contact Us</p>
-
+            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Join Our Team</p>
             <a
-              href="mailto:info@transform9.com"
-              className="text-xl md:text-[24px] lg:text-[30px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
+              href="mailto:careers@seravion.com"
+              className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
-              info@transform9.com
+              careers@seravion.com
             </a>
           </div>
 
-          {/* LOCATION */}
+          {/* GENERAL INQUIRIES */}
           <div>
-            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-10">Location</p>
-
+            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">General Inquiries</p>
             <a
-              href="#"
-              className="text-xl md:text-[24px] lg:text-[30px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors"
+              href="mailto:info@seravion.com"
+              className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
-              Bengaluru, India
+              info@seravion.com
             </a>
           </div>
         </div>
@@ -121,10 +128,19 @@ const Footer = () => {
       <div className="border-t border-white/5">
         <Container className="min-h-[72px] py-4 flex flex-wrap items-center justify-between gap-4">
           
-          {/* COPYRIGHT */}
-          <p className="text-white/35 text-[13px] md:text-[15px]">
-            © 2026 Seravion. All Rights Reserved.
-          </p>
+          {/* COPYRIGHT & LEGAL */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6">
+            <p className="text-white/35 text-[13px] md:text-[14px]">
+              © 2026 Seravion Technologies Pvt. Ltd. All rights reserved.
+            </p>
+            <div className="flex items-center gap-3 text-white/35 text-[13px] md:text-[14px]">
+              <Link href="#" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+              <span>|</span>
+              <Link href="#" className="hover:text-white/70 transition-colors">Terms of Service</Link>
+              <span>|</span>
+              <Link href="#" className="hover:text-white/70 transition-colors">Cookie Policy</Link>
+            </div>
+          </div>
 
           {/* SOCIAL ICONS */}
           <div className="flex items-center gap-3">

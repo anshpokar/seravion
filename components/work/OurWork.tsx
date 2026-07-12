@@ -6,52 +6,147 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/components/ui/Container";
 
-const tabs = ["All Work", "Web App", "Mobile App", "Website"];
+const tabs = ["All Work", "AI Solutions", "ERP & CRM", "Web Application", "Mobile Application", "Enterprise Software", "Real Estate", "Healthcare"];
 
 const projects = [
   {
     id: 1,
-    category: ["All Work", "Web App"],
-    tags: ["#UX Audit", "#Product redesign", "#Web development"],
-    title: "Comprehensive Scheduling",
-    techStack: ["React", "Python", "AWS"],
-    timeline: "12 months, ongoing",
+    category: ["All Work", "AI Solutions", "ERP & CRM", "Enterprise Software"],
+    tags: ["#AI", "#ERP", "#CRM", "#SaaS"],
+    title: "Seravion Connect",
+    description: "AI-Powered ERP, CRM & Field Service Management Platform. An intelligent enterprise platform built specifically for service-driven businesses to automate sales, customer management, technician operations, inventory, billing, and business analytics.",
+    techStack: ["Flutter", "React.js", "Django", "PostgreSQL", "AWS", "AI", "LangChain"],
+    timeline: "18+ Months • SaaS Platform",
     results: [
-      "2× faster user workflows",
-      "50% shorter time-to-market",
-      "Nominated for UX Design Award 2024",
+      "80% faster field service ops",
+      "AI-powered scheduling",
+      "Real-time ERP & CRM",
+      "Multi-branch management",
     ],
     image: "/service-tab.png",
   },
   {
     id: 2,
-    category: ["All Work", "Mobile App"],
-    tags: ["#UI Design", "#Mobile Development", "#iOS"],
-    title: "Health Monitoring App",
-    techStack: ["React Native", "Node.js", "Firebase"],
-    timeline: "8 months",
+    category: ["All Work", "Enterprise Software", "AI Solutions"],
+    tags: ["#Digital Transformation", "#OCR AI", "#Union Management"],
+    title: "Shramjivi Sangathan Maharashtra",
+    description: "A comprehensive digital transformation platform enabling centralized member management, receipt tracking, activity monitoring, district-level administration, and intelligent reporting with AI-powered OCR technology.",
+    techStack: ["Flutter", "React.js", "Python", "Django", "OCR AI", "AWS"],
+    timeline: "12 Months • Enterprise Digital Transformation",
     results: [
-      "4.8 App Store rating",
-      "200K+ active users",
-      "Best Health App Award 2023",
+      "90% faster receipt processing",
+      "100% centralized management",
+      "70% less admin work",
     ],
     image: "/service-tab.png",
   },
   {
     id: 3,
-    category: ["All Work", "Website"],
-    tags: ["#Branding", "#Web Design", "#No-Code"],
-    title: "E-Commerce Platform",
-    techStack: ["Next.js", "Shopify", "Tailwind"],
-    timeline: "5 months",
+    category: ["All Work", "Real Estate", "AI Solutions"],
+    tags: ["#Real Estate", "#AI Marketplace", "#PropTech"],
+    title: "Reelty",
+    description: "Reelty is a next-generation AI-powered real estate platform designed to transform how buyers, sellers, investors, and builders discover and interact with properties using intelligent recommendations and immersive digital experiences.",
+    techStack: ["Next.js", "Flutter", "Python", "AWS"],
+    timeline: "Product Development • SaaS Platform",
     results: [
-      "3× increase in conversions",
-      "40% lower bounce rate",
-      "Featured in Awwwards",
+      "12X faster property discovery",
+      "AI-driven recommendations",
+      "Verified property ecosystem",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 4,
+    category: ["All Work", "Real Estate", "ERP & CRM"],
+    tags: ["#Sales CRM", "#AI Intelligence", "#PropTech"],
+    title: "Seravion Real Estate CRM",
+    description: "A comprehensive CRM platform built for real estate developers, builders, and sales teams to automate lead management, sales pipelines, customer engagement, booking workflows, and business analytics.",
+    techStack: ["React.js", "Flutter", "Django", "PostgreSQL", "AWS"],
+    timeline: "Product Development • SaaS",
+    results: [
+      "AI-powered lead management",
+      "Automated follow-ups",
+      "Complete pipeline visibility",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 5,
+    category: ["All Work", "Enterprise Software", "AI Solutions"],
+    tags: ["#Go-To-Market", "#AI Analytics", "#SaaS"],
+    title: "Ambit",
+    description: "Ambit is an intelligent GTM platform designed to help organizations accelerate customer acquisition, optimize sales execution, and improve business growth using automation, AI insights, and data-driven decision-making.",
+    techStack: ["React.js", "Node.js", "AI Analytics", "AWS"],
+    timeline: "Enterprise SaaS Platform",
+    results: [
+      "Automated sales workflows",
+      "AI-powered insights",
+      "Intelligent engagement",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 6,
+    category: ["All Work", "Healthcare", "Web Application"],
+    tags: ["#Healthcare", "#EMR", "#Digital Platform"],
+    title: "MedFaster",
+    description: "MedFaster is a modern healthcare platform designed to simplify patient engagement, appointment scheduling, electronic medical records, healthcare administration, and digital healthcare services.",
+    techStack: ["Flutter", "React.js", "Python", "AWS"],
+    timeline: "Healthcare Digital Platform",
+    results: [
+      "Digital patient management",
+      "Appointment automation",
+      "Secure healthcare records",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 7,
+    category: ["All Work", "AI Solutions", "Web Application"],
+    tags: ["#Career Intelligence", "#AI Roadmap", "#EdTech"],
+    title: "Carevo",
+    description: "Carevo transforms career planning through artificial intelligence, neuroscience-backed assessments, predictive analytics, and personalized learning pathways to deliver dynamic, data-driven career roadmaps.",
+    techStack: ["React.js", "Flutter", "Python AI", "Machine Learning"],
+    timeline: "AI Product",
+    results: [
+      "AI-powered Career GPS",
+      "30+ decision signals",
+      "Personalized roadmap",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 8,
+    category: ["All Work", "Web Application"],
+    tags: ["#Interior Design", "#E-Commerce", "#Lead Generation"],
+    title: "Akshar Decor",
+    description: "A premium digital platform developed for Akshar Decor to showcase products, manage inquiries, streamline customer interactions, and strengthen online brand presence using modern UI and business automation.",
+    techStack: ["Next.js", "React.js", "CMS", "AWS"],
+    timeline: "Website & Business Platform",
+    results: [
+      "Premium digital experience",
+      "Lead generation automation",
+      "SEO-optimized architecture",
+    ],
+    image: "/service-tab.png",
+  },
+  {
+    id: 9,
+    category: ["All Work", "AI Solutions", "Enterprise Software"],
+    tags: ["#Agentic AI", "#RAG", "#Enterprise Knowledge"],
+    title: "Enterprise AI Assistant",
+    description: "An advanced enterprise AI assistant built using Retrieval-Augmented Generation (RAG) and Agentic AI. It enables employees to interact with business data using natural language, instantly generate reports, and automate workflows.",
+    techStack: ["Agentic AI", "LangChain", "OpenAI", "RAG", "FastAPI", "AWS"],
+    timeline: "Enterprise AI Product",
+    results: [
+      "Instant AI-powered reporting",
+      "Natural language access",
+      "Automated workflows",
     ],
     image: "/service-tab.png",
   },
 ];
+;
 
 export default function OurWork() {
   const [activeTab, setActiveTab] = useState("All Work");
@@ -173,9 +268,14 @@ export default function OurWork() {
                 </div>
 
                 {/* TITLE */}
-                <h2 className="card-content-anim text-[26px] md:text-[32px] font-bold text-[#1a1a1a] leading-tight mb-8">
+                <h2 className="card-content-anim text-[26px] md:text-[32px] font-bold text-[#1a1a1a] leading-tight mb-4">
                   {project.title}
                 </h2>
+
+                {/* DESCRIPTION */}
+                <p className="card-content-anim text-[#444] text-[15px] leading-relaxed mb-8">
+                  {project.description}
+                </p>
 
                 {/* TECH + TIMELINE */}
                 <div className="card-content-anim flex gap-12 mb-8">

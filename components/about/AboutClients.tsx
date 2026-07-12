@@ -6,15 +6,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const LOGOS = [
-  { id: 1,  name: "Amazon",    src: "/amazon-logo.png" },
-  { id: 2,  name: "Google",    src: "/google_logo_grayed_7-1128x376_983de733_transparent-removebg-preview.png" },
-  { id: 3,  name: "Meta",      src: "/Meta-logo.png" },
-  { id: 4,  name: "Microsoft", src: "/microsoft-logo-png-transparent-background-11660471226dms6lxgzs1-removebg-preview.png" },
-  { id: 5,  name: "Netflix",   src: "/netflix_PNG25.png" },
-  { id: 6,  name: "OIP",       src: "/OIP-removebg-preview.png" },
-  { id: 7,  name: "Oracle",    src: "/Oracle-Logotipo-1995-Presente-removebg-preview.png" },
-  { id: 8,  name: "SpaceX",    src: "/SpaceX-Emblema-removebg-preview.png" },
-  { id: 9,  name: "Tesla",     src: "/Tesla_Logo-removebg-preview.png" },
+  { id: 1, name: "Akshar Decore", src: "/akshar-decore.png" },
+  { id: 2, name: "Careerwale", src: "/careerwale.png" },
+  { id: 3, name: "Gandhi Investmall", src: "/gandhi-investmall.png" },
+  { id: 4, name: "HBR Tech", src: "/hbr-tech.png" },
+  { id: 5, name: "Pestmed", src: "/pestmed-logo.png" },
+  { id: 6, name: "SCCA", src: "/sspc-logo.png" },
+  { id: 7, name: "Maitri", src: "/maitri-logo.png" },
+  { id: 8, name: "Reelty", src: "/reelty logo.png" },
+  { id: 9, name: "Sang", src: "/sang-logo.png" },
 ];
 
 export default function AboutClients() {
@@ -57,12 +57,12 @@ export default function AboutClients() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-white py-16 md:py-24 overflow-hidden">
+    <section ref={containerRef} className="bg-white py-8 md:py-12 overflow-hidden">
 
       {/* Heading */}
       <Container>
         <div ref={headerRef} className="max-w-[1000px] mx-auto text-center px-4 opacity-0">
-          <h2 className="text-[#171717] text-[28px] md:text-[36px] leading-[1.2] font-normal tracking-normal mb-12">
+          <h2 className="text-[#171717] text-[28px] md:text-[36px] leading-[1.2] font-normal tracking-normal mb-8">
             Help to brands growing up and show their
             <br className="hidden md:block" />
             success stories to the world
@@ -71,7 +71,7 @@ export default function AboutClients() {
       </Container>
 
       {/* Divider with Pill */}
-      <div ref={pillRef} className="relative flex items-center justify-center mb-12 opacity-0">
+      <div ref={pillRef} className="relative flex items-center justify-center mb-6 opacity-0">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t border-[#EFEFEF]"></div>
         </div>
@@ -98,7 +98,7 @@ export default function AboutClients() {
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="h-8 md:h-10 w-auto object-contain max-w-[140px] opacity-50 hover:opacity-90 transition-opacity duration-300 grayscale"
+                className="h-14 md:h-16 w-auto object-contain max-w-[200px] opacity-50 hover:opacity-90 transition-opacity duration-300 grayscale"
               />
             </div>
           ))}

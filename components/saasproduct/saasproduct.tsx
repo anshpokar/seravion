@@ -55,14 +55,35 @@ const SaasProduct = () => {
       </div>
 
       {/* 1. HEADER SECTION */}
-      <div className="relative z-20 text-center max-w-4xl px-6 pt-[12vh] md:pt-[15vh] flex-shrink-0 mb-[2vh]">
-        <h2 className="text-[32px] md:text-[42px] font-bold text-black tracking-tight mb-2">
-          Our SAAS Product
+      <div className="relative z-20 text-center max-w-5xl px-6 pt-[8vh] md:pt-[10vh] flex-shrink-0 mb-[1vh]">
+        <h2 className="text-[28px] md:text-[38px] font-bold text-black tracking-tight leading-tight">
+          Seravion Connect
         </h2>
-        <p className="text-gray-500 text-sm md:text-base max-w-none mx-auto mb-6 leading-relaxed md:whitespace-nowrap">
-          Seravion is a people-first design studio that cares as much about your business and product as you do.
+        <h3 className="text-sm md:text-lg font-semibold text-blue-600 mb-3">
+          AI-Powered ERP, CRM & Enterprise Automation
+        </h3>
+        <p className="text-gray-600 text-xs md:text-sm max-w-3xl mx-auto mb-4 leading-relaxed">
+          Delivering powerful AI-driven ERP, CRM, and workflow automation to simplify operations and accelerate growth. A people-first platform for the modern world.
         </p>
-        <button suppressHydrationWarning className="px-8 py-2 border border-blue-400 text-blue-500 font-semibold rounded-lg hover:bg-blue-50/50 transition-all duration-300 text-xs">
+        
+        <div className="flex justify-center items-center gap-6 md:gap-10 mb-4">
+          <div className="text-center">
+            <span className="block text-xl md:text-2xl font-bold text-black">20X</span>
+            <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider font-semibold">Faster</span>
+          </div>
+          <div className="w-[1px] h-8 bg-gray-200"></div>
+          <div className="text-center">
+            <span className="block text-xl md:text-2xl font-bold text-black">120%</span>
+            <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider font-semibold">Growth</span>
+          </div>
+          <div className="w-[1px] h-8 bg-gray-200"></div>
+          <div className="text-center">
+            <span className="block text-xl md:text-2xl font-bold text-black">90%</span>
+            <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider font-semibold">Manual Work Reduced</span>
+          </div>
+        </div>
+
+        <button suppressHydrationWarning className="px-6 py-2 border border-blue-400 text-blue-500 font-semibold rounded-lg hover:bg-blue-50 transition-all text-xs">
           Know More
         </button>
       </div>
@@ -82,8 +103,8 @@ const SaasProduct = () => {
           {/* DASHBOARD IMAGE ALIGNMENT */}
           <div className="absolute inset-0 z-10 flex justify-center px-[2%] pt-[4%] pb-[2%] pointer-events-none">
             <img 
-              src="/imageinsidetab.png" 
-              alt="Dashboard Content" 
+              src="/seravionconnect.jpeg" 
+              alt="Seravion Connect Dashbaord" 
               className="w-[96%] h-[105%] object-top object-cover rounded-t-[0.8rem] md:rounded-t-[1.1rem]"
             />
           </div>

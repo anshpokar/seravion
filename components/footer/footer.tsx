@@ -91,12 +91,12 @@ const Footer = () => {
           
           {/* START A PROJECT */}
           <div>
-            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Start a Project</p>
+            <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Start a Project or General Inquiries</p>
             <a
               href="mailto:hello@seravion.com"
               className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
-              hello@seravion.com
+              sales@seraviontechnologies.com
             </a>
           </div>
 
@@ -107,11 +107,11 @@ const Footer = () => {
               href="mailto:careers@seravion.com"
               className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
-              careers@seravion.com
+              hr@seraviontechnologies.com
             </a>
           </div>
 
-          {/* GENERAL INQUIRIES */}
+          {/* GENERAL INQUIRIES
           <div>
             <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">General Inquiries</p>
             <a
@@ -120,7 +120,7 @@ const Footer = () => {
             >
               info@seravion.com
             </a>
-          </div>
+          </div> */}
         </div>
       </Container>
 

@@ -115,7 +115,7 @@ const SaasProduct = () => {
           ref={(el) => {
   floatRefs.current[0] = el;
 }}
-          className="absolute -left-[20%] md:-left-[30%] top-[2%] w-[25%] md:w-[12%] z-30"
+          className="absolute -left-[15%] md:-left-[35%] top-[2%] w-[25%] md:w-[12%] z-30"
         >
           <img src="/image 8.png" alt="Icon Left" className="w-full h-auto" />
         </div>
@@ -126,23 +126,23 @@ const SaasProduct = () => {
 }}
           className="absolute -left-[15%] md:-left-[25%] bottom-[25%] w-[35%] md:w-[25%] z-30 rounded-xl overflow-hidden"
         >
-          <img src="/Rectangle 32.png" alt="Stats Left" className="w-full h-auto" />
+          <img src="/mobile1.png" alt="Stats Left" className="w-full h-auto" />
         </div>
 
         <div 
           ref={(el) => {
   floatRefs.current[2] = el;
 }}
-          className="absolute -right-[15%] md:-right-[22%] top-[5%] w-[35%] md:w-[22%] z-30 rounded-xl overflow-hidden"
+          className="absolute -right-[5%] md:-right-[25%] bottom-[25%] w-[35%] md:w-[25%] z-30 rounded-xl overflow-hidden"
         >
-          <img src="/Rectangle 33.png" alt="Stats Right" className="w-full h-auto" />
+          <img src="/mobile1.png" alt="Stats Right" className="w-full h-auto" />
         </div>
 
         <div 
           ref={(el) => {
   floatRefs.current[3] = el;
 }}
-          className="absolute -right-[20%] md:-right-[28%] bottom-[10%] w-[20%] md:w-[11%] z-30"
+          className="absolute -right-[20%] md:-right-[38%] bottom-[20%] w-[20%] md:w-[11%] z-30"
         >
           <img src="/image 7.png" alt="Icon Right" className="w-full h-auto rotate-[12deg]" />
         </div>

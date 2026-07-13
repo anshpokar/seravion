@@ -117,28 +117,52 @@ export default function TeamSection() {
         </div>
 
         {/* Squad Grid: 4 columns */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          {squadMembers.map((member, i) => (
-            <div key={i} className="relative overflow-hidden aspect-[3/4] sm:aspect-[3/4] lg:aspect-[2/3] group rounded-sm opacity-0">
-              {/* Image filling the card */}
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-full object-cover"
-              />
-              {/* Glassmorphism Text Box */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-black/30 backdrop-blur-md p-4 lg:p-5 rounded-sm">
-                  <h3 className="text-white font-medium text-[16px] lg:text-[18px] mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/80 text-[12px] lg:text-[13px]">
-                    {member.role}
-                  </p>
-                </div>
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          
+          {/* 1. CEO Image */}
+          <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[4/5] group rounded-sm opacity-0">
+            <img src="/suraj.webp" alt="Founder & CEO" className="w-full h-full object-cover" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="bg-black/30 backdrop-blur-md p-4 lg:p-5 rounded-sm">
+                <h3 className="text-white font-medium text-[16px] lg:text-[18px] mb-1">Kanhaiyalal Sonar</h3>
+                <p className="text-white/80 text-[12px] lg:text-[13px]">Founder & CEO</p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* 2. CEO Details */}
+          <div className="bg-[#f5f5f5] p-6 lg:p-8 flex flex-col justify-center rounded-sm opacity-0 aspect-[4/5] lg:aspect-[4/5]">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-3 lg:mb-4 text-[#171717]">Visionary Leadership</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              With extensive experience in digital innovation, Kanhaiyalal leads the vision for our transformative digital products. He believes in people-first technology.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              "Building innovative digital solutions that care about your business growth as much as you do."
+            </p>
+          </div>
+
+          {/* 3. Advisory Image */}
+          <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[4/5] group rounded-sm opacity-0">
+            <img src="/taledted squad 2.png" alt="Advisory" className="w-full h-full object-cover" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="bg-black/30 backdrop-blur-md p-4 lg:p-5 rounded-sm">
+                <h3 className="text-white font-medium text-[16px] lg:text-[18px] mb-1">Manan Shah</h3>
+                <p className="text-white/80 text-[12px] lg:text-[13px]">Lead Advisor</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Advisory Details */}
+          <div className="bg-[#f5f5f5] p-6 lg:p-8 flex flex-col justify-center rounded-sm opacity-0 aspect-[4/5] lg:aspect-[4/5]">
+            <h3 className="text-xl lg:text-2xl font-semibold mb-3 lg:mb-4 text-[#171717]">Strategic Guidance</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Our advisory board brings decades of industry experience, ensuring our solutions are grounded in practical business needs and market realities.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              "Empowering teams with actionable insights and forward-thinking strategies."
+            </p>
+          </div>
+
         </div>
 
         {/* Team list */}

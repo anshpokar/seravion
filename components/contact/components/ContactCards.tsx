@@ -6,15 +6,15 @@ import Container from "@/components/ui/Container";
 const cards = [
   {
     icon: Mail,
-    title: "hello@seraviontechnology.com",
+    title: "sales@seraviontechnology.com",
   },
   {
     icon: Phone,
-    title: "+91 98565 55212",
+    title: "+91 82869 01466",
   },
   {
     icon: MapPin,
-    title: "300 Broadway,\nSan Francisco, CA 94133",
+    title: "105 16, k. No 270, Guru Raghavendra Nagar, J.P. Nagar Bengaluru, Karnataka 560078",
   },
 ];
 

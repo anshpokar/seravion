@@ -172,7 +172,7 @@ const OurIndustries = () => {
       {/* ─── HEADER ─── */}
       <section className="pt-24 pb-12 md:pb-16" ref={headerRef}>
         <Container>
-          <p className="header-anim text-sm text-gray-500 mb-4 font-bold tracking-widest uppercase">
+          <p className="header-anim text-sm text-gray-500 mb-4 font-bold tracking-widest ">
             Industries We Serve
           </p>
           <h1 className="header-anim text-[42px] md:text-[54px] lg:text-[64px] font-bold text-[#1a1a2e] leading-[1.05] tracking-tight max-w-5xl mb-6">

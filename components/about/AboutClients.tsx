@@ -15,6 +15,11 @@ const LOGOS = [
   { id: 7, name: "Maitri", src: "/maitri-logo.png" },
   { id: 8, name: "Reelty", src: "/reelty logo.png" },
   { id: 9, name: "Sang", src: "/sang-logo.png" },
+  { id: 10, name: "Leo9", src: "/leo9.png" },
+  { id: 11, name: "Unique", src: "/unique.png" },
+  { id: 12, name: "SCCA 1", src: "/scca-logo__1.png" },
+  { id: 13, name: "Furrl", src: "/Furrl.png" },
+  { id: 14, name: "Chimera", src: "/chimera.png" },
 ];
 
 export default function AboutClients() {

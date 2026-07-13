@@ -42,17 +42,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Determine if the navbar should actually be hidden (never hide on home page)
-  const shouldHide = hidden && pathname !== "/";
+  // Determine if the navbar should actually be hidden
+  // The navbar hide-on-scroll behavior is now disabled across all pages
+  const shouldHide = false;
 
   return (
     <>
-      {/* LAYER 1: NORMAL BLEND MODE (Logo Icon, Button) */}
+      {/* LAYER 1: NORMAL BLEND MODE (Logo Icon, Button) & LIQUID GLASS BACKGROUND */}
       <header
         className={`
-          fixed top-0 left-0 w-full z-[100] pointer-events-none
-          transition-transform duration-300 ease-in-out
-          ${scrolled ? "py-3" : "py-4"}
+          fixed top-0 left-0 w-full z-[100]
+          transition-all duration-500 ease-in-out
+          ${(scrolled || pathname !== "/")
+            ? "py-3 bg-transparent backdrop-blur-md border-b border-white/5 pointer-events-auto" 
+            : "py-4 bg-transparent border-transparent pointer-events-none"}
           ${shouldHide ? "-translate-y-full" : "translate-y-0"}
         `}
       >
@@ -115,8 +118,8 @@ const Navbar = () => {
       <header
         className={`
           fixed top-0 left-0 w-full z-[101] pointer-events-none mix-blend-difference text-white
-          transition-transform duration-300 ease-in-out
-          ${scrolled ? "py-3" : "py-4"}
+          transition-all duration-500 ease-in-out
+          ${(scrolled || pathname !== "/") ? "py-3" : "py-4"}
           ${shouldHide ? "-translate-y-full" : "translate-y-0"}
         `}
       >

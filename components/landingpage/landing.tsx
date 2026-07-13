@@ -125,9 +125,13 @@ if (!device || !videoWrapper || !finalText) return;
             The Digital Engineering Partner Built for What's Coming Next
           </h1>
 
-          <button suppressHydrationWarning className="mt-6 md:mt-8 bg-[#2693ED]/10 backdrop-blur-md border border-[#2693ED]/20 hover:bg-[#2693ED]/20 text-[#1C72BB] text-[15px] md:text-[16px] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 leading-[1.4] transition-all shadow-sm hover:shadow-md active:scale-95 mx-auto">
+          <button 
+            suppressHydrationWarning 
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+            className="mt-6 md:mt-8 bg-[#2693ED] hover:bg-[#1C72BB] text-white text-[15px] md:text-[16px] font-semibold px-6 py-3 rounded-full flex items-center justify-center gap-2 leading-[1.4] transition-all shadow-sm hover:shadow-md active:scale-95 mx-auto"
+          >
             Explore Work
-            <ArrowDown className="w-5 h-5 text-[#1C72BB] animate-bounce" />
+            <ArrowDown className="w-5 h-5 text-white animate-bounce" />
           </button>
         </div>
 

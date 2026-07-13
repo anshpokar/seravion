@@ -23,7 +23,7 @@ const projects = [
       "Real-time ERP & CRM",
       "Multi-branch management",
     ],
-    image: "/service-tab.png",
+    image: "/CONNECTPROJECT.png"
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const projects = [
       "100% centralized management",
       "70% less admin work",
     ],
-    image: "/service-tab.png",
+    image: "/SHRAMPROJECT.png",
   },
   {
     id: 3,

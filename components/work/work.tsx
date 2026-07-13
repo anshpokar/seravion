@@ -122,17 +122,17 @@ const Work = () => {
     <section className="bg-[#f5f5f5] overflow-hidden">
       <div
         ref={pinRef}
-        className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#f5f5f5] pt-16 pb-20"
+        className="relative min-h-screen w-full flex flex-col items-center justify-start bg-[#f5f5f5] pt-12 md:pt-20 pb-20"
       >
         {/* HEADER TEXT */}
-        <Container className="mb-20 md:mb-24">
+        <Container className="mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             {/* LEFT SIDE */}
             <div className="mb-4 md:mb-0 md:w-[55%]">
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
                 <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">
-                  Our Works
+                  Our Work
                 </p>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tighter whitespace-nowrap">
@@ -166,7 +166,7 @@ const Work = () => {
                 </>
               ),
               desc: "An AI-powered marketplace that transforms property discovery and investment with intelligent recommendations and immersive digital experiences.",
-              image: "/card-4.png", // Kept your updated image path
+              image: "/ReeltyDashbaord.png", // Kept your updated image path
               stats: [
                 { value: "12X", label: "Faster Discovery" },
                 { value: "AI", label: "Intelligence" },

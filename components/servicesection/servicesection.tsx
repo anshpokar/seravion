@@ -91,7 +91,7 @@ const ServiceSection = () => {
       <section className="flex flex-col md:flex-row w-full h-screen overflow-hidden">
         
         <div 
-          className="w-full md:w-1/2 h-full pt-[10vh] pb-24 md:pb-32 bg-white z-50 pr-6 md:pr-8"
+          className="w-full md:w-1/2 h-full pt-[12vh] md:pt-[12vh] pb-24 md:pb-32 bg-white z-50 pr-6 md:pr-8"
           style={{ paddingLeft: "calc(max(0px, (100vw - 1600px) / 2))" }}
         >
           <div className="pl-6 md:pl-10 lg:pl-12 h-full flex flex-col justify-between">

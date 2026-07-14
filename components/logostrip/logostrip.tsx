@@ -18,6 +18,7 @@ const LOGOS = [
   { id: 12, name: "SCCA 1", src: "/scca-logo__1.png" },
   { id: 13, name: "Furrl", src: "/Furrl.png" },
   { id: 14, name: "Chimera", src: "/chimera.png" },
+  { id: 15, name: "Carevo", src: "/CarevoLogo.png" },
 ];
 
 const LogoStrip = () => {

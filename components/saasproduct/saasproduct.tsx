@@ -103,7 +103,7 @@ const SaasProduct = () => {
           {/* DASHBOARD IMAGE ALIGNMENT */}
           <div className="absolute inset-0 z-10 flex justify-center px-[2%] pt-[4%] pb-[2%] pointer-events-none">
             <img 
-              src="/seravionconnect.jpeg" 
+              src="/connectLanding.png" 
               alt="Seravion Connect Dashbaord" 
               className="w-[96%] h-[105%] object-top object-cover rounded-t-[0.8rem] md:rounded-t-[1.1rem]"
             />
@@ -133,9 +133,9 @@ const SaasProduct = () => {
           ref={(el) => {
   floatRefs.current[2] = el;
 }}
-          className="absolute -right-[5%] md:-right-[25%] bottom-[25%] w-[35%] md:w-[25%] z-30 rounded-xl overflow-hidden"
+          className="absolute -right-[5%] md:-right-[25%] bottom-[27%] w-[25%] md:w-[22%] z-30 rounded-xl overflow-hidden"
         >
-          <img src="/mobile1.png" alt="Stats Right" className="w-full h-auto" />
+          <img src="/mobile2.png" alt="Stats Right" className="w-full h-auto" />
         </div>
 
         <div 

@@ -194,7 +194,7 @@ const Work = () => {
                 </>
               ),
               desc: "Transforms career planning using neuroscience-backed assessments and real-time analytics to build dynamic, data-driven career roadmaps.",
-              image: "/seravionConnect landing.png",
+              image: "/CarevoLanding.png",
               stats: [
                 { value: "30+", label: "Decision Signals" },
                 { value: "AI", label: "Career GPS" },

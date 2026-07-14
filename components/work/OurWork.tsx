@@ -23,7 +23,7 @@ const projects = [
       "Real-time ERP & CRM",
       "Multi-branch management",
     ],
-    image: "/CONNECTPROJECT.png"
+    image: "/ConnectProject-V2.png"
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ const projects = [
       "AI-driven recommendations",
       "Verified property ecosystem",
     ],
-    image: "/service-tab.png",
+    image: "/ReeltyProject_v2.png",
   },
   {
     id: 4,
@@ -68,7 +68,7 @@ const projects = [
       "Automated follow-ups",
       "Complete pipeline visibility",
     ],
-    image: "/service-tab.png",
+    image: "/CRMProject_v2.png",
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ const projects = [
       "AI-powered insights",
       "Intelligent engagement",
     ],
-    image: "/service-tab.png",
+    image: "/Ambitproject.png",
   },
   {
     id: 6,
@@ -98,7 +98,7 @@ const projects = [
       "Appointment automation",
       "Secure healthcare records",
     ],
-    image: "/service-tab.png",
+    image: "/medstrrProject.png",
   },
   {
     id: 7,
@@ -113,7 +113,7 @@ const projects = [
       "30+ decision signals",
       "Personalized roadmap",
     ],
-    image: "/service-tab.png",
+    image: "/CarevoProject.png",
   },
   {
     id: 8,
@@ -128,7 +128,7 @@ const projects = [
       "Lead generation automation",
       "SEO-optimized architecture",
     ],
-    image: "/service-tab.png",
+    image: "/aksharDecor.png",
   },
   {
     id: 9,
@@ -386,6 +386,7 @@ export default function OurWork() {
                   fill
                   className="object-cover object-left-top"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading={index <= 2 ? "eager" : "lazy"}
                 />
               </div>
             </div>

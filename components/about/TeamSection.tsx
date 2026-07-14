@@ -91,7 +91,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-white pt-4 lg:pt-8 pb-20 lg:pb-28 overflow-hidden">
+    <section ref={containerRef} className="relative bg-white pt-4 lg:pt-8 pb-20 lg:pb-28 overflow-hidden">
       <Container>
 
         {/* Top Row: Heading and Label */}
@@ -110,7 +110,7 @@ export default function TeamSection() {
           {/* Heading */}
           <div className="md:col-span-9">
             <h2 className="text-[#171717] text-[36px] md:text-[56px] lg:text-[72px] font-normal max-w-full leading-[1.2] tracking-normal">
-              Meet the talented squad, behind the creativity
+              Meet the talented Duo, behind the creativity
             </h2>
           </div>
 
@@ -143,10 +143,10 @@ export default function TeamSection() {
 
           {/* 3. Advisory Image */}
           <div className="relative overflow-hidden aspect-[4/5] lg:aspect-[4/5] group rounded-sm opacity-0">
-            <img src="/taledted squad 2.png" alt="Advisory" className="w-full h-full object-cover" />
+            <img src="/Dhruvin.png" alt="Advisory" className="w-full h-full object-cover" />
             <div className="absolute bottom-4 left-4 right-4">
               <div className="bg-black/30 backdrop-blur-md p-4 lg:p-5 rounded-sm">
-                <h3 className="text-white font-medium text-[16px] lg:text-[18px] mb-1">Manan Shah</h3>
+                <h3 className="text-white font-medium text-[16px] lg:text-[18px] mb-1">Dhruvin Shah</h3>
                 <p className="text-white/80 text-[12px] lg:text-[13px]">Lead Advisor</p>
               </div>
             </div>
@@ -165,14 +165,13 @@ export default function TeamSection() {
 
         </div>
 
-        {/* Team list */}
+        {/* Team list
         <div ref={listRef}>
           {members.map((member) => (
             <div
               key={member.name}
               className="grid grid-cols-12 items-center py-6 md:py-8 border-t border-[#ECECEC] gap-4 group cursor-pointer opacity-0"
             >
-              {/* Name & Avatar */}
               <div className="col-span-10 sm:col-span-6 md:col-span-5 flex items-center gap-6 md:gap-8 min-w-0 relative group/avatar">
                 <img
                   src={member.image}
@@ -183,7 +182,6 @@ export default function TeamSection() {
                   {member.name}
                 </h3>
 
-                {/* Floating Card Tooltip on Hover */}
                 <div className="absolute left-[80px] bottom-full mb-4 w-[220px] aspect-[3/4] rounded-md overflow-hidden opacity-0 pointer-events-none group-hover/avatar:opacity-100 group-hover/avatar:-translate-y-2 transition-all duration-300 z-50 shadow-2xl">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   <div className="absolute bottom-3 left-3 right-3">
@@ -199,14 +197,12 @@ export default function TeamSection() {
                 </div>
               </div>
 
-              {/* Role (Left Center) */}
               <div className="hidden sm:flex col-span-5 md:col-span-6 justify-start pl-4 md:pl-10">
                 <p className="text-[#5E5E5E] text-[14px] md:text-[15px] flex-shrink-0">
                   {member.role}
                 </p>
               </div>
 
-              {/* Arrow */}
               <div className="col-span-2 sm:col-span-1 flex justify-end">
                 <button suppressHydrationWarning className="text-[20px] md:text-[24px] text-[#171717] flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200">
                   ↗
@@ -215,7 +211,8 @@ export default function TeamSection() {
             </div>
           ))}
           <div className="border-t border-[#ECECEC]" />
-        </div>
+        </div> 
+        */}
 
       </Container>
     </section>

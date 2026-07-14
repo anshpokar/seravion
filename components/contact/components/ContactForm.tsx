@@ -25,6 +25,30 @@ export default function ContactForm() {
   const [selectedService, setSelectedService] = useState("");
   const [selectedBudget, setSelectedBudget] = useState("");
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [details, setDetails] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedService || !selectedBudget) {
+      alert("Please select both a service you are interested in and your project budget.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`New Enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nInterested in: ${selectedService}\nProject Budget: ${selectedBudget}\n\nProject Details:\n${details}`
+    );
+    
+    const mailtoLink = document.createElement('a');
+    mailtoLink.href = `mailto:sales@seraviontechnologies.com?subject=${subject}&body=${body}`;
+    mailtoLink.target = "_blank";
+    mailtoLink.click();
+  };
+
   return (
     <section className="bg-white py-24">
       <Container>
@@ -37,7 +61,7 @@ export default function ContactForm() {
         </h2>
 
         {/* Interested In */}
-        <p className="text-[#666] mb-5">I'm interested in...</p>
+        <p className="text-[#666] mb-5">I'm interested in... <span className="text-red-500"></span></p>
 
         <div className="flex flex-wrap gap-3 mb-16">
           {services.map((service) => (
@@ -57,37 +81,52 @@ export default function ContactForm() {
         </div>
 
         {/* Form */}
-        <form className="max-w-[760px]">
+        <form className="max-w-[760px]" onSubmit={handleSubmit}>
           <div className="space-y-10">
             <input suppressHydrationWarning
               type="text"
-              placeholder="Your Name"
-              className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your Name "
+              className="w-full border-b border-gray-200 pb-4 outline-none text-[#171717] bg-transparent placeholder:text-gray-400"
             />
 
             <input suppressHydrationWarning
               type="email"
-              placeholder="Email"
-              className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email "
+              className="w-full border-b border-gray-200 pb-4 outline-none text-[#171717] bg-transparent placeholder:text-gray-400"
             />
 
             <input suppressHydrationWarning
               type="tel"
-              placeholder="Phone Number"
-              className="w-full border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
+              required
+              pattern="[0-9]{10}"
+              title="Please enter exactly 10 digits"
+              maxLength={10}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Phone Number "
+              className="w-full border-b border-gray-200 pb-4 outline-none text-[#171717] bg-transparent placeholder:text-gray-400"
             />
 
             <textarea
               rows={1}
-              placeholder="Tell us about your project"
-              className="w-full resize-none border-b border-gray-200 pb-4 outline-none placeholder:text-gray-400"
+              required
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              placeholder="Tell us about your project "
+              className="w-full resize-none border-b border-gray-200 pb-4 outline-none text-[#171717] bg-transparent placeholder:text-gray-400"
             />
           </div>
 
           {/* Budget */}
           <div className="mt-14">
             <p className="font-medium text-[#444] mb-5">
-              Project Budget
+              Project Budget <span className="text-red-500"></span>
             </p>
 
             <div className="flex flex-wrap gap-3">

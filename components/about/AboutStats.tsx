@@ -35,16 +35,16 @@ export default function AboutStats() {
       // Number Counting Animation
       const counts = { num1: 0, num2: 0, num3: 0 };
       const countAnim = gsap.to(counts, {
-        num1: 4.9,
-        num2: 170,
-        num3: 1.7,
+        num1: 70,
+        num2: 3,
+        num3: 5,
         duration: 2,
         ease: "power2.out",
         paused: true,
         onUpdate: () => {
-          if (num1Ref.current) num1Ref.current.innerHTML = counts.num1.toFixed(1);
-          if (num2Ref.current) num2Ref.current.innerHTML = Math.round(counts.num2) + "+";
-          if (num3Ref.current) num3Ref.current.innerHTML = counts.num3.toFixed(1) + "k";
+          if (num1Ref.current) num1Ref.current.innerHTML = Math.round(counts.num1) + "%";
+          if (num2Ref.current) num2Ref.current.innerHTML = Math.round(counts.num2) + "X";
+          if (num3Ref.current) num3Ref.current.innerHTML = Math.round(counts.num3) + "+";
         }
       });
 
@@ -95,28 +95,28 @@ export default function AboutStats() {
             
             <div className="bg-[#00269B] p-10 lg:p-14 opacity-0">
               <p className="text-white opacity-90 mb-4 text-[15px] lg:text-[16px]">
-                35+ Google reviews
+                Reduction in Manual Operation
               </p>
               <h3 ref={num1Ref} className="text-white text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight">
-                0.0
+                0%
               </h3>
             </div>
 
             <div className="bg-[#00269B] p-10 lg:p-14 opacity-0">
               <p className="text-white opacity-90 mb-4 text-[15px] lg:text-[16px]">
-                Clients world-wide
+                Faster Business Workflows
               </p>
               <h3 ref={num2Ref} className="text-white text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight">
-                0+
+                0X
               </h3>
             </div>
 
             <div className="bg-[#00269B] p-10 lg:p-14 opacity-0">
               <p className="text-white opacity-90 mb-4 text-[15px] lg:text-[16px]">
-                Completed projects
+                Global Markets Served
               </p>
               <h3 ref={num3Ref} className="text-white text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight">
-                0.0k
+                0+
               </h3>
             </div>
 

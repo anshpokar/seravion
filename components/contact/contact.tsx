@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const countryCodes = [
   { code: "+1", label: "US" },
@@ -171,9 +172,9 @@ const ContactUs = () => {
 
               {/* CENTER BUTTON */}
               <div className="flex-1 flex items-center justify-center">
-                <button suppressHydrationWarning className="text-2xl md:text-[32px] leading-none font-normal underline underline-offset-[10px] hover:opacity-70 transition-opacity">
+                <Link href="/contact" suppressHydrationWarning className="text-2xl md:text-[32px] leading-none font-normal underline underline-offset-[10px] hover:opacity-70 transition-opacity">
                   Book a Demo
-                </button>
+                </Link>
               </div>
             </div>
           </div>

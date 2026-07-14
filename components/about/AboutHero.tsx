@@ -50,10 +50,10 @@ const AboutHero = () => {
           <p className="text-[15px] text-[#555] mb-5">About Us</p>
 
           {/* Heading */}
-          <h1 className="text-[#343A40] font-semibold tracking-[-0.045em] leading-[1.05] text-[40px] md:text-[56px] lg:text-[64px] max-w-[720px]">
-            We're Creative Design &
-            <br />
-            Development Agency.
+          <h1 className="text-[#343A40] font-semibold tracking-[-0.045em] leading-[1.05] text-[40px] md:text-[56px] lg:text-[64px] max-w-[800px]">
+            We're your Strategic Digital
+            <br className="hidden md:block" />
+            Engineering Partner.
           </h1>
         </div>
       </Container>

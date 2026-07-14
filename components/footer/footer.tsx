@@ -93,8 +93,9 @@ const Footer = () => {
           <div>
             <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Start a Project or General Inquiries</p>
             <a
-              href="mailto:hello@seravion.com"
-              className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
+              href="mailto:sales@seraviontechnologies.com"
+              target="_blank" rel="noopener noreferrer"
+              className="text-lg md:text-[22px] lg:text-[26px] leading-none  font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
               sales@seraviontechnologies.com
             </a>
@@ -104,8 +105,9 @@ const Footer = () => {
           <div>
             <p className="text-white/35 text-[13px] md:text-[15px] mb-4 md:mb-8">Join Our Team</p>
             <a
-              href="mailto:careers@seravion.com"
-              className="text-lg md:text-[22px] lg:text-[26px] leading-none underline underline-offset-[8px] font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
+              href="mailto:hr@seraviontechnologies.com"
+              target="_blank" rel="noopener noreferrer"
+              className="text-lg md:text-[22px] lg:text-[26px] leading-none font-light tracking-[-0.04em] hover:text-white/70 transition-colors break-all"
             >
               hr@seraviontechnologies.com
             </a>

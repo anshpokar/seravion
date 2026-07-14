@@ -48,7 +48,7 @@ const AboutContent = () => {
             <div className="flex items-center gap-3">
               <div className="w-8 h-[2px] bg-[#2F80ED]" />
               <span className="uppercase text-[11px] md:text-[12px] tracking-[0.35em] text-[#8C8C8C] font-medium whitespace-nowrap">
-                About Studio
+                Our Story
               </span>
             </div>
           </div>
@@ -56,9 +56,9 @@ const AboutContent = () => {
           {/* Heading */}
           <div className="md:col-span-9">
             <h2 className="text-[32px] md:text-[44px] lg:text-[66px] leading-[1.08] tracking-[-0.04em] font-semibold text-[#171717] max-w-[980px]">
-              Crafting digital products with a<br className="hidden lg:block" />
-              unique vision of making user<br className="hidden lg:block" />
-              experience better.
+              Engineering intelligent digital<br className="hidden lg:block" />
+              products that solve real business<br className="hidden lg:block" />
+              problems and scale with ambition.
             </h2>
           </div>
 
@@ -79,19 +79,19 @@ const AboutContent = () => {
               <li className="flex gap-4 items-center">
                 <div className="w-[7px] h-[7px] rounded-full bg-[#1a1a1a] flex-shrink-0" />
                 <span className="text-[24px] md:text-[32px] leading-none font-medium text-[#1a1a1a]">
-                  Art Direction
+                  Engineering Excellence
                 </span>
               </li>
               <li className="flex gap-4 items-center">
                 <div className="w-[7px] h-[7px] rounded-full bg-[#1a1a1a] flex-shrink-0" />
                 <span className="text-[24px] md:text-[32px] leading-none font-medium text-[#1a1a1a]">
-                  Capability
+                  Product Mindset
                 </span>
               </li>
               <li className="flex gap-4 items-center">
                 <div className="w-[7px] h-[7px] rounded-full bg-[#1a1a1a] flex-shrink-0" />
                 <span className="text-[24px] md:text-[32px] leading-none font-medium text-[#1a1a1a]">
-                  Sustainability
+                  AI-Forward Thinking
                 </span>
               </li>
             </ul>
@@ -101,14 +101,10 @@ const AboutContent = () => {
           <div className="md:col-span-5">
             <div className="space-y-8 md:space-y-10 max-w-[500px]">
               <p className="text-[16px] md:text-[18px] leading-[1.9] text-[#5E5E5E]">
-                Seravion is the first and only creative agency for your
-                real exploration. It's one private place to save everything
-                you can realize about digital beautifully design.
+                Founded with a global mindset, we set out to build a digital engineering company that doesn't just execute requirements — but thinks like a product company, moves like a startup, and delivers like an enterprise.
               </p>
               <p className="text-[16px] md:text-[18px] leading-[1.9] text-[#5E5E5E]">
-                As a global creative agency, we understand the importance
-                of staying ahead of the game. That's why we partner with
-                some of the world's best talent to bring fresh ideas.
+                We sit at the intersection of product thinking and engineering execution, partnering with ambitious founders and enterprise teams to transform complex challenges into elegant, scalable digital products.
               </p>
             </div>
           </div>

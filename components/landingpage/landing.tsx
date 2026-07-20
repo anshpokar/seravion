@@ -5,21 +5,39 @@
 // ==========================
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
 import MobileLanding from "./MobileLanding";
+import Loader from "./Loader";
 
 const Landing = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
-const initialTextRef = useRef<HTMLDivElement | null>(null);
-const finalTextRef = useRef<HTMLDivElement | null>(null);
-const deviceRef = useRef<HTMLDivElement | null>(null);
-const videoWrapperRef = useRef<HTMLDivElement | null>(null);
+  const initialTextRef = useRef<HTMLDivElement | null>(null);
+  const finalTextRef = useRef<HTMLDivElement | null>(null);
+  const deviceRef = useRef<HTMLDivElement | null>(null);
+  const videoWrapperRef = useRef<HTMLDivElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem("hasLoadedThisSession")) {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  const handleLoadingComplete = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("hasLoadedThisSession", "true");
+    }
+    setIsLoaded(true);
+  };
 
   useLayoutEffect(() => {
+    if (!isLoaded) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -112,17 +130,23 @@ if (!device || !videoWrapper || !finalText) return;
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isLoaded]);
 
   return (
     <>
+      {!isLoaded && <Loader onComplete={handleLoadingComplete} />}
+
       {/* ── MOBILE / TABLET HERO (< 1024px) ── */}
       <div className="block lg:hidden">
-        <MobileLanding />
+        <MobileLanding startAnimation={isLoaded} />
       </div>
 
-      {/* ── DESKTOP HERO (≥ 1024px) — untouched GSAP animation ── */}
-      <div className="hidden lg:block">
+      {/* ── DESKTOP HERO (≥ 1024px) ── */}
+      <div
+        ref={contentRef}
+        className="hidden lg:block"
+        style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }}
+      >
         <div ref={containerRef} className="relative h-[260vh] bg-white">
           <div className="sticky top-0 h-screen overflow-hidden">
             

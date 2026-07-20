@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
 
-const MobileLanding = () => {
+const MobileLanding = ({ startAnimation = true }: { startAnimation?: boolean }) => {
   const containerRef  = useRef<HTMLDivElement | null>(null);
   const lineRef       = useRef<HTMLDivElement | null>(null);
   const wordsRef      = useRef<HTMLDivElement | null>(null);
@@ -15,6 +15,8 @@ const MobileLanding = () => {
   const finalRef      = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
+    if (!startAnimation) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -88,7 +90,7 @@ const MobileLanding = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [startAnimation]);
 
   return (
     <div
@@ -120,6 +122,8 @@ const MobileLanding = () => {
               right: 0,
               height: "1px",
               background: "rgba(255,255,255,0.13)",
+              transform: "scaleX(0)",
+              transformOrigin: "left center",
             }}
           />
 
@@ -128,26 +132,30 @@ const MobileLanding = () => {
             ref={wordsRef}
             style={{ position: "absolute", left: "24px", right: "24px", top: "106px" }}
           >
-            {(["BUILD.", "SHIP.", "SCALE."] as const).map((word, i) => (
-              <div
-                key={word}
-                style={{ overflow: "hidden", lineHeight: 0.9, marginBottom: "2px" }}
-              >
-                <span
-                  className="word-wrap"
-                  style={{
-                    display: "block",
-                    fontSize: "clamp(72px, 22vw, 110px)",
-                    fontWeight: 900,
-                    letterSpacing: "-0.04em",
-                    lineHeight: 0.9,
-                    color: i === 1 ? "#2693ED" : "#ffffff",
-                  }}
+            {(["BUILD.", "SHIP.", "SCALE."] as const).map((word, i) => {
+              const skews = [-8, 0, 8];
+              return (
+                <div
+                  key={word}
+                  style={{ overflow: "hidden", lineHeight: 0.9, marginBottom: "2px" }}
                 >
-                  {word}
-                </span>
-              </div>
-            ))}
+                  <span
+                    className="word-wrap"
+                    style={{
+                      display: "block",
+                      fontSize: "clamp(72px, 22vw, 110px)",
+                      fontWeight: 900,
+                      letterSpacing: "-0.04em",
+                      lineHeight: 0.9,
+                      color: i === 1 ? "#2693ED" : "#ffffff",
+                      transform: `translateY(108%) skewX(${skews[i]}deg)`,
+                    }}
+                  >
+                    {word}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Bottom meta */}
@@ -163,7 +171,7 @@ const MobileLanding = () => {
               pointerEvents: "auto",
             }}
           >
-            <div ref={subRef}>
+            <div ref={subRef} style={{ opacity: 0, transform: "translateY(14px)" }}>
               <p style={{
                 fontSize: "9px",
                 letterSpacing: "0.22em",
@@ -177,7 +185,7 @@ const MobileLanding = () => {
               </p>
             </div>
 
-            <div ref={scrollHintRef} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+            <div ref={scrollHintRef} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", opacity: 0, transform: "translateY(14px)" }}>
               <span style={{
                 fontSize: "8px",
                 letterSpacing: "0.22em",
@@ -218,6 +226,8 @@ const MobileLanding = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             padding: "88px 24px 44px",
+            opacity: 0,
+            transform: "translateY(50px)",
           }}
         >
           {/* ── TOP: eyebrow + headline ── */}

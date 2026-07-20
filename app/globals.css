@@ -67,3 +67,24 @@ html {
   /* scrollbar-width: auto; */
   scrollbar-color: #3b82f6 #000000;
 }
+
+/* ─────────────────────────────────────────────
+   MOBILE HERO ANIMATIONS
+────────────────────────────────────────────── */
+
+/* Scroll-hint vertical line drip */
+@keyframes scrollLine {
+  0%   { top: -100%; height: 100%; opacity: 1; }
+  60%  { top: 0%;    height: 100%; opacity: 1; }
+  100% { top: 100%;  height: 100%; opacity: 0; }
+}
+
+/* Live-indicator dot blink */
+@keyframes mobileDotPulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+.mobile-dot-pulse {
+  animation: mobileDotPulse 1.8s ease-in-out infinite;
+}

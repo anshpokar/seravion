@@ -192,20 +192,19 @@ const OurIndustries = () => {
               <Link
                 key={industry.id}
                 href={`/industries/${industry.slug}`}
-                className="industry-row w-full flex flex-col md:flex-row overflow-hidden group cursor-pointer"
-                style={{ height: "340px" }}
+                className="industry-row w-full flex flex-col md:flex-row overflow-hidden group cursor-pointer rounded-xl md:rounded-none bg-black h-auto md:h-[340px]"
               >
-                {/* LEFT: Image with right-edge blend */}
-                <div className="card-img-panel relative w-full md:w-1/2 h-48 md:h-full flex-shrink-0 overflow-hidden bg-black">
+                {/* LEFT: Image panel */}
+                <div className="card-img-panel relative w-full md:w-1/2 h-56 sm:h-64 md:h-full flex-shrink-0 overflow-hidden bg-black">
                   <img
                     src={industry.image}
                     alt={industry.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{ filter: "brightness(0.9) saturate(1.3)" }}
+                    style={{ filter: "brightness(0.95) saturate(1.2)" }}
                   />
-                  {/* Blend gradient: fades the right edge of the image into black */}
+                  {/* Blend gradient: Desktop right edge blend ONLY */}
                   <div
-                    className="absolute inset-y-0 right-0 w-1/2 pointer-events-none"
+                    className="hidden md:block absolute inset-y-0 right-0 w-1/2 pointer-events-none"
                     style={{
                       background:
                         "linear-gradient(to right, transparent, #000000)",
@@ -213,18 +212,19 @@ const OurIndustries = () => {
                   />
                 </div>
 
-                {/* RIGHT: Dark panel */}
-                <div className="card-text-panel w-full md:w-1/2 h-full bg-black flex flex-col justify-center px-6 md:px-8 lg:px-10 py-8 transition-colors duration-300 group-hover:bg-[#0f0f0f]">
-                  <h2 className="text-white text-[32px] md:text-[38px] lg:text-[44px] font-bold tracking-tight mb-4">
+                {/* RIGHT: Dark text panel */}
+                <div className="card-text-panel w-full md:w-1/2 bg-black flex flex-col justify-center px-6 md:px-8 lg:px-10 py-6 md:py-8 transition-colors duration-300 group-hover:bg-[#0f0f0f]">
+                  <h2 className="text-white text-2xl md:text-[38px] lg:text-[44px] font-bold tracking-tight mb-2 md:mb-4">
                     {industry.name}
                   </h2>
-                  <p className="text-white font-semibold text-lg mb-3 leading-snug">
+                  <p className="text-white/90 font-semibold text-sm md:text-lg mb-3 leading-snug">
                     {industry.subtitle}
                   </p>
-                  <p className="text-gray-400 text-base leading-relaxed max-w-sm mb-6">
+                  {/* HIDE DESCRIPTION ON MOBILE - SHOW ON DESKTOP ONLY */}
+                  <p className="hidden md:block text-gray-400 text-base leading-relaxed max-w-sm mb-6">
                     {industry.description}
                   </p>
-                  <span className="text-[#1A3FD8] text-sm font-semibold tracking-wide uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-[#1A3FD8] text-xs md:text-sm font-semibold tracking-wide uppercase flex items-center gap-1 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 md:mt-0">
                     Explore Industry →
                   </span>
                 </div>

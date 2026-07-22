@@ -143,7 +143,7 @@ const projects = [
       "Natural language access",
       "Automated workflows",
     ],
-    image: "/service-tab.png",
+    image: "/chatbot1.png",
   },
 ];
 ;
@@ -319,7 +319,7 @@ export default function OurWork() {
             </div>
 
             {/* RIGHT: BLACK BG + TABLET FRAME */}
-            <div className="w-full lg:w-1/2 bg-[#000000] flex items-center justify-end overflow-hidden relative self-stretch py-10">
+            <div className="w-full lg:w-1/2 min-h-[260px] sm:min-h-[340px] lg:min-h-[480px] bg-[#000000] flex items-center justify-center lg:justify-end overflow-hidden relative self-stretch py-6 lg:py-10 px-4 lg:px-0">
 
               {/* Subtle dot pattern */}
               <div
@@ -330,16 +330,10 @@ export default function OurWork() {
                 }}
               />
 
-              {/* TABLET FRAME — slightly overflows right edge */}
+              {/* TABLET FRAME — responsive mobile height + desktop overflow */}
               <div
-                className="project-img relative flex-shrink-0 self-stretch"
+                className="project-img relative flex-shrink-0 w-full lg:w-[115%] max-w-full lg:max-w-[900px] h-[240px] sm:h-[320px] lg:h-full lg:self-stretch rounded-2xl lg:rounded-[25px] lg:-mr-[20%] overflow-hidden bg-[#080c12]"
                 style={{
-                  width: "115%",
-                  maxWidth: "900px",
-                  borderRadius: "25px",
-                  marginRight: "-20%",
-                  overflow: "hidden",
-                  background: "#080c12",
                   boxShadow: `
                     0 0 0 2px rgba(60,140,255,0.4),
                     0 0 0 4px rgba(60,140,255,0.15),

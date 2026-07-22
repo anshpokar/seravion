@@ -13,84 +13,114 @@ export default function MobileWork() {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // 1. Header Entrance Animation
-      const header = containerRef.current?.querySelector(".m-work-header");
-      if (header) {
-        gsap.fromTo(
-          header.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: header,
-              start: "top 95%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
+      if (!containerRef.current) return;
 
-      // 2. Card ScrollTrigger Animations
-      const cards = gsap.utils.toArray<HTMLElement>(".m-work-card");
-      cards.forEach((card) => {
-        const title = card.querySelector(".m-card-title");
-        const desc = card.querySelector(".m-card-desc");
-        const stats = card.querySelector(".m-card-stats");
-        const img = card.querySelector(".m-card-img");
+      const cards = gsap.utils.toArray<HTMLElement>(
+        containerRef.current.querySelectorAll(".m-work-card")
+      );
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: card,
-            start: "top 92%",
-            toggleActions: "play none none none",
-          },
+      if (cards.length === 0) return;
+
+      cards.forEach((card, i) => {
+        gsap.set(card, {
+          zIndex: i + 1,
+          y:
+            i === 0
+              ? 0
+              : i === 1
+              ? window.innerHeight * 0.7
+              : window.innerHeight * 1.1,
+          scale: 1,
+          opacity: 1,
+          transformOrigin: "top center",
+          force3D: true,
         });
-
-        tl.fromTo(
-          card,
-          { opacity: 0, y: 45, scale: 0.96 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.65,
-            ease: "power3.out",
-          }
-        )
-          .fromTo(
-            [title, desc, stats].filter(Boolean),
-            { opacity: 0, y: 15 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.5,
-              stagger: 0.08,
-              ease: "power2.out",
-            },
-            "-=0.35"
-          );
-
-        if (img) {
-          tl.fromTo(
-            img,
-            { opacity: 0, y: 25, scale: 0.94 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power2.out",
-            },
-            "-=0.3"
-          );
-        }
       });
 
-      // Force recalculation after setup
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80px",
+          end: `+=${cards.length * 110}%`,
+          scrub: 0.5,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Card 0 -> Card 1 transition
+      tl.to(
+        cards[0],
+        {
+          y: -20,
+          scale: 0.94,
+          opacity: 0.5,
+          duration: 1,
+          ease: "none",
+        },
+        0
+      );
+
+      tl.to(
+        cards[1],
+        {
+          y: 0,
+          duration: 1,
+          ease: "none",
+        },
+        0
+      );
+
+      tl.to(
+        cards[2],
+        {
+          y: window.innerHeight * 0.7,
+          duration: 1,
+          ease: "none",
+        },
+        0
+      );
+
+      // Card 1 -> Card 2 transition
+      if (cards.length > 2) {
+        tl.to(
+          cards[1],
+          {
+            y: -20,
+            scale: 0.94,
+            opacity: 0.5,
+            duration: 1,
+            ease: "none",
+          },
+          1.2
+        );
+
+        tl.to(
+          cards[0],
+          {
+            y: -40,
+            scale: 0.88,
+            opacity: 0,
+            duration: 1,
+            ease: "none",
+          },
+          1.2
+        );
+
+        tl.to(
+          cards[2],
+          {
+            y: 0,
+            duration: 1,
+            ease: "none",
+          },
+          1.2
+        );
+
+        tl.to({}, { duration: 0.4 });
+      }
+
       ScrollTrigger.refresh();
     }, containerRef);
 
@@ -128,65 +158,69 @@ export default function MobileWork() {
   ];
 
   return (
-    <div ref={containerRef} className="py-16 px-5">
+    <div
+      ref={containerRef}
+      className="relative min-h-screen w-full flex flex-col justify-start bg-[#f5f5f5] pt-4 pb-12 px-4"
+    >
       <Container>
         {/* HEADER SECTION */}
-        <div className="m-work-header flex flex-col gap-5 mb-12">
+        <div className="m-work-header flex flex-col gap-3 mb-6">
           <div className="flex items-center gap-2">
             <span className="w-3 h-1.5 bg-blue-500 rounded-full"></span>
             <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">
               Our Work
             </p>
           </div>
-          <h2 className="text-[32px] font-bold text-black tracking-tight leading-[1.1] mb-2">
+          <h2 className="text-3xl font-bold text-black tracking-tight leading-[1.1]">
             Unseen Possibilities.
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-md">
+          <p className="text-gray-500 text-xs leading-relaxed max-w-sm">
             Seravion is a people-first technology company focused on building
-            innovative digital solutions that care about your business growth and
-            product success as much as you do.
+            innovative digital solutions that care about your business growth.
           </p>
-          <Link
-            href="/work"
-            suppressHydrationWarning
-            className="w-full text-center border border-blue-500 text-blue-500 font-bold px-6 py-3 rounded-lg text-sm hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap mt-2"
-          >
-            View All Projects
-          </Link>
+          <div className="mt-1">
+            <Link
+              href="/work"
+              suppressHydrationWarning
+              className="inline-block border border-blue-500 text-blue-500 font-bold px-5 py-2 rounded-lg text-xs hover:bg-blue-500 hover:text-white transition-all duration-300 whitespace-nowrap"
+            >
+              View All Projects
+            </Link>
+          </div>
         </div>
 
-        {/* CARDS FEED */}
-        <div className="flex flex-col gap-6">
+        {/* CARDS CONTAINER (PINNED STACK) */}
+        <div className="relative h-[480px] min-h-[460px] w-full">
           {projects.map((item, index) => (
             <div
               key={index}
-              className="m-work-card w-full bg-[#0d1116] rounded-3xl overflow-hidden border border-white/5 shadow-xl flex flex-col justify-between"
-              style={{ willChange: "transform, opacity" }}
+              className="m-work-card absolute top-0 left-0 right-0 w-full bg-[#0d1116] rounded-none overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-between h-[480px] min-h-[460px]"
+              style={{ willChange: "transform" }}
             >
-              <div className="p-7 pb-0 text-white">
-                <h3 className="m-card-title text-xl sm:text-2xl font-bold mb-3 tracking-tight leading-snug">
+              <div className="p-5 pb-0 text-white">
+                <h3 className="m-card-title text-xl font-bold mb-2 tracking-tight leading-snug">
                   {item.title}
                 </h3>
-                <p className="m-card-desc text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+                <p className="m-card-desc text-gray-400 text-xs leading-relaxed mb-4 line-clamp-3">
                   {item.desc}
                 </p>
 
                 {/* STATS */}
-                <div className="m-card-stats flex items-center gap-5 border border-white/5 rounded-xl p-4 bg-white/[0.02] w-fit mb-6">
+                <div className="m-card-stats flex items-center gap-4 border border-white/5 rounded-none p-3 bg-white/[0.02] w-fit mb-4">
                   <div>
-                    <p className="text-lg font-bold leading-none mb-1">
+                    <p className="text-base font-bold leading-none mb-1">
                       {item.stats[0].value}
                     </p>
-                    <p className="text-gray-400 text-[9px] font-semibold tracking-wider uppercase">
+                    <p className="text-gray-400 text-[8px] font-semibold tracking-wider uppercase">
                       {item.stats[0].label}
                     </p>
                   </div>
-                  <div className="w-[1px] h-8 bg-white/10"></div>
+                  <div className="w-[1px] h-6 bg-white/10"></div>
                   <div>
-                    <p className="text-lg font-bold leading-none mb-1">
+                    <p className="text-base font-bold leading-none mb-1">
                       {item.stats[1].value}
                     </p>
-                    <p className="text-gray-400 text-[9px] font-semibold tracking-wider uppercase">
+                    <p className="text-gray-400 text-[8px] font-semibold tracking-wider uppercase">
                       {item.stats[1].label}
                     </p>
                   </div>
@@ -194,12 +228,11 @@ export default function MobileWork() {
               </div>
 
               {/* IMAGE CONTAINER */}
-              <div className="w-full relative flex items-end justify-center pt-4 px-4 overflow-hidden rounded-b-3xl">
+              <div className="w-full relative flex items-end justify-end pt-2 pl-4 pr-0 pb-0 overflow-hidden">
                 <img
                   src={item.image}
                   alt={`Feature UI ${index + 1}`}
-                  className="m-card-img w-[90%] object-contain object-bottom h-auto max-h-[220px] drop-shadow-2xl rounded-t-xl"
-                  style={{ willChange: "transform, opacity" }}
+                  className="m-card-img w-[110%] max-w-none object-contain object-right-bottom h-auto max-h-[220px] drop-shadow-2xl"
                 />
               </div>
             </div>

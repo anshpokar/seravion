@@ -5,12 +5,12 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const industries = [
-  { name: "Healthcare", slug: "healthcare-healthtech", image: "/healthtech.png" },
-  { name: "FinTech", slug: "fintech-financial-services", image: "/fintech.png" },
-  { name: "SaaS & Cloud", slug: "saas-cloud-products", image: "/biztech.png" },
-  { name: "EdTech", slug: "edtech-learning-platforms", image: "/edutech.png" },
-  { name: "Real Estate", slug: "real-estate-proptech", image: "/realeastateTech.png" },
-  { name: "HR Tech", slug: "hr-tech-future-of-work", image: "/HRTech.png" },
+  { name: "Healthcare", slug: "healthcare-healthtech", image: "/industries1.png" },
+  { name: "FinTech", slug: "fintech-financial-services", image: "/industries2.png" },
+  { name: "SaaS & Cloud", slug: "saas-cloud-products", image: "/industries3.png" },
+  { name: "EdTech", slug: "edtech-learning-platforms", image: "/industries4.png" },
+  { name: "Real Estate", slug: "real-estate-proptech", image: "/industries3.png" },
+  { name: "HR Tech", slug: "hr-tech-future-of-work", image: "/industries6.png" },
 ];
 
 const Industries = () => {

@@ -27,7 +27,8 @@ export default function MobileWork() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: header,
-              start: "top 90%",
+              start: "top 95%",
+              toggleActions: "play none none none",
             },
           }
         );
@@ -41,27 +42,28 @@ export default function MobileWork() {
         const stats = card.querySelector(".m-card-stats");
         const img = card.querySelector(".m-card-img");
 
-        // Set initial state via GSAP to prevent style conflicts
-        gsap.set(card, { opacity: 0, y: 55 });
-        gsap.set([title, desc, stats], { opacity: 0, y: 15 });
-        gsap.set(img, { opacity: 0, y: 30, scale: 0.96 });
-
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
-            start: "top 88%",
+            start: "top 92%",
             toggleActions: "play none none none",
           },
         });
 
-        tl.to(card, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        })
-          .to(
-            [title, desc, stats],
+        tl.fromTo(
+          card,
+          { opacity: 0, y: 45, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.65,
+            ease: "power3.out",
+          }
+        )
+          .fromTo(
+            [title, desc, stats].filter(Boolean),
+            { opacity: 0, y: 15 },
             {
               opacity: 1,
               y: 0,
@@ -70,19 +72,26 @@ export default function MobileWork() {
               ease: "power2.out",
             },
             "-=0.35"
-          )
-          .to(
+          );
+
+        if (img) {
+          tl.fromTo(
             img,
+            { opacity: 0, y: 25, scale: 0.94 },
             {
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 0.65,
+              duration: 0.6,
               ease: "power2.out",
             },
-            "-=0.25"
+            "-=0.3"
           );
+        }
       });
+
+      // Force recalculation after setup
+      ScrollTrigger.refresh();
     }, containerRef);
 
     return () => ctx.revert();

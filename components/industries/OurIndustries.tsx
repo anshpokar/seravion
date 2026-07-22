@@ -13,7 +13,7 @@ const industries = [
     name: "HEALTHCARE & HEALTHTECH",
     subtitle: "Improving Patient Outcomes with Technology",
     description: "We build HIPAA-compliant digital health platforms, patient engagement solutions, clinical workflow automation, and AI-powered diagnostics tools. Our healthcare engineers bridge clinical knowledge with technology to create products that genuinely improve patient outcomes.",
-    image: "/healthtech.png",
+    image: "/industries1.png",
   },
   {
     id: "02",
@@ -21,7 +21,7 @@ const industries = [
     name: "FINTECH & FINANCIAL",
     subtitle: "Secure, Compliant, and Scalable Solutions",
     description: "We engineer secure, compliant, and scalable financial technology solutions — from payment platforms and digital banking to investment tools and InsurTech products. Our FinTech team understands regulatory complexity, real-time data requirements, and the trust architecture that financial products demand.",
-    image: "/fintech.png",
+    image: "/industries2.png",
   },
   {
     id: "03",
@@ -29,7 +29,7 @@ const industries = [
     name: "SAAS & CLOUD PRODUCTS",
     subtitle: "Architecting Multi-Tenant Platforms",
     description: "SaaS is in our DNA. We architect multi-tenant platforms, implement subscription billing, build product analytics, and help SaaS companies scale from first revenue to enterprise contracts.",
-    image: "/biztech.png",
+    image: "/industries3.png",
   },
   {
     id: "04",
@@ -37,7 +37,7 @@ const industries = [
     name: "EDTECH & LEARNING",
     subtitle: "Education Technology that Scales",
     description: "From adaptive learning engines and LMS platforms to virtual classrooms and assessment tools — we build education technology that scales from thousands to millions of learners without sacrificing the experience.",
-    image: "/edutech.png",
+    image: "/industries4.png",
   },
   {
     id: "05",
@@ -45,7 +45,7 @@ const industries = [
     name: "REAL ESTATE & PROPTECH",
     subtitle: "Digital Platforms for the Modern Era",
     description: "Digital platforms for property listing, CRM for real estate teams, virtual tour technology, and data-driven valuation tools — we help real estate businesses operate and grow in the digital era.",
-    image: "/cartech.png",
+    image: "/industries1.png",
   },
   {
     id: "06",
@@ -53,7 +53,7 @@ const industries = [
     name: "HR TECH & FUTURE WORK",
     subtitle: "Smarter Decisions and Better Workplaces",
     description: "We build applicant tracking systems, employee experience platforms, workforce analytics, and AI-powered talent intelligence tools that help HR teams make smarter decisions and create workplaces people love.",
-    image: "/meditech.png",
+    image: "/industries6.png",
   },
   {
     id: "07",
@@ -61,7 +61,7 @@ const industries = [
     name: "LOGISTICS & SUPPLY CHAIN",
     subtitle: "Intelligent Platforms with Real-Time Tracking",
     description: "We develop intelligent logistics platforms with real-time tracking, route optimization, warehouse management, and predictive analytics. Our solutions reduce operational costs and create visibility across even the most complex supply chains.",
-    image: "/fintech.png",
+    image: "/industries7.png",
   },
   {
     id: "08",
@@ -69,7 +69,7 @@ const industries = [
     name: "E-COMMERCE & RETAIL",
     subtitle: "Next-Generation Commerce Experiences",
     description: "We build next-generation commerce experiences — from headless storefronts and personalization engines to inventory systems and omnichannel platforms — that convert browsers into buyers and buyers into loyalists.",
-    image: "/healthtech.png",
+    image: "/industries1.png",
   },
   {
     id: "09",
@@ -77,7 +77,7 @@ const industries = [
     name: "MANUFACTURING & IND 4.0",
     subtitle: "Unlocking Value from the Shop Floor",
     description: "IoT-enabled factory monitoring, predictive maintenance systems, digital twin solutions, and supply chain visibility platforms — we help manufacturers unlock the value of data from the shop floor to the boardroom.",
-    image: "/biztech.png",
+    image: "/industries2.png",
   },
   {
     id: "10",
@@ -85,7 +85,7 @@ const industries = [
     name: "TRAVEL & HOSPITALITY",
     subtitle: "Competing in a Digital Market",
     description: "From booking engines and dynamic pricing platforms to loyalty programs and guest experience applications — we build technology that helps travel and hospitality businesses compete in a highly digital, customer-driven market.",
-    image: "/edutech.png",
+    image: "/industries3.png",
   },
   {
     id: "11",
@@ -93,7 +93,7 @@ const industries = [
     name: "INSURANCE & INSURTECH",
     subtitle: "Modernizing How Insurers Operate",
     description: "We develop policy management platforms, claims automation, AI-powered underwriting tools, and customer-facing insurance portals that modernize how insurers operate and engage their customers.",
-    image: "/meditech.png",
+    image: "/industries4.png",
   },
   {
     id: "12",
@@ -101,7 +101,7 @@ const industries = [
     name: "MEDIA & ENTERTAINMENT",
     subtitle: "Powering Modern Media Businesses",
     description: "OTT platforms, content management systems, audience analytics, interactive experiences, and creator tools — we build the technology infrastructure that powers modern media businesses.",
-    image: "/cartech.png",
+    image: "/industries1.png",
   },
 ];
 ;
